@@ -7,15 +7,18 @@ public class AR_Cursor : MonoBehaviour
 {
     public GameObject cursorChildObject;
     public GameObject objectToPlace;
+    public GameObject actions;
     public ARRaycastManager raycastManager;
     public ARPlaneManager aRPlaneManager;
 
     public bool useCursor = true;
+    
     // Start is called before the first frame update
     void Start()
     {
         cursorChildObject.SetActive(useCursor);
-
+        //PlayerScript playerScript = thePlayer.GetComponent<PlayerScript>();
+        
 
     }
 
@@ -27,7 +30,7 @@ public class AR_Cursor : MonoBehaviour
             UpdateCursor();
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began /*&& !actions.GetComponent<ExecuteAction>().isAction*/)     // added: last bool -> do not insantiate if aciton button is clicked
         {
             if (useCursor)
             {
