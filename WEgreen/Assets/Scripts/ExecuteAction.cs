@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class ExecuteAction : MonoBehaviour
 {
     public Text title;
-
+    //visibility button und bool für das ändern des images
+    public Button visibility;
+    bool vis = false;
     //scale button soll bei berührung den slider fürs skalieren aktivieren/deaktivieren
-    public Slider scaleButton;
+    public Slider scaleSlider;
     private bool scaleSliderActive = false;
 
     public bool isAction = false;
@@ -31,7 +33,12 @@ public class ExecuteAction : MonoBehaviour
         switch (titlename) {
             case "Scaling":
                 scaleSliderActive = !scaleSliderActive;
-                scaleButton.gameObject.SetActive(scaleSliderActive);
+                scaleSlider.gameObject.SetActive(scaleSliderActive);
+                break;
+            case "Visibility":
+                vis = !vis;
+                visibility.transform.GetChild(0).gameObject.SetActive(!vis);
+                visibility.transform.GetChild(1).gameObject.SetActive(vis);
                 break;
         }
              
