@@ -8,16 +8,19 @@ public class AR_Cursor : MonoBehaviour
    
     public GameObject cursorChildObject;
     public GameObject objectToPlace;
+    public GameObject actions;
     public ARRaycastManager raycastManager;
     public ARPlaneManager aRPlaneManager;
     public int amountOfPlants = 0;
     public GameObject movingPlantToPlace;
 
     public bool useCursor = true;
+    
     // Start is called before the first frame update
     void Start()
     {
         cursorChildObject.SetActive(useCursor);
+
         objectToPlace.SetActive(true);
         movingPlantToPlace.SetActive(true);
     }
