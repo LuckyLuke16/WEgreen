@@ -5,11 +5,14 @@ using UnityEngine.XR.ARFoundation;
 
 public class AR_Cursor : MonoBehaviour
 {
+   
     public GameObject cursorChildObject;
     public GameObject objectToPlace;
     public GameObject actions;
     public ARRaycastManager raycastManager;
     public ARPlaneManager aRPlaneManager;
+    public int amountOfPlants = 0;
+    public GameObject movingPlantToPlace;
 
     public bool useCursor = true;
     
@@ -17,20 +20,25 @@ public class AR_Cursor : MonoBehaviour
     void Start()
     {
         cursorChildObject.SetActive(useCursor);
-        //PlayerScript playerScript = thePlayer.GetComponent<PlayerScript>();
-        
 
+        objectToPlace.SetActive(true);
+        movingPlantToPlace.SetActive(true);
     }
 
     // Update is called once per frame
+    /*
+     * bei touch auf bildschirm wird eine pflanze auf die Stelle des hits des raycasts mit einer generierten plane gesetzt
+     * max. 3 pflanzen moeglich zu generieren (performance)
+    */
     void Update()
     {
+      
         if (useCursor)
         {
             UpdateCursor();
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began /*&& !actions.GetComponent<ExecuteAction>().isAction*/)     // added: last bool -> do not insantiate if aciton button is clicked
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && amountOfPlants < 3)
         {
             if (useCursor)
             {
@@ -45,15 +53,17 @@ public class AR_Cursor : MonoBehaviour
                     GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
                 }
             }
-            foreach (var plane in aRPlaneManager.trackables)
-            {
-                plane.gameObject.SetActive(false);
-            }
+            amountOfPlants++;
+           
         }
-    
+        
 
-}
 
+    }
+    /*
+     * updated die position und rotation des cursors wenn hit mit plane aufgetreten ist
+     * Modell-Pflanze ist immer auf cursor
+    */
     void UpdateCursor()
     {
         Vector2 screenPosition = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
@@ -64,6 +74,9 @@ public class AR_Cursor : MonoBehaviour
         {
             transform.position = hits[0].pose.position;
             transform.rotation = hits[0].pose.rotation;
+            
+            movingPlantToPlace.transform.position = hits[0].pose.position;
+            movingPlantToPlace.transform.rotation = hits[0].pose.rotation;
         }
     }
 }
