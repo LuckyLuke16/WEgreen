@@ -35,7 +35,7 @@ public class AR_Cursor : MonoBehaviour
       
         if (useCursor)
         {
-            UpdateCursor();
+            updateCursorAndPlant();
         }
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && amountOfPlants < 3)
@@ -64,7 +64,7 @@ public class AR_Cursor : MonoBehaviour
      * updated die position und rotation des cursors wenn hit mit plane aufgetreten ist
      * Modell-Pflanze ist immer auf cursor
     */
-    void UpdateCursor()
+    void updateCursorAndPlant()
     {
         Vector2 screenPosition = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
@@ -78,5 +78,12 @@ public class AR_Cursor : MonoBehaviour
             movingPlantToPlace.transform.position = hits[0].pose.position;
             movingPlantToPlace.transform.rotation = hits[0].pose.rotation;
         }
+    }
+
+    //skalierfunktion, die beim benutzen des sliders verwendet wird
+    public void changeScale(float scaleValue)
+    {
+        movingPlantToPlace.transform.localScale = Vector3.one * scaleValue;
+
     }
 }

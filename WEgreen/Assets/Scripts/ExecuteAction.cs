@@ -7,6 +7,10 @@ public class ExecuteAction : MonoBehaviour
 {
     public Text title;
 
+    //scale button soll bei berührung den slider fürs skalieren aktivieren/deaktivieren
+    public Slider scaleButton;
+    private bool scaleSliderActive = false;
+
     public bool isAction = false;
     // Start is called before the first frame update
     void Start()
@@ -24,5 +28,13 @@ public class ExecuteAction : MonoBehaviour
     {
         title.text = titlename;
         isAction = true;
+        switch (titlename) {
+            case "Scaling":
+                scaleSliderActive = !scaleSliderActive;
+                scaleButton.gameObject.SetActive(scaleSliderActive);
+                break;
+        }
+             
     }
+
 }
