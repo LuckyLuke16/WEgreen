@@ -481,6 +481,18 @@ MonoBehaviour:
           m_StringArgument: Visibility
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1450346910}
+        m_TargetAssemblyTypeName: AR_Cursor, Assembly-CSharp
+        m_MethodName: setVisibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &66069057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,7 +1218,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 562590800}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1450346910}
+        m_TargetAssemblyTypeName: AR_Cursor, Assembly-CSharp
+        m_MethodName: pressedOkWhenMaxPlants
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &562590800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,7 +2086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056048756}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children: []
   m_Father: {fileID: 1450346909}
@@ -2487,10 +2511,11 @@ MonoBehaviour:
   actions: {fileID: 0}
   raycastManager: {fileID: 450181048}
   aRPlaneManager: {fileID: 450181047}
-  amountOfPlants: 0
   movingPlantToPlace: {fileID: 1320018716}
+  amountOfPlants: 0
   maxPlantReachedDialouge: {fileID: 1925739338}
   useCursor: 1
+  visibility: 1
 --- !u!1 &1453366009
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,10 +3079,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1450346908}
-        m_TargetAssemblyTypeName: ExecuteAction, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 1450346910}
+        m_TargetAssemblyTypeName: AR_Cursor, Assembly-CSharp
+        m_MethodName: deletePlacedPlants
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

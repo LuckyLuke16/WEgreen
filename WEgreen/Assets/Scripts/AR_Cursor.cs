@@ -11,8 +11,11 @@ public class AR_Cursor : MonoBehaviour
     public GameObject actions;
     public ARRaycastManager raycastManager;
     public ARPlaneManager aRPlaneManager;
-    public int amountOfPlants = 0;
     public GameObject movingPlantToPlace;
+    
+    //maximale anzahl an platzierbaren pflanzen und counter für pflanzenanzahl
+    public int amountOfPlants = 0;
+    private int maxAmountOfPlants = 3;
 
     //Dialog wenn maximales pflanzenlimit erreicht ist
     public GameObject maxPlantReachedDialouge;
@@ -21,19 +24,23 @@ public class AR_Cursor : MonoBehaviour
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     public bool useCursor = true;
+    public bool visibility = true;
+
+    GameObject[] placedPlants;
     
     // Start is called before the first frame update
     void Start()
     {
-        cursorChildObject.SetActive(useCursor);
+        cursorChildObject.SetActive(true);
 
         movingPlantToPlace.SetActive(true);
+        placedPlants = new GameObject[maxAmountOfPlants];
     }
 
     // Update is called once per frame
     /*
      * bei touch auf bildschirm wird eine pflanze auf die Stelle des hits des raycasts mit einer generierten plane gesetzt
-     * max. 3 pflanzen moeglich zu generieren (performance)
+     * max. 3 pflanzen moeglich zu generieren (performance) 
     */
     void Update()
     {
@@ -98,11 +105,13 @@ public class AR_Cursor : MonoBehaviour
 
     }
 
+    //pflanze wird auf die derzeitige position des cursors platziert, wenn mehr als 3 pflanzen hinzugefügt sind wird ein dialog angezeigt
     public void addPlant()
     {
-        if (hits.Count > 0 && amountOfPlants < 3)
+        if (hits.Count > 0 && amountOfPlants < maxAmountOfPlants && visibility)
         {
-            GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
+            //GameObject placedPlant = GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
+            placedPlants[amountOfPlants] = GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
             amountOfPlants++;
         }
         else
@@ -110,8 +119,33 @@ public class AR_Cursor : MonoBehaviour
             //wenn 3 oder mehr pflanzen gesetzt sind wird ein dialog angezeigt, der darauf hinweist, dass die maximale anzahl erreicht ist
             if (amountOfPlants >= 3) {
                 maxPlantReachedDialouge.SetActive(true);
-                Time.timeScale = 0;
+                useCursor = false;
             }
         }
+    }
+    //ok taste bei max. pflanzen-erreicht-dialog schließt diesen
+    public void pressedOkWhenMaxPlants()
+    {
+        maxPlantReachedDialouge.SetActive(false);
+        useCursor = true;
+        
+    }
+    //sichtbarkeit der pflanze + cursor wird mit taste aktiviert/deaktiviert
+    public void setVisibility()
+    {
+        visibility = !visibility;
+        cursorChildObject.SetActive(visibility);
+        movingPlantToPlace.SetActive(visibility);
+        useCursor = visibility;
+    }
+
+    //die mülleimer-taste löscht alle gesetzten pflanzen
+    public void deletePlacedPlants()
+    {
+        for(int i = 0; i < maxAmountOfPlants; i++)
+        {
+            placedPlants[i].SetActive(false);
+        }
+        amountOfPlants = 0;
     }
 }
