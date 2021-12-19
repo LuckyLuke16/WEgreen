@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -12,24 +12,22 @@ public class MeasurementController : MonoBehaviour
     [SerializeField] private Vector3 offsetMeasurement;
     [SerializeField] private TextMeshPro distanceText;
     [SerializeField] private ARCameraManager arCameraManager;
-    //[SerializeField] private Renderer renderer;
+    //[SerializeField] private MeshRenderer renderer;
     private LineRenderer measureLine;
     private ARRaycastManager arRaycastManager;
     //private GameObject p1, p2, p3, p4, p5, p6, p7, p8;
     private GameObject startPoint, endPoint;
-    private Vector2 touchPosition = default;
+    //private Vector2 touchPosition = default;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    private Vector3 size;
     void Awake()
     {
         arRaycastManager = GetComponent<ARRaycastManager>();
 
-        startPoint = Instantiate(measurementPointPrefab, Vector3.zero, Quaternion.identity);
-        endPoint = Instantiate(measurementPointPrefab, Vector3.zero, Quaternion.identity);
+        //startPoint = Instantiate(measurementPointPrefab, Vector3.zero, Quaternion.identity);
+        //endPoint = Instantiate(measurementPointPrefab, Vector3.zero, Quaternion.identity);
 
         measureLine = GetComponent<LineRenderer>();
 
-        //size = renderer.bounds.size;
         //startPoint.SetActive(false);
         //endPoint.SetActive(false);
     }
@@ -69,7 +67,7 @@ public class MeasurementController : MonoBehaviour
             }
         }
         */
-
+    /*
         if(startPoint.activeSelf && endPoint.activeSelf)
         {
             distanceText.transform.position = endPoint.transform.position + offsetMeasurement;
@@ -77,7 +75,10 @@ public class MeasurementController : MonoBehaviour
             measureLine.SetPosition(0, startPoint.transform.position);
             measureLine.SetPosition(1, endPoint.transform.position);
 
-            distanceText.text = $"Distance: {(Vector3.Distance(startPoint.transform.position, endPoint.transform.position)).ToString("F2")} m";
+            distanceText.text = $"Breite (x): {(Vector3.Distance(startPoint.transform.position, endPoint.transform.position)).ToString("F2")} m";
+            distanceText.text = $"Höhe (y): {(Vector3.Distance(startPoint.transform.position, endPoint.transform.position)).ToString("F2")} m";
+            distanceText.text = $"Tiefe (z): {(Vector3.Distance(startPoint.transform.position, endPoint.transform.position)).ToString("F2")} m";
         }
+        */
     }
 }
