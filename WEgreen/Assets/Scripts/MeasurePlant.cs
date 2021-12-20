@@ -22,6 +22,7 @@ public class MeasurePlant : MonoBehaviour
     void Update()
     {
         measure();
+        OnDrawGizmos();
     }
 
     public void combine()
@@ -87,7 +88,7 @@ public class MeasurePlant : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
+        Gizmos.color = Color.green;
         Gizmos.DrawWireCube(bounds.center, bounds.size);
     }
 }
