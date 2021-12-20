@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlantCubeSize : MonoBehaviour
 {
-    [SerializeField] private MeasurePlant MeasurePlant;
+    private MeasurePlant MeasurePlant;
     private GameObject plant;
     private float xScale, yScale, zScale;
 
     void Start()
     {
-        plant = transform.parent.gameObject;
+        plant = transform.parent.parent.gameObject;
+        MeasurePlant = plant.GetComponent<MeasurePlant>();
         //transform.localScale = transform.localScale + plant.transform.localScale;
     }
     void Update()
