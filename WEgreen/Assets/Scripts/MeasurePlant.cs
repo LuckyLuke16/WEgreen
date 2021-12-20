@@ -21,15 +21,12 @@ public class MeasurePlant : MonoBehaviour
 
     void Update()
     {
+        combine();
         measure();
-        OnDrawGizmos();
     }
 
     public void combine()
     {
-        //Vector3 position = obj.transform.position;
-        //obj.transform.position = Vector3.zero;
-
         MeshFilter[]  meshFilters = GetComponentsInChildren<MeshFilter>();
         List<MeshFilter> meshFilter = new List<MeshFilter>();
         
@@ -45,16 +42,14 @@ public class MeasurePlant : MonoBehaviour
         {
             combine[np].mesh = meshFilter[np].sharedMesh;
             combine[np].transform = meshFilter[np].transform.localToWorldMatrix;
-            //meshFilters[np].gameObject.SetActive(false);
             np++;
         }
         mesh = transform.GetComponent<MeshFilter>().mesh;
         mesh = new Mesh();
         mesh.CombineMeshes(combine);
-        bounds = mesh.bounds; 
-        //transform.gameObject.SetActive(true);
+        bounds = mesh.bounds;
+        
         setLabels();
-        //obj.transform.position = position;
     }
 
     public void setLabels()
