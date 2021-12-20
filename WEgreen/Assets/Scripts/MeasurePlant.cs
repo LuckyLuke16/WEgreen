@@ -7,21 +7,27 @@ using TMPro;
 [RequireComponent(typeof(MeshRenderer))]
 public class MeasurePlant : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro xText, yText, zText;
+    private GameObject xText, yText, zText;
     [SerializeField] private Vector3 offsetMeasurement;
     private Bounds bounds;
     //private MeshRenderer renderer;
     private Mesh mesh;
-    private float xSize, ySize, zSize;
+    public float xSize, ySize, zSize;
     private Vector3 xLabel, yLabel, zLabel;
+    private GameObject measurePrefab;
     void Start()
     {
+        measurePrefab = transform.Find("MeasurePrefab").gameObject;
+        xText = measurePrefab.transform.Find("xText").gameObject;
+        yText = measurePrefab.transform.Find("yText").gameObject;
+        zText = measurePrefab.transform.Find("zText").gameObject;
+
         combine();
     }
 
     void Update()
     {
-        combine();
+        //combine();
         measure();
     }
 
@@ -48,6 +54,7 @@ public class MeasurePlant : MonoBehaviour
         mesh = new Mesh();
         mesh.CombineMeshes(combine);
         bounds = mesh.bounds;
+        //Debug.Log(bounds);
         
         setLabels();
     }
@@ -55,11 +62,11 @@ public class MeasurePlant : MonoBehaviour
     public void setLabels()
     {
         xSize = bounds.size.x;
-        //Debug.Log("xSize: " + xSize);
+        Debug.Log("xSize: " + xSize);
         ySize = bounds.size.y;
-        //Debug.Log("ySize: " + ySize);
+        Debug.Log("ySize: " + ySize);
         zSize = bounds.size.z;
-        //Debug.Log("zSize: " + zSize);
+        Debug.Log("zSize: " + zSize);
 
         xLabel = new Vector3(xSize, 0, 0);
         yLabel = new Vector3(0, ySize, 0);
@@ -76,14 +83,16 @@ public class MeasurePlant : MonoBehaviour
         zText.transform.position = transform.position + xLabel + offsetMeasurement;
         //zText.transform.LookAt(Camera.main.transform);
 
-        xText.text = $"Breite (x): {xSize.ToString("F2")} m";
-        yText.text = $"Höhe (y): {ySize.ToString("F2")} m";
-        zText.text = $"Tiefe (z): {zSize.ToString("F2")} m";
+        xText.GetComponent<TextMeshPro>().text = $"Breite (x): {xSize.ToString("F2")} m";
+        yText.GetComponent<TextMeshPro>().text = $"Höhe (y): {ySize.ToString("F2")} m";
+        zText.GetComponent<TextMeshPro>().text = $"Tiefe (z): {zSize.ToString("F2")} m";
     }
 
+/*
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(bounds.center, bounds.size);
     }
+    */
 }

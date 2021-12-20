@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scripts/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/AR Scene.unity
+    path: Assets/Scripts/Scenes/AR Scene.unity
     guid: 2ae76a1a73362704195cf1af18f275be
   - enabled: 1
-    path: Assets/Scenes/BookScene.unity
+    path: Assets/Scripts/Scenes/BookScene.unity
     guid: 7b3e3670c4053c64b854c016e587f4f0
   - enabled: 1
-    path: Assets/Scenes/CookingScene.unity
+    path: Assets/Scripts/Scenes/CookingScene.unity
     guid: cc618a35be2469e44bffe5e1d3c9e78a
   - enabled: 1
-    path: Assets/Scenes/NotesScene.unity
+    path: Assets/Scripts/Scenes/NotesScene.unity
     guid: 1f447ed2fb87e114c847a018ba587975
   - enabled: 1
-    path: Assets/Scenes/CalenderScene.unity
+    path: Assets/Scripts/Scenes/CalenderScene.unity
     guid: d17aefeaa0388594c812cf2454f1f579
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 5234393fb675c12449ae2a973748a90d, type: 2}
