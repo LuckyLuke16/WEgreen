@@ -91,9 +91,9 @@ public class MeasurePlant : MonoBehaviour
         zText.transform.position = transform.position + xLabel + offsetMeasurement;
         //zText.transform.LookAt(Camera.main.transform);
 
-        xText.text = $"Breite (x): {xSize.ToString("F2")} m";
-        yText.text = $"Höhe (y): {ySize.ToString("F2")} m";
-        zText.text = $"Tiefe (z): {zSize.ToString("F2")} m";
+        xText.text = $"x: {xSize.ToString("F2")} m";
+        yText.text = $"y: {ySize.ToString("F2")} m";
+        zText.text = $"z: {zSize.ToString("F2")} m";
     }
 
     public bool isScaling()

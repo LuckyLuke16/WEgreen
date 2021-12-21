@@ -3197,6 +3197,18 @@ PrefabInstance:
       propertyPath: outlineMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2009345037, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 386361075743205110, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 569621097564478159, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5402567292850203010, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3240,6 +3252,10 @@ PrefabInstance:
     - target: {fileID: 5402567292850203010, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869681079697727037, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8848908203771038450, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
       propertyPath: m_Name
