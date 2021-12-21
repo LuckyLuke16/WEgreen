@@ -7,53 +7,61 @@ using TMPro;
 [RequireComponent(typeof(MeshRenderer))]
 public class MeasurePlant : MonoBehaviour
 {
-    private GameObject xText, yText, zText;
+    private TextMeshPro xText, yText, zText;
     [SerializeField] private Vector3 offsetMeasurement;
     private Bounds bounds;
     //private MeshRenderer renderer;
-    private Mesh mesh;
+    //private Mesh mesh;
     public float xSize, ySize, zSize;
     private Vector3 xLabel, yLabel, zLabel;
     private GameObject measurePrefab;
+    private bool scaling = false;
+    private Vector3 plantScale;
+    private MeshFilter[]  meshFilters;
+    private List<MeshFilter> meshFilter;
     void Start()
     {
         measurePrefab = transform.Find("MeasurePrefab").gameObject;
-        xText = measurePrefab.transform.Find("xText").gameObject;
-        yText = measurePrefab.transform.Find("yText").gameObject;
-        zText = measurePrefab.transform.Find("zText").gameObject;
-
-        combine();
-    }
-
-    void Update()
-    {
+        xText = measurePrefab.transform.Find("xText").GetComponent<TextMeshPro>();
+        yText = measurePrefab.transform.Find("yText").GetComponent<TextMeshPro>();
+        zText = measurePrefab.transform.Find("zText").GetComponent<TextMeshPro>();
+        plantScale = transform.localScale;
         //combine();
-        measure();
-    }
-
-    public void combine()
-    {
-        MeshFilter[]  meshFilters = GetComponentsInChildren<MeshFilter>();
-        List<MeshFilter> meshFilter = new List<MeshFilter>();
-        
-        
+        meshFilters = GetComponentsInChildren<MeshFilter>();
+        meshFilter = new List<MeshFilter>();
         for(int i = 1; i < meshFilters.Length; i++)
         {
             meshFilter.Add(meshFilters[i]);
         }
         meshFilter.Add(meshFilters[meshFilters.Length-1]);
+    }
+
+    void Update()
+    {
+        //if(isScaling())
+            combine();
+        measure();
+    }
+
+    public void combine()
+    {
+        //MeshFilter[]  meshFilters = GetComponentsInChildren<MeshFilter>();
+        //List<MeshFilter> meshFilter = new List<MeshFilter>();
+        
         CombineInstance[] combine = new CombineInstance[meshFilters.Length];
         int np = 0;
         while(np < meshFilter.Count)
         {
             combine[np].mesh = meshFilter[np].sharedMesh;
             combine[np].transform = meshFilter[np].transform.localToWorldMatrix;
+            //Destroy(meshFilters[np]);
             np++;
         }
-        mesh = transform.GetComponent<MeshFilter>().mesh;
-        mesh = new Mesh();
-        mesh.CombineMeshes(combine);
-        bounds = mesh.bounds;
+        //mesh = transform.GetComponent<MeshFilter>().mesh;
+        //mesh = new Mesh();
+        //transform.GetComponent<MeshFilter>().mesh = new Mesh();
+        transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
+        bounds = transform.GetComponent<MeshFilter>().mesh.bounds;
         //Debug.Log(bounds);
         
         setLabels();
@@ -83,16 +91,23 @@ public class MeasurePlant : MonoBehaviour
         zText.transform.position = transform.position + xLabel + offsetMeasurement;
         //zText.transform.LookAt(Camera.main.transform);
 
-        xText.GetComponent<TextMeshPro>().text = $"Breite (x): {xSize.ToString("F2")} m";
-        yText.GetComponent<TextMeshPro>().text = $"Höhe (y): {ySize.ToString("F2")} m";
-        zText.GetComponent<TextMeshPro>().text = $"Tiefe (z): {zSize.ToString("F2")} m";
+        xText.text = $"Breite (x): {xSize.ToString("F2")} m";
+        yText.text = $"Höhe (y): {ySize.ToString("F2")} m";
+        zText.text = $"Tiefe (z): {zSize.ToString("F2")} m";
     }
 
-/*
-    void OnDrawGizmos()
+    public bool isScaling()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(bounds.center, bounds.size);
+        if(plantScale != transform.localScale)
+        {
+            scaling = true;
+            plantScale = transform.localScale;
+        }
+        else
+        {
+            scaling = false;
+        }
+
+        return scaling;
     }
-    */
 }
