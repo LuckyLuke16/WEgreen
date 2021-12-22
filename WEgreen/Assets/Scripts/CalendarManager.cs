@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class CalendarManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CalendarManager : MonoBehaviour
     public bool isButtonA;
     public bool isButtonB;
     public Button[] buttonList;
+    public string time;
+    public int intTime;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +23,25 @@ public class CalendarManager : MonoBehaviour
         for (int i = 1; i < 26; i++)
         {
             buttonList[i] = GameObject.Find("Button (" + i + ")").GetComponent<Button>();
-            Debug.Log(i);
+            //Debug.Log(i);
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // DOES NOT WORK: color of current day not changing???
+        //time = System.DateTime.UtcNow.ToLocalTime().ToString("dd");
+        //Debug.Log(Convert.ToInt32(time) + 3);
+
+        //time = System.DateTime.UtcNow.ToLocalTime().ToString("dd");
+        //intTime = Convert.ToInt32(time) - 8;
+        //Image currentDay = buttonList[intTime].GetComponent<Image>();
+        //currentDay.color = Color.black;
+        //Debug.Log(currentDay.name);
+
         if (isButtonA)
         {
             for (int i = 1; i < 24; i += 2)
