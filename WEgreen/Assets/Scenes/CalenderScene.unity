@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 328024094}
   - component: {fileID: 328024093}
   m_Layer: 5
-  m_Name: Sun
+  m_Name: D7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,7 +794,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sun
+  m_Text: D7
 --- !u!222 &328024094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 500611011}
   - component: {fileID: 500611010}
   m_Layer: 5
-  m_Name: Thu
+  m_Name: D4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1508,7 +1508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thu
+  m_Text: D4
 --- !u!222 &500611011
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4707,7 +4707,7 @@ GameObject:
   - component: {fileID: 1154500094}
   - component: {fileID: 1154500093}
   m_Layer: 5
-  m_Name: Wed
+  m_Name: D3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4765,7 +4765,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wed
+  m_Text: D3
 --- !u!222 &1154500094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6861,7 +6861,7 @@ GameObject:
   - component: {fileID: 1584000445}
   - component: {fileID: 1584000444}
   m_Layer: 5
-  m_Name: Sa
+  m_Name: D6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6919,7 +6919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sat
+  m_Text: D6
 --- !u!222 &1584000445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8958,7 +8958,7 @@ GameObject:
   - component: {fileID: 2092782260}
   - component: {fileID: 2092782259}
   m_Layer: 5
-  m_Name: Tue
+  m_Name: D2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9016,7 +9016,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tue
+  m_Text: D2
 --- !u!222 &2092782260
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9037,7 +9037,7 @@ GameObject:
   - component: {fileID: 2112735707}
   - component: {fileID: 2112735706}
   m_Layer: 5
-  m_Name: Mo
+  m_Name: D1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9095,7 +9095,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mon
+  m_Text: D1
 --- !u!222 &2112735707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9195,7 +9195,7 @@ GameObject:
   - component: {fileID: 2128384183}
   - component: {fileID: 2128384182}
   m_Layer: 5
-  m_Name: Fr
+  m_Name: D5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9253,7 +9253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fri
+  m_Text: D5
 --- !u!222 &2128384183
 CanvasRenderer:
   m_ObjectHideFlags: 0

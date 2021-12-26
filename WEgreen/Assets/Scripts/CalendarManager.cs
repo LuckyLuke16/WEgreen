@@ -24,7 +24,9 @@ public class CalendarManager : MonoBehaviour
     private int dayIndex;
     public Text monthText;
     public Text yearText;
+    private Text[] weekdaysText;
     private string[] monthsList;
+    private string[] weekdaysAligned;
     public Sprite greenArrow;
     public Sprite redArrow;
     public Sprite grayArrow;
@@ -50,12 +52,7 @@ public class CalendarManager : MonoBehaviour
         navLeft = GameObject.Find("Nav_Left").GetComponent<Button>();
 
 
-        // find current day and cast from string to int
-        currentDay = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("dd"));
-        // find current month and cast from string to int
-        currentMonth = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("MM"));
-        // find current year and cast from string to int
-        currentYear = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy"));
+        FindCurrentYearMonthDay();
         // find current page the use is on
         dayIndex = currentDay - 1;
         monthIndex = currentMonth - 1;
@@ -66,6 +63,15 @@ public class CalendarManager : MonoBehaviour
 
         // initialize current month text
         monthText.text = monthsList[monthIndex];
+
+        // initialize current weekdays text
+        weekdaysText = new Text[7];
+        for (int i = 0; i < weekdaysText.Length; i++)
+        {
+            weekdaysText[i] = GameObject.Find("D" + (i + 1)).GetComponent<Text>();
+        }
+
+        AlignWeekdays();
     }
 
     // Update is called once per frame
@@ -165,6 +171,16 @@ public class CalendarManager : MonoBehaviour
         }
     }
 
+    private void FindCurrentYearMonthDay()
+    {
+        // find current day and cast from string to int
+        currentDay = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("dd"));
+        // find current month and cast from string to int
+        currentMonth = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("MM"));
+        // find current year and cast from string to int
+        currentYear = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy"));
+    }
+
     // navigating one month back
     public void NavigateLeft()
     {
@@ -178,6 +194,7 @@ public class CalendarManager : MonoBehaviour
         if (monthIndex > 0)
         {
             monthText.text = monthsList[--monthIndex];
+            AlignWeekdays();
             CheckCurrentDay();
         }
         if(monthIndex == 0)
@@ -200,6 +217,7 @@ public class CalendarManager : MonoBehaviour
         if (monthIndex < monthsList.Length - 1)
         {
             monthText.text = monthsList[++monthIndex];
+            AlignWeekdays();
             CheckCurrentDay();
         }
         if (monthIndex == monthsList.Length - 1)
@@ -228,5 +246,62 @@ public class CalendarManager : MonoBehaviour
             currentDayImg.color = Color.white;
         }
         Debug.Log("END\nStart");
+    }
+
+    private void AlignWeekdays()
+    {
+        FindCurrentYearMonthDay();
+        DateTime date = new DateTime(currentYear, monthIndex + 1, 1);
+        // for debugging
+        //print(date);
+        //print(date.ToString("dddd"));
+
+        // identify the weekday of the first day of the month and align the weekdays in the correct order for this month
+        if(date.ToString("dddd") == "Montag")
+        {
+            print("Montag baby!");
+            weekdaysAligned = new string[] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
+        }
+        else if (date.ToString("dddd") == "Dienstag")
+        {
+            print("Dienstag baby!");
+            weekdaysAligned = new string[] { "Di", "Mi", "Do", "Fr", "Sa", "So", "Mo" };
+        }
+        else if (date.ToString("dddd") == "Mittwoch")
+        {
+            print("Mittwoch baby!");
+            weekdaysAligned = new string[] { "Mi", "Do", "Fr", "Sa", "So", "Mo", "Di" };
+
+        }
+        else if (date.ToString("dddd") == "Donnerstag")
+        {
+            print("Donnerstag baby!");
+            weekdaysAligned = new string[] { "Do", "Fr", "Sa", "So", "Mo", "Di", "Mi" };
+
+        }
+        else if (date.ToString("dddd") == "Freitag")
+        {
+            print("Freitag baby!");
+            weekdaysAligned = new string[] { "Fr", "Sa", "So", "Mo", "Di", "Mi", "Do" };
+
+        }
+        else if (date.ToString("dddd") == "Samstag")
+        {
+            print("Samstag baby!");
+            weekdaysAligned = new string[] { "Sa", "So", "Mo", "Di", "Mi", "Do", "Fr" };
+
+        }
+        else if (date.ToString("dddd") == "Sonntag")
+        {
+            print("Sonntag baby!");
+            weekdaysAligned = new string[] { "So", "Mo", "Di", "Mi", "Do", "Fr", "Sa" };
+
+        }
+
+        // name the weekday texts in the correct way
+        for (int i = 0; i < weekdaysAligned.Length; i++)
+        {
+            weekdaysText[i].text = weekdaysAligned[i];
+        }
     }
 }
