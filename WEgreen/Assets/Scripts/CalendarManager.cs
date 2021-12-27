@@ -13,7 +13,7 @@ public class CalendarManager : MonoBehaviour
     public bool isButtonA;
     public bool isButtonB;
     public Button[] buttonList;
-    public Button navLeft;
+    //public Button navLeft;
     public string time;
     private string currentPage;
     public int intTime;
@@ -32,7 +32,8 @@ public class CalendarManager : MonoBehaviour
     public Sprite grayArrow;
     public Image navRightImg;
     public Image navLeftImg;
-    public Image currentDayImg;
+    private Image currentDayImg;
+    public GameObject addingWindow;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +44,13 @@ public class CalendarManager : MonoBehaviour
         // creating array and put all the buttons(31 days) in it
         buttonList = new Button[30];
         Debug.Log(buttonList.Length);
-        for (int i = 1; i < 26; i++)
+        for (int i = 1; i < 30; i++)
         {
             buttonList[i] = GameObject.Find("Button (" + i + ")").GetComponent<Button>();
             //Debug.Log(i);
         }
 
-        navLeft = GameObject.Find("Nav_Left").GetComponent<Button>();
+        //navLeft = GameObject.Find("Nav_Left").GetComponent<Button>();
 
 
         FindCurrentYearMonthDay();
@@ -303,5 +304,15 @@ public class CalendarManager : MonoBehaviour
         {
             weekdaysText[i].text = weekdaysAligned[i];
         }
+    }
+
+    public void OpenAddingWindow()
+    {
+        addingWindow.SetActive(true);
+    }
+
+    public void CloseAddingWindow()
+    {
+        addingWindow.SetActive(false);
     }
 }
