@@ -12,11 +12,13 @@ public class CalendarManager : MonoBehaviour
     //public Button buttonB;
     public bool isButtonA;
     public bool isButtonB;
-    public Button[] buttonList;
+    private Button[] buttonList;
+    private Button addWateringPlantButton;
     //public Button navLeft;
     public string time;
     private string currentPage;
     public int intTime;
+    public int intYear;
     private int currentDay;
     private int currentMonth;
     private int currentYear;
@@ -24,6 +26,7 @@ public class CalendarManager : MonoBehaviour
     private int dayIndex;
     public Text monthText;
     public Text yearText;
+    public Text waterIntervallValueText;
     private Text[] weekdaysText;
     private string[] monthsList;
     private string[] weekdaysAligned;
@@ -34,6 +37,11 @@ public class CalendarManager : MonoBehaviour
     public Image navLeftImg;
     private Image currentDayImg;
     public GameObject addingWindow;
+    public GameObject[] buttonGameobjectList = new GameObject[3];
+    public GameObject[] greenWateringGameobjectList;
+    public GameObject[] yellowWateringGameobjectList;
+    public GameObject[] redWateringGameobjectList;
+    public Slider wateringSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -42,37 +50,60 @@ public class CalendarManager : MonoBehaviour
         monthsList = new string[] {"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
         monthIndex = currentMonth - 1;
         // creating array and put all the buttons(31 days) in it
-        buttonList = new Button[30];
+        buttonList = new Button[31];
         Debug.Log(buttonList.Length);
-        for (int i = 1; i < 30; i++)
+        for (int i = 1; i < 31; i++)
         {
-            buttonList[i] = GameObject.Find("Button (" + i + ")").GetComponent<Button>();
+            buttonList[i - 1] = GameObject.Find(i.ToString()).GetComponent<Button>();
             //Debug.Log(i);
         }
 
-        //navLeft = GameObject.Find("Nav_Left").GetComponent<Button>();
-
-
         FindCurrentYearMonthDay();
-        // find current page the use is on
+
+        // find current page the user is on
         dayIndex = currentDay - 1;
         monthIndex = currentMonth - 1;
         currentDayImg = buttonList[dayIndex].GetComponent<Image>();
         Debug.Log("OKKKK: " + currentPage + "." + currentYear + "\n" + System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy"));
 
-        CheckCurrentDay();
-
-        // initialize current month text
+        // initialize current month text, year text and casting year text to int
         monthText.text = monthsList[monthIndex];
+        yearText.text = "2021";
+        intYear = Convert.ToInt32(yearText.text);
 
-        // initialize current weekdays text
+        // initialize current weekdays text list with the text objects from scene
         weekdaysText = new Text[7];
         for (int i = 0; i < weekdaysText.Length; i++)
         {
             weekdaysText[i] = GameObject.Find("D" + (i + 1)).GetComponent<Text>();
         }
 
+        // check corectness routine
+        CheckCurrentDay();
         AlignWeekdays();
+        TotalDaysInMonth();
+
+        // set max value of watering slider
+        wateringSlider.maxValue = 4;
+
+        // find watering game objects with tag and disable them in scene
+        greenWateringGameobjectList = GameObject.FindGameObjectsWithTag("greenWatering");
+        yellowWateringGameobjectList = GameObject.FindGameObjectsWithTag("yellowWatering");
+        redWateringGameobjectList = GameObject.FindGameObjectsWithTag("redWatering");
+
+        foreach (GameObject go in greenWateringGameobjectList)
+        {
+            Debug.Log("HELLOOOOOOOOOOOOOOOO");
+            go.SetActive(false);
+        }
+        foreach (GameObject go in yellowWateringGameobjectList)
+        {
+            go.SetActive(false);
+        }
+        foreach (GameObject go in redWateringGameobjectList)
+        {
+            go.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -90,41 +121,45 @@ public class CalendarManager : MonoBehaviour
         //Debug.Log(currentDay.name);
 
         // highlight watering days
-        if (isButtonA)
-        {
-            for (int i = 1; i < 24; i += 2)
-            {
-                Image imgA = buttonList[i].GetComponent<Image>();
-                imgA.color = Color.red;
-            }
-        }
-        else if (!isButtonA)
-        {
-            for (int i = 1; i < 24; i += 2)
-            {
-                //buttonList[i].GetComponent<Image>().color = Color.white;
-                Image imgA = buttonList[i].GetComponent<Image>();
-                imgA.color = Color.white;
-            }
-        }
-        if (isButtonB)
-        {
-            for (int i = 2; i < 24; i += 2)
-            {
-                //buttonList[i].GetComponent<Image>().color = Color.blue;
-                Image imgB = buttonList[i].GetComponent<Image>();
-                imgB.color = Color.blue;
-            }
-        }
-        else if (!isButtonB)
-        {
-            for (int i = 2; i < 24; i += 2)
-            {
-                //buttonList[i].GetComponent<Image>().color = Color.white;
-                Image imgB = buttonList[i].GetComponent<Image>();
-                imgB.color = Color.white;
-            }
-        }
+        //if (isButtonA)
+        //{
+        //    for (int i = 1; i < 24; i += 2)
+        //    {
+        //        Image imgA = buttonList[i].GetComponent<Image>();
+        //        imgA.color = Color.red;
+        //    }
+        //}
+        //else if (!isButtonA)
+        //{
+        //    for (int i = 1; i < 24; i += 2)
+        //    {
+        //        //buttonList[i].GetComponent<Image>().color = Color.white;
+        //        Image imgA = buttonList[i].GetComponent<Image>();
+        //        imgA.color = Color.white;
+        //    }
+        //}
+        //if (isButtonB)
+        //{
+        //    for (int i = 2; i < 24; i += 2)
+        //    {
+        //        //buttonList[i].GetComponent<Image>().color = Color.blue;
+        //        Image imgB = buttonList[i].GetComponent<Image>();
+        //        imgB.color = Color.blue;
+        //    }
+        //}
+        //else if (!isButtonB)
+        //{
+        //    for (int i = 2; i < 24; i += 2)
+        //    {
+        //        //buttonList[i].GetComponent<Image>().color = Color.white;
+        //        Image imgB = buttonList[i].GetComponent<Image>();
+        //        imgB.color = Color.white;
+        //    }
+        //}
+
+        waterIntervallValueText.text = wateringSlider.value.ToString();
+
+        MarkWateringDays();
     }
 
 
@@ -192,14 +227,25 @@ public class CalendarManager : MonoBehaviour
 
             Debug.Log("changed sprite!!!");
         }
-        if (monthIndex > 0)
+        if (monthIndex >= 0)
         {
-            monthText.text = monthsList[--monthIndex];
+            if (monthText.text == "Januar" && intYear > 2021)
+            {
+                intYear--;
+                monthIndex = monthsList.Length;
+            }
+            if(monthIndex > 0)
+            {
+                monthText.text = monthsList[--monthIndex];
+            }
             AlignWeekdays();
             CheckCurrentDay();
+            TotalDaysInMonth();
+            Debug.Log("Month Index: " + monthIndex);
         }
-        if(monthIndex == 0)
+        if(monthIndex == 0 && intYear == 2021)
         {
+            Debug.Log("Month Index: " + monthIndex);
             navLeftImg.sprite = grayArrow;
             Debug.Log("end of year!!!");
         }
@@ -215,13 +261,24 @@ public class CalendarManager : MonoBehaviour
             navLeftImg.sprite = greenArrow;
             Debug.Log("changed sprite!!!");
         }
-        if (monthIndex < monthsList.Length - 1)
+        if (monthIndex <= monthsList.Length - 1)
         {
-            monthText.text = monthsList[++monthIndex];
+            Debug.Log("Month Index: " + monthIndex);
+            if (monthText.text == "Dezember" && intYear < 2024)
+            {
+                Debug.Log("IM INNNNN!!!");
+                intYear++;
+                monthIndex = -1;
+            }
+            if(monthIndex < monthsList.Length - 1)
+            {
+                monthText.text = monthsList[++monthIndex];
+            }
             AlignWeekdays();
             CheckCurrentDay();
+            TotalDaysInMonth();
         }
-        if (monthIndex == monthsList.Length - 1)
+        if (monthIndex == monthsList.Length - 1 && intYear == 2024)
         {
             navRightImg.sprite = grayArrow;
             Debug.Log("end of year!!!");
@@ -234,8 +291,9 @@ public class CalendarManager : MonoBehaviour
     {
         // update current page
         currentPage = monthsList[monthIndex];
+        yearText.text = intYear.ToString();
 
-        if (System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy") == currentPage + "." + currentYear)
+        if (System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy") == currentPage + "." + yearText.text)
         {
             Debug.Log("Current DAY!!!!!");
             currentDayImg.color = Color.red;
@@ -251,14 +309,15 @@ public class CalendarManager : MonoBehaviour
 
     private void AlignWeekdays()
     {
+        
         FindCurrentYearMonthDay();
-        DateTime date = new DateTime(currentYear, monthIndex + 1, 1);
+        DateTime date = new DateTime(intYear, monthIndex + 1, 1);
         // for debugging
         //print(date);
         //print(date.ToString("dddd"));
 
         // identify the weekday of the first day of the month and align the weekdays in the correct order for this month
-        if(date.ToString("dddd") == "Montag")
+        if (date.ToString("dddd") == "Montag")
         {
             print("Montag baby!");
             weekdaysAligned = new string[] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
@@ -306,13 +365,91 @@ public class CalendarManager : MonoBehaviour
         }
     }
 
+    public void TotalDaysInMonth()
+    {
+        FindCurrentYearMonthDay();
+        DateTime firstDayOfMonth = new DateTime(intYear, monthIndex + 1, 1);
+        DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+        // identify the last day of the month and adjust how many days are shown for this month
+        if (lastDayOfMonth.ToString("dd") == "31")
+        {
+            print("31days baby!");
+            buttonGameobjectList[0].SetActive(true);
+            buttonGameobjectList[1].SetActive(true);
+            buttonGameobjectList[2].SetActive(true);
+        }
+
+        else if (lastDayOfMonth.ToString("dd") == "30")
+        {
+            print("30days baby!");
+            buttonGameobjectList[0].SetActive(true);
+            buttonGameobjectList[1].SetActive(true);
+            buttonGameobjectList[2].SetActive(true);
+            buttonGameobjectList[2].SetActive(false);
+        }
+        else if (lastDayOfMonth.ToString("dd") == "29")
+        {
+            print("29days baby!");
+            buttonGameobjectList[0].SetActive(true);
+            buttonGameobjectList[1].SetActive(true);
+            buttonGameobjectList[2].SetActive(true);
+            buttonGameobjectList[1].SetActive(false);
+        }
+        else if (lastDayOfMonth.ToString("dd") == "28")
+        {
+            print("28days baby!");
+            buttonGameobjectList[0].SetActive(true);
+            buttonGameobjectList[1].SetActive(true);
+            buttonGameobjectList[2].SetActive(true);
+            buttonGameobjectList[0].SetActive(false);
+        }
+    }
+
     public void OpenAddingWindow()
     {
         addingWindow.SetActive(true);
+        GameObject.Find("Add_Plant_To_Watering").GetComponent<Button>().image.color = Color.gray;
     }
 
     public void CloseAddingWindow()
     {
         addingWindow.SetActive(false);
+        GameObject.Find("Add_Plant_To_Watering").GetComponent<Button>().image.color = Color.white;
+    }
+
+    // mark the watering days with correct intervalls
+    public void MarkWateringDays()
+    {
+        switch (Convert.ToInt32(waterIntervallValueText.text))
+        {
+            case 1:
+                //Debug.Log("Intervall 1");
+                for(int i = 0; i < greenWateringGameobjectList.Length; i += 2)
+                {
+                    greenWateringGameobjectList[i].SetActive(true);
+                }
+                break;
+            case 2:
+                //Debug.Log("Intervall 2");
+                for (int i = 0; i < yellowWateringGameobjectList.Length; i += 3)
+                {
+                    yellowWateringGameobjectList[i].SetActive(true);
+                }
+                break;
+            case 3:
+                //Debug.Log("Intervall 3");
+                for (int i = 0; i < redWateringGameobjectList.Length; i += 5)
+                {
+                    redWateringGameobjectList[i].SetActive(true);
+                }
+                break;
+            case 4:
+                Debug.Log("Intervall 4");
+                break;
+            default:
+                Debug.Log("mhhhhh?");
+                break;
+        }
     }
 }
