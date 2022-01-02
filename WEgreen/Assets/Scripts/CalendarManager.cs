@@ -68,7 +68,7 @@ public class CalendarManager : MonoBehaviour
 
         // initialize current month text, year text and casting year text to int
         monthText.text = monthsList[monthIndex];
-        yearText.text = "2021";
+        yearText.text = currentYear.ToString();
         intYear = Convert.ToInt32(yearText.text);
 
         // initialize current weekdays text list with the text objects from scene
