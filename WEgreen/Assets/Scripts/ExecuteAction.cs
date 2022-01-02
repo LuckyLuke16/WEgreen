@@ -17,6 +17,7 @@ public class ExecuteAction : MonoBehaviour
     public bool isAction = false;
     [SerializeField] private AR_Cursor cursor;
     private GameObject measurePrefab;
+    private Transform plantModels;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,17 @@ public class ExecuteAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        measurePrefab = cursor.objectToPlace.transform.Find("MeasurePrefab").gameObject;
+        //measurePrefab = cursor.objectToPlace.transform.Find("MeasurePrefab").gameObject;
+        plantModels = cursor.objectToPlace.transform;
+        //measurePrefab = new  GameObject();
+
+        foreach(Transform child in plantModels)
+        {
+            if(child.transform.gameObject.active)
+            {
+               measurePrefab = child.transform.Find("MeasurePrefab").gameObject; 
+            }
+        }
     }
 
     public void ActionButton(string titlename)
