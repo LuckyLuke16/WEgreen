@@ -1551,6 +1551,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45351eb119ce9a043995f3df5f6f3282, type: 3}
+      propertyPath: m_TagString
+      value: apfel
+      objectReference: {fileID: 0}
     - target: {fileID: 922725318761711532, guid: 45351eb119ce9a043995f3df5f6f3282, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2998,6 +3002,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7447009ed17648f4bab3ca86d7275154, type: 3}
+      propertyPath: m_TagString
+      value: aloe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7447009ed17648f4bab3ca86d7275154, type: 3}
 --- !u!4 &171173366 stripped
@@ -3075,6 +3083,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 18c5b7f82d71c1a4aa8ce259e681929c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18c5b7f82d71c1a4aa8ce259e681929c, type: 3}
+      propertyPath: m_TagString
+      value: aloe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c5b7f82d71c1a4aa8ce259e681929c, type: 3}
@@ -3432,6 +3444,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: abc7db4a1faba8c45ab1374c1ffcc583, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: abc7db4a1faba8c45ab1374c1ffcc583, type: 3}
+      propertyPath: m_TagString
+      value: aloe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc7db4a1faba8c45ab1374c1ffcc583, type: 3}
@@ -5511,6 +5527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 171173366}
     m_Modifications:
+    - target: {fileID: 2009345036, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5402567292850203010, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7687,6 +7707,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197235058}
     m_Modifications:
+    - target: {fileID: 2009345036, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5402567292850203010, guid: 3ba9d442dc09eaf49bdb0ae4a8a4c792, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -8008,6 +8032,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
+      propertyPath: m_TagString
+      value: tomaten
       objectReference: {fileID: 0}
     - target: {fileID: 1043113635756736210, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8850,6 +8878,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
+      propertyPath: m_TagString
+      value: tomaten
       objectReference: {fileID: 0}
     - target: {fileID: 949729496626225823, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10490,6 +10522,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 363ce7a285c97d44499db1a778ffc1fb, type: 3}
+      propertyPath: m_TagString
+      value: apfel
+      objectReference: {fileID: 0}
     - target: {fileID: 922725318761711532, guid: 363ce7a285c97d44499db1a778ffc1fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11060,6 +11096,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0741d0b9df9b66d42889742beb5f51b6, type: 3}
+      propertyPath: m_TagString
+      value: tomaten
+      objectReference: {fileID: 0}
     - target: {fileID: 2028431927853068603, guid: 0741d0b9df9b66d42889742beb5f51b6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11461,6 +11501,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 27c0287573cdce2418372a51d5e4e4f6, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27c0287573cdce2418372a51d5e4e4f6, type: 3}
+      propertyPath: m_TagString
+      value: apfel
       objectReference: {fileID: 0}
     - target: {fileID: 922725318761711532, guid: 27c0287573cdce2418372a51d5e4e4f6, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - plant
+  - aloe
+  - apfel
+  - tomaten
   layers:
   - Default
   - TransparentFX
