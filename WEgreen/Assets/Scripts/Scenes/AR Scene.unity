@@ -2996,7 +2996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7447009ed17648f4bab3ca86d7275154, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7447009ed17648f4bab3ca86d7275154, type: 3}
@@ -11024,6 +11024,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e4351cd45bb191843bb89c4531921100, type: 2}
+    - target: {fileID: -5679941666241095196, guid: 0741d0b9df9b66d42889742beb5f51b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4394326432562965884, guid: 0741d0b9df9b66d42889742beb5f51b6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11044,6 +11048,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e3b9f9f8d1e3f6a46af7241247eedc1b, type: 2}
+    - target: {fileID: 586045317092795319, guid: 0741d0b9df9b66d42889742beb5f51b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0741d0b9df9b66d42889742beb5f51b6, type: 3}
       propertyPath: m_Name
       value: '!Plant2TomatenpflanzeStage1v6Final'

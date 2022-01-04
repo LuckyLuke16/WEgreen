@@ -29,9 +29,11 @@ public class MeasurePlant : MonoBehaviour
         //combine();
         meshFilters = GetComponentsInChildren<MeshFilter>();
         meshFilter = new List<MeshFilter>();
+        //Debug.Log(meshFilters.Length);
         for(int i = 1; i < meshFilters.Length; i++)
         {
             meshFilter.Add(meshFilters[i]);
+            //Debug.Log(meshFilters[i].gameObject.name);
         }
         meshFilter.Add(meshFilters[meshFilters.Length-1]);
     }
@@ -60,7 +62,9 @@ public class MeasurePlant : MonoBehaviour
         //mesh = transform.GetComponent<MeshFilter>().mesh;
         //mesh = new Mesh();
         //transform.GetComponent<MeshFilter>().mesh = new Mesh();
+        transform.GetComponent<MeshFilter>().mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
+        transform.GetComponent<MeshRenderer>().enabled = false;
         bounds = transform.GetComponent<MeshFilter>().mesh.bounds;
         //Debug.Log(bounds);
         
@@ -70,11 +74,11 @@ public class MeasurePlant : MonoBehaviour
     public void setLabels()
     {
         xSize = bounds.size.x;
-        Debug.Log("xSize: " + xSize);
+        //Debug.Log("xSize: " + xSize);
         ySize = bounds.size.y;
-        Debug.Log("ySize: " + ySize);
+        //Debug.Log("ySize: " + ySize);
         zSize = bounds.size.z;
-        Debug.Log("zSize: " + zSize);
+        //Debug.Log("zSize: " + zSize);
 
         xLabel = new Vector3(xSize, 0, 0);
         yLabel = new Vector3(0, ySize, 0);
