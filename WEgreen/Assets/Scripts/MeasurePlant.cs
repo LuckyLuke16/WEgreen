@@ -74,16 +74,12 @@ public class MeasurePlant : MonoBehaviour
     public void setLabels()
     {
         xSize = bounds.size.x;
-        //Debug.Log("xSize: " + xSize);
         ySize = bounds.size.y;
-        //Debug.Log("ySize: " + ySize);
         zSize = bounds.size.z;
-        //Debug.Log("zSize: " + zSize);
 
         xLabel = new Vector3(xSize, 0, 0);
         yLabel = new Vector3(0, ySize, 0);
         zLabel = new Vector3(0, 0, zSize);
-
     }
 
     public void measure()
@@ -94,6 +90,20 @@ public class MeasurePlant : MonoBehaviour
         //yText.transform.LookAt(Camera.main.transform);
         zText.transform.position = transform.position + xLabel + offsetMeasurement;
         //zText.transform.LookAt(Camera.main.transform);
+
+        if(gameObject.tag == "aloe")
+        {
+            xText.rectTransform.localScale = new Vector3(28, 28, 28);
+            yText.rectTransform.localScale = new Vector3(28, 28, 28);
+            zText.rectTransform.localScale = new Vector3(28, 28, 28);
+        }
+        else
+        {
+            xText.rectTransform.localScale = new Vector3(3, 3, 3);
+            yText.rectTransform.localScale = new Vector3(3, 3, 3);
+            zText.rectTransform.localScale = new Vector3(3, 3, 3);
+        }
+        
 
         xText.text = $"x: {xSize.ToString("F2")} m";
         yText.text = $"y: {ySize.ToString("F2")} m";
