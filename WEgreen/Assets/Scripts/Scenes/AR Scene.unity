@@ -481,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 72c6f77ba3210344f944f06595c5a822, type: 2}
     - target: {fileID: -8679921383154817045, guid: 45351eb119ce9a043995f3df5f6f3282, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45351eb119ce9a043995f3df5f6f3282, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7947,15 +7947,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8035,7 +8035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_TagString
-      value: tomaten
+      value: tomaten2
       objectReference: {fileID: 0}
     - target: {fileID: 1043113635756736210, guid: 6bdda5da19ff93d4181b44533631e595, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8693,7 +8693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.768
+      value: 0.766
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8881,7 +8881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
       propertyPath: m_TagString
-      value: tomaten
+      value: tomaten3
       objectReference: {fileID: 0}
     - target: {fileID: 949729496626225823, guid: 922cb6a97811c084e937fd0001761a80, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9836,7 +9836,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 72c6f77ba3210344f944f06595c5a822, type: 2}
     - target: {fileID: -8679921383154817045, guid: 363ce7a285c97d44499db1a778ffc1fb, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 363ce7a285c97d44499db1a778ffc1fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11164,7 +11164,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 72c6f77ba3210344f944f06595c5a822, type: 2}
     - target: {fileID: -8679921383154817045, guid: 27c0287573cdce2418372a51d5e4e4f6, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 27c0287573cdce2418372a51d5e4e4f6, type: 3}
       propertyPath: m_LocalScale.x

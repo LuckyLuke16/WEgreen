@@ -28,7 +28,16 @@ public class PlantCubeSize : MonoBehaviour
         {
             calculateScales();
             transform.localScale = new Vector3(xScale, yScale, zScale);
-            transform.position = new Vector3(plant.transform.position.x, plant.transform.position.y + (MeasurePlant.ySize/2), plant.transform.position.z);
+            if(plant.tag == "tomaten2")
+            {
+                transform.position = new Vector3(0, plant.transform.position.y + (MeasurePlant.ySize/2), plant.transform.position.z);
+            }
+            else if(plant.tag == "tomaten3")
+            {
+                transform.position = new Vector3(0, plant.transform.position.y + (MeasurePlant.ySize/2), plant.transform.position.z);
+            }
+            else
+                transform.position = new Vector3(plant.transform.position.x, plant.transform.position.y + (MeasurePlant.ySize/2), plant.transform.position.z);
         }
     }
 

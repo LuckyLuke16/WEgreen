@@ -8,6 +8,8 @@ TagManager:
   - aloe
   - apfel
   - tomaten
+  - tomaten2
+  - tomaten3
   layers:
   - Default
   - TransparentFX
