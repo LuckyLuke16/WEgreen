@@ -29,9 +29,10 @@ public class CalendarManager : MonoBehaviour
     public Text yearText;
     public Text waterIntervallValueText;
     public Text wateringPlantName;
-    public Text wateringPlantIntervall; 
+    public Text wateringPlantIntervall;
     public Text wateringPlantNameLoaded;
     public Text wateringPlantIntervallLoaded;
+    public Text wateringPlantCollectionOverviewText;
     private Text[] weekdaysText;
     private string[] monthsList;
     private string[] weekdaysAligned;
@@ -42,17 +43,29 @@ public class CalendarManager : MonoBehaviour
     public Image navLeftImg;
     private Image currentDayImg;
     public GameObject addingWindow;
+    public GameObject wateringPlantOverview;
     public GameObject[] buttonGameobjectList = new GameObject[3];
     public GameObject[] greenWateringGameobjectList;
     public GameObject[] yellowWateringGameobjectList;
     public GameObject[] redWateringGameobjectList;
     public Slider wateringSlider;
+    //public List<WateringPlantData> wateringPlantList = new List<WateringPlantData>();
+    public static WateringPlantData wateringPlant01 = new WateringPlantData();
+    public static WateringPlantData wateringPlant02 = new WateringPlantData();
+    public static WateringPlantData wateringPlant03 = new WateringPlantData();
+    public static WateringPlantData wateringPlant04 = new WateringPlantData();
+    public static WateringPlantData wateringPlant05 = new WateringPlantData();
+    public int wateringPlantCounter;
+    public WateringPlantData[] wateringPlantList = new WateringPlantData[] { wateringPlant01, wateringPlant02, wateringPlant03, wateringPlant04, wateringPlant05 };
+    string json = "";
+    string[] jsonSplit;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
-        
+        LoadWateringPlantData();
 
         // initialize list of months
         monthsList = new string[] {"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
@@ -465,6 +478,7 @@ public class CalendarManager : MonoBehaviour
 
     public void AddWateringPlant()
     {
+        // save
         //WateringPlantData wateringPlantKaktus = new WateringPlantData();
         //wateringPlantKaktus.wateringPlantName = wateringPlantName.text;
         //wateringPlantKaktus.wateringIntervall = wateringPlantIntervall.text;
@@ -474,19 +488,76 @@ public class CalendarManager : MonoBehaviour
 
         //File.WriteAllText(Application.dataPath + "/wateringPlantKaktus.json", jsonWateringPlantKaktus);
 
-        string jsonWateringPlantKaktus = File.ReadAllText(Application.dataPath + "/wateringPlantKaktus.json");
+        // load
+        //string jsonWateringPlantKaktus = File.ReadAllText(Application.dataPath + "/wateringPlantKaktus.json");
 
-        WateringPlantData loadedWateringPlantKaktus = JsonUtility.FromJson<WateringPlantData>(jsonWateringPlantKaktus);
+        //WateringPlantData loadedWateringPlantKaktus = JsonUtility.FromJson<WateringPlantData>(jsonWateringPlantKaktus);
 
-        wateringPlantNameLoaded.text = loadedWateringPlantKaktus.wateringPlantName;
-        wateringPlantIntervallLoaded.text = loadedWateringPlantKaktus.wateringIntervall;
-        Debug.Log("Name: " + loadedWateringPlantKaktus.wateringPlantName);
-        Debug.Log("Intervall: " + loadedWateringPlantKaktus.wateringIntervall);
+        //wateringPlantNameLoaded.text = loadedWateringPlantKaktus.wateringPlantName;
+        //wateringPlantIntervallLoaded.text = loadedWateringPlantKaktus.wateringIntervall;
+        //Debug.Log("Name: " + loadedWateringPlantKaktus.wateringPlantName);
+        //Debug.Log("Intervall: " + loadedWateringPlantKaktus.wateringIntervall);
+
+        // ---
+        wateringPlantList[wateringPlantCounter].wateringPlantName = wateringPlantName.text;
+        wateringPlantList[wateringPlantCounter].wateringIntervall = wateringPlantIntervall.text;
+        json += JsonUtility.ToJson(wateringPlantList[wateringPlantCounter]) + "\n";
+        Debug.Log(json);
+        File.WriteAllText(Application.dataPath + "/wateringPlantCollection.json", json);
+        wateringPlantCounter++;
+        //PlayerPrefs.SetInt("wateringPlantCounter", wateringPlantCounter);
+        Debug.Log(wateringPlantCounter);
     }
 
-    private class WateringPlantData
+    public void RemoveWateringPlant()
+    {
+        //wateringPlantCounter--;
+        //wateringPlantList[wateringPlantCounter] = null;
+        //int tmp = wateringPlantCounter;
+        //wateringPlantCounter = 0;
+        //json = "";
+        //for (int i = 0; i < tmp; i++)
+        //{
+        //    wateringPlantList[i].wateringPlantName = wateringPlantName.text;
+        //    wateringPlantList[i].wateringIntervall = wateringPlantIntervall.text;
+        //    json += JsonUtility.ToJson(wateringPlantList[wateringPlantCounter]) + "\n";
+        //    File.WriteAllText(Application.dataPath + "/wateringPlantCollection.json", json);
+        //    wateringPlantCounter++;
+        //}
+    }
+
+    public void LoadWateringPlantData()
+    {
+        json = File.ReadAllText(Application.dataPath + "/wateringPlantCollection.json");
+        jsonSplit = json.Split('\n');
+        WateringPlantData[] loadedWateringPlantData = new WateringPlantData[jsonSplit.Length];
+        for(int i = 0; i < loadedWateringPlantData.Length; i++)
+        {
+            loadedWateringPlantData[i] = JsonUtility.FromJson<WateringPlantData>(jsonSplit[i]);
+            wateringPlantCollectionOverviewText.text += "Name:" + loadedWateringPlantData[i].wateringPlantName + "\n" + "Intervall: " + loadedWateringPlantData[i].wateringIntervall + "\n\n";
+            Debug.Log("Name: " + loadedWateringPlantData[i].wateringPlantName);
+            Debug.Log("Intervall: " + loadedWateringPlantData[i].wateringIntervall);
+        }
+        //wateringPlantNameLoaded.text = loadedWateringPlantData.wateringPlantName;
+        //wateringPlantIntervallLoaded.text = loadedWateringPlantData.wateringIntervall;
+        //Debug.Log("Name: " + loadedWateringPlantData.wateringPlantName);
+        //Debug.Log("Intervall: " + loadedWateringPlantData.wateringIntervall);
+    }
+
+    public void OpenWateringPlantCollectionOverview()
+    {
+        wateringPlantOverview.SetActive(true);
+    }
+
+    public void CloseWateringPlantCollectionOverview()
+    {
+        wateringPlantOverview.SetActive(false);
+    }
+
+    public class WateringPlantData
     {
         public string wateringPlantName;
         public string wateringIntervall;
     }
+
 }
