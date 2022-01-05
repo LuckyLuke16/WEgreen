@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.IO;
 
 public class CalendarManager : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class CalendarManager : MonoBehaviour
     public Text monthText;
     public Text yearText;
     public Text waterIntervallValueText;
+    public Text wateringPlantName;
+    public Text wateringPlantIntervall; 
+    public Text wateringPlantNameLoaded;
+    public Text wateringPlantIntervallLoaded;
     private Text[] weekdaysText;
     private string[] monthsList;
     private string[] weekdaysAligned;
@@ -46,12 +51,15 @@ public class CalendarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        
+
         // initialize list of months
         monthsList = new string[] {"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
         monthIndex = currentMonth - 1;
         // creating array and put all the buttons(31 days) in it
         buttonList = new Button[31];
-        Debug.Log(buttonList.Length);
+        //Debug.Log(buttonList.Length);
         for (int i = 1; i < 31; i++)
         {
             buttonList[i - 1] = GameObject.Find(i.ToString()).GetComponent<Button>();
@@ -64,7 +72,7 @@ public class CalendarManager : MonoBehaviour
         dayIndex = currentDay - 1;
         monthIndex = currentMonth - 1;
         currentDayImg = buttonList[dayIndex].GetComponent<Image>();
-        Debug.Log("OKKKK: " + currentPage + "." + currentYear + "\n" + System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy"));
+        //Debug.Log("OKKKK: " + currentPage + "." + currentYear + "\n" + System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy"));
 
         // initialize current month text, year text and casting year text to int
         monthText.text = monthsList[monthIndex];
@@ -93,7 +101,7 @@ public class CalendarManager : MonoBehaviour
 
         foreach (GameObject go in greenWateringGameobjectList)
         {
-            Debug.Log("HELLOOOOOOOOOOOOOOOO");
+            //Debug.Log("HELLOOOOOOOOOOOOOOOO");
             go.SetActive(false);
         }
         foreach (GameObject go in yellowWateringGameobjectList)
@@ -160,6 +168,8 @@ public class CalendarManager : MonoBehaviour
         waterIntervallValueText.text = wateringSlider.value.ToString();
 
         MarkWateringDays();
+
+        //AddWateringPlant();
     }
 
 
@@ -184,12 +194,12 @@ public class CalendarManager : MonoBehaviour
         if (isButtonA)
         {
             isButtonA = false;
-            Debug.Log("A: false");
+            //Debug.Log("A: false");
         }
         else
         {
             isButtonA = true;
-            Debug.Log("A: true");
+            //Debug.Log("A: true");
         }
     }
 
@@ -198,12 +208,12 @@ public class CalendarManager : MonoBehaviour
         if (isButtonB)
         {
             isButtonB = false;
-            Debug.Log("B: false");
+            //Debug.Log("B: false");
         }
         else
         {
             isButtonB = true;
-            Debug.Log("B: true");
+            //Debug.Log("B: true");
         }
     }
 
@@ -225,7 +235,7 @@ public class CalendarManager : MonoBehaviour
             navLeftImg.sprite = redArrow;
             navRightImg.sprite = greenArrow;
 
-            Debug.Log("changed sprite!!!");
+            //Debug.Log("changed sprite!!!");
         }
         if (monthIndex >= 0)
         {
@@ -241,15 +251,15 @@ public class CalendarManager : MonoBehaviour
             AlignWeekdays();
             CheckCurrentDay();
             TotalDaysInMonth();
-            Debug.Log("Month Index: " + monthIndex);
+            //Debug.Log("Month Index: " + monthIndex);
         }
         if(monthIndex == 0 && intYear == 2021)
         {
-            Debug.Log("Month Index: " + monthIndex);
+            //Debug.Log("Month Index: " + monthIndex);
             navLeftImg.sprite = grayArrow;
-            Debug.Log("end of year!!!");
+            //Debug.Log("end of year!!!");
         }
-        Debug.Log("left clicked: " + monthIndex);
+        //Debug.Log("left clicked: " + monthIndex);
     }
 
     // navigating one month forward
@@ -259,14 +269,14 @@ public class CalendarManager : MonoBehaviour
         {
             navRightImg.sprite = redArrow;
             navLeftImg.sprite = greenArrow;
-            Debug.Log("changed sprite!!!");
+            //Debug.Log("changed sprite!!!");
         }
         if (monthIndex <= monthsList.Length - 1)
         {
-            Debug.Log("Month Index: " + monthIndex);
+            //Debug.Log("Month Index: " + monthIndex);
             if (monthText.text == "Dezember" && intYear < 2024)
             {
-                Debug.Log("IM INNNNN!!!");
+                //Debug.Log("IM INNNNN!!!");
                 intYear++;
                 monthIndex = -1;
             }
@@ -281,9 +291,9 @@ public class CalendarManager : MonoBehaviour
         if (monthIndex == monthsList.Length - 1 && intYear == 2024)
         {
             navRightImg.sprite = grayArrow;
-            Debug.Log("end of year!!!");
+            //Debug.Log("end of year!!!");
         }
-        Debug.Log("right clicked: " + monthIndex);
+        //Debug.Log("right clicked: " + monthIndex);
     }
 
     // highlight current day
@@ -295,7 +305,7 @@ public class CalendarManager : MonoBehaviour
 
         if (System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy") == currentPage + "." + yearText.text)
         {
-            Debug.Log("Current DAY!!!!!");
+            //Debug.Log("Current DAY!!!!!");
             currentDayImg.color = Color.red;
         }
         else
@@ -304,7 +314,7 @@ public class CalendarManager : MonoBehaviour
             //currentDayImg = buttonList[dayIndex].GetComponent<Image>();
             currentDayImg.color = Color.white;
         }
-        Debug.Log("END\nStart");
+        //Debug.Log("END\nStart");
     }
 
     private void AlignWeekdays()
@@ -445,11 +455,38 @@ public class CalendarManager : MonoBehaviour
                 }
                 break;
             case 4:
-                Debug.Log("Intervall 4");
+                //Debug.Log("Intervall 4");
                 break;
             default:
-                Debug.Log("mhhhhh?");
+                //Debug.Log("mhhhhh?");
                 break;
         }
+    }
+
+    public void AddWateringPlant()
+    {
+        //WateringPlantData wateringPlantKaktus = new WateringPlantData();
+        //wateringPlantKaktus.wateringPlantName = wateringPlantName.text;
+        //wateringPlantKaktus.wateringIntervall = wateringPlantIntervall.text;
+
+        //string jsonWateringPlantKaktus = JsonUtility.ToJson(wateringPlantKaktus);
+        //Debug.Log(jsonWateringPlantKaktus);
+
+        //File.WriteAllText(Application.dataPath + "/wateringPlantKaktus.json", jsonWateringPlantKaktus);
+
+        string jsonWateringPlantKaktus = File.ReadAllText(Application.dataPath + "/wateringPlantKaktus.json");
+
+        WateringPlantData loadedWateringPlantKaktus = JsonUtility.FromJson<WateringPlantData>(jsonWateringPlantKaktus);
+
+        wateringPlantNameLoaded.text = loadedWateringPlantKaktus.wateringPlantName;
+        wateringPlantIntervallLoaded.text = loadedWateringPlantKaktus.wateringIntervall;
+        Debug.Log("Name: " + loadedWateringPlantKaktus.wateringPlantName);
+        Debug.Log("Intervall: " + loadedWateringPlantKaktus.wateringIntervall);
+    }
+
+    private class WateringPlantData
+    {
+        public string wateringPlantName;
+        public string wateringIntervall;
     }
 }
