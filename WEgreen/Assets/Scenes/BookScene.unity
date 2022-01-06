@@ -718,7 +718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 803008994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 715629753}
+        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BookScene_Apfel
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &803008994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,7 +1098,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1617144527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 715629753}
+        m_TargetAssemblyTypeName: ChangeScenes, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BookScene_Tomate
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1617144527
 MonoBehaviour:
   m_ObjectHideFlags: 0
