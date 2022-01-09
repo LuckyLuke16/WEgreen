@@ -5569,7 +5569,7 @@ MonoBehaviour:
   intYear: 0
   monthText: {fileID: 2120635743}
   yearText: {fileID: 1588634600}
-  waterIntervallValueText: {fileID: 19675139}
+  waterIntervallValueText: {fileID: 1155791218}
   wateringPlantName: {fileID: 1416407400}
   wateringPlantIntervall: {fileID: 1155791218}
   wateringPlantNameLoaded: {fileID: 109228243}
@@ -5589,8 +5589,6 @@ MonoBehaviour:
   greenWateringGameobjectList: []
   yellowWateringGameobjectList: []
   redWateringGameobjectList: []
-  wateringSlider: {fileID: 786645546}
-  wateringPlantCounter: 0
   wateringPlantList:
   - wateringPlantName: 
     wateringIntervall: 
@@ -14363,6 +14361,18 @@ MonoBehaviour:
       - m_Target: {fileID: 585157281}
         m_TargetAssemblyTypeName: CalendarManager, Assembly-CSharp
         m_MethodName: AddWateringPlant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 585157281}
+        m_TargetAssemblyTypeName: CalendarManager, Assembly-CSharp
+        m_MethodName: MarkWateringDays
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
