@@ -12,7 +12,11 @@ EditorBuildSettings:
     path: Assets/Scripts/Scenes/AR Scene.unity
     guid: 2ae76a1a73362704195cf1af18f275be
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scripts/Scenes/Nachschlagewerk/BookScene.unity
+=======
+    path: Assets/Scripts/Scenes/BookScene.unity
+>>>>>>> main
     guid: 7b3e3670c4053c64b854c016e587f4f0
   - enabled: 1
     path: Assets/Scripts/Scenes/CookingScene.unity
