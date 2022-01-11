@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - plant
+  - aloe
+  - apfel
+  - tomaten
+  - tomaten2
+  - tomaten3
   layers:
   - Default
   - TransparentFX
