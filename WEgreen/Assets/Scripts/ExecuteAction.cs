@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Reflection;
+using TMPro;
 
 public class ExecuteAction : MonoBehaviour
 {
@@ -18,10 +19,13 @@ public class ExecuteAction : MonoBehaviour
     [SerializeField] private AR_Cursor cursor;
     private GameObject measurePrefab;
     private Transform plantModels;
+    private TextMeshProUGUI xText, yText, zText;
     // Start is called before the first frame update
     void Start()
     {
-        
+        xText = GameObject.Find("xText_UI").GetComponent<TextMeshProUGUI>();
+        yText = GameObject.Find("yText_UI").GetComponent<TextMeshProUGUI>();
+        zText = GameObject.Find("zText_UI").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -33,7 +37,7 @@ public class ExecuteAction : MonoBehaviour
 
         foreach(Transform child in plantModels)
         {
-            if(child.transform.gameObject.active)
+            if(child.transform.gameObject.activeInHierarchy)
             {
                measurePrefab = child.transform.Find("MeasurePrefab").gameObject; 
             }
@@ -57,6 +61,9 @@ public class ExecuteAction : MonoBehaviour
             case "Measuring":
                 measureActive = !measureActive;
                 measurePrefab.SetActive(measureActive);
+                xText.enabled = measureActive;
+                yText.enabled = measureActive;
+                zText.enabled = measureActive;
                 break;
 
         }

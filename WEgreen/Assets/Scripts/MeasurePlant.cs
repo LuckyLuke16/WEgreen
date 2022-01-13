@@ -7,7 +7,7 @@ using TMPro;
 [RequireComponent(typeof(MeshRenderer))]
 public class MeasurePlant : MonoBehaviour
 {
-    private TextMeshPro xText, yText, zText;
+    private TextMeshProUGUI xText, yText, zText;
     [SerializeField] private Vector3 offsetMeasurement;
     private Bounds bounds;
     //private MeshRenderer renderer;
@@ -22,9 +22,13 @@ public class MeasurePlant : MonoBehaviour
     void Start()
     {
         measurePrefab = transform.Find("MeasurePrefab").gameObject;
-        xText = measurePrefab.transform.Find("xText").GetComponent<TextMeshPro>();
-        yText = measurePrefab.transform.Find("yText").GetComponent<TextMeshPro>();
-        zText = measurePrefab.transform.Find("zText").GetComponent<TextMeshPro>();
+        //xText = measurePrefab.transform.Find("xText").GetComponent<TextMeshPro>();
+        xText = GameObject.Find("xText_UI").GetComponent<TextMeshProUGUI>();
+        //yText = measurePrefab.transform.Find("yText").GetComponent<TextMeshPro>();
+        yText = GameObject.Find("yText_UI").GetComponent<TextMeshProUGUI>();
+        //zText = measurePrefab.transform.Find("zText").GetComponent<TextMeshPro>();
+        zText = GameObject.Find("zText_UI").GetComponent<TextMeshProUGUI>();
+
         plantScale = transform.localScale;
         //combine();
         meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -84,6 +88,7 @@ public class MeasurePlant : MonoBehaviour
 
     public void measure()
     {
+        /*
         xText.transform.position = transform.position + -zLabel + offsetMeasurement;
         //xText.transform.LookAt(Camera.main.transform);
         yText.transform.position = transform.position + yLabel + offsetMeasurement;
@@ -103,8 +108,8 @@ public class MeasurePlant : MonoBehaviour
             yText.rectTransform.localScale = new Vector3(3, 3, 3);
             zText.rectTransform.localScale = new Vector3(3, 3, 3);
         }
-        
-
+        */
+        //Debug.Log(xText.name);
         xText.text = $"x: {xSize.ToString("F2")} m";
         yText.text = $"y: {ySize.ToString("F2")} m";
         zText.text = $"z: {zSize.ToString("F2")} m";
