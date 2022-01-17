@@ -14,7 +14,7 @@ public class AR_Cursor : MonoBehaviour
     public GameObject movingPlantToPlace;
     
     //maximale anzahl an platzierbaren pflanzen und counter für pflanzenanzahl
-    public int amountOfPlants = 0;
+    private int amountOfPlants = 0;
     private int maxAmountOfPlants = 3;
 
     //Dialog wenn maximales pflanzenlimit erreicht ist
@@ -23,9 +23,10 @@ public class AR_Cursor : MonoBehaviour
     //list mit hits des raycasts mit einer plane
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
-    public bool useCursor = true;
-    public bool visibility = true;
+    private bool useCursor = true;
+    private bool visibility = true;
 
+    //array mit pflanzen die platziert werden
     GameObject[] placedPlants;
     
     // Start is called before the first frame update
@@ -49,30 +50,6 @@ public class AR_Cursor : MonoBehaviour
         {
             updateCursorAndPlant();
         }
-
-        //instanziieren eines modellpflanze an der momentanen position des cursors
-        /*
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && amountOfPlants < 3)
-        {
-            if (useCursor)
-            {
-                GameObject.Instantiate(objectToPlace, transform.position, transform.rotation);
-            }
-            else
-            {
-                List<ARRaycastHit> hits = new List<ARRaycastHit>();
-                raycastManager.Raycast(Input.GetTouch(0).position, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
-                if (hits.Count > 0)
-                {
-                    GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
-                }
-            }
-            amountOfPlants++;
-           
-        }
-        */
-
-
     }
     /*
      * updated die position und rotation des cursors wenn hit mit plane aufgetreten ist

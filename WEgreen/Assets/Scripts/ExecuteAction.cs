@@ -7,14 +7,27 @@ using System.Reflection;
 public class ExecuteAction : MonoBehaviour
 {
     public Text title;
-    //visibility button und bool fï¿½r das ï¿½ndern des images
+    //visibility button und bool fuer das aendern des images
     public Button visibility;
+    public Sprite spriteWhenBtnPressed;
+    public Sprite spriteBtnNotPressed;
     bool vis = false;
-    //scale button soll bei berï¿½hrung den slider fï¿½rs skalieren aktivieren/deaktivieren
+    //Hauptfunktions-Buttons 
+    public Button scaleButton;
+    public Button measureButton;
+    public Button selectPlantButon;
+
+    //scale button soll bei beruehrung den slider fuers skalieren aktivieren/deaktivieren
     public Slider scaleSlider;
     private bool scaleSliderActive = false;
+
+    //funktionen aktivität
     private bool measureActive = false;
-    public bool isAction = false;
+    private bool selectPlant = false;
+    private bool isAction = false;
+
+    private float titleTime = 2.0f;
+
     [SerializeField] private AR_Cursor cursor;
     private GameObject measurePrefab;
     private Transform plantModels;
@@ -42,12 +55,24 @@ public class ExecuteAction : MonoBehaviour
 
     public void ActionButton(string titlename)
     {
-        title.text = titlename;
+        //die visibilityfunktion soll keinen titel bekommen
+        if (titlename!="Visibility")
+        {
+            title.text = titlename;
+        }
         isAction = true;
         switch (titlename) {
-            case "Scaling":
+            case "Skalieren":
                 scaleSliderActive = !scaleSliderActive;
                 scaleSlider.gameObject.SetActive(scaleSliderActive);
+                if (scaleSliderActive)
+                {
+                    scaleButton.image.sprite = spriteWhenBtnPressed;
+                }
+                else
+                {
+                    scaleButton.image.sprite = spriteBtnNotPressed;
+                }
                 break;
             case "Visibility":
                 vis = !vis;
@@ -57,6 +82,25 @@ public class ExecuteAction : MonoBehaviour
             case "Measuring":
                 measureActive = !measureActive;
                 measurePrefab.SetActive(measureActive);
+                if (measureActive)
+                {
+                    measureButton.image.sprite = spriteWhenBtnPressed;
+                }
+                else
+                {
+                    measureButton.image.sprite = spriteBtnNotPressed;
+                }
+                break;
+            case "Pflanzenauswahl":
+                selectPlant = !selectPlant;
+                if (selectPlant)
+                {
+                    selectPlantButon.image.sprite = spriteWhenBtnPressed;
+                }
+                else
+                {
+                    selectPlantButon.image.sprite = spriteBtnNotPressed;
+                }
                 break;
 
         }
