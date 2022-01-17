@@ -26,7 +26,8 @@ public class ExecuteAction : MonoBehaviour
     private bool selectPlant = false;
     private bool isAction = false;
 
-    private float titleTime = 2.0f;
+    private float titleTime = 1.50f;
+    private float deltaTime = 1.50f;
 
     [SerializeField] private AR_Cursor cursor;
     private GameObject measurePrefab;
@@ -35,11 +36,18 @@ public class ExecuteAction : MonoBehaviour
     void Start()
     {
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //der text verblasst nach einer gewissen zeit
+        if (Time.time >= deltaTime)
+        {
+            title.CrossFadeAlpha(0,0.6f,false);
+        }
+
         //measurePrefab = cursor.objectToPlace.transform.Find("MeasurePrefab").gameObject;
         plantModels = cursor.objectToPlace.transform;
         //measurePrefab = new  GameObject();
@@ -51,6 +59,7 @@ public class ExecuteAction : MonoBehaviour
                measurePrefab = child.transform.Find("MeasurePrefab").gameObject; 
             }
         }
+
     }
 
     public void ActionButton(string titlename)
@@ -61,13 +70,16 @@ public class ExecuteAction : MonoBehaviour
             title.text = titlename;
         }
         isAction = true;
-        switch (titlename) {
+        switch (titlename)
+        {
             case "Skalieren":
                 scaleSliderActive = !scaleSliderActive;
                 scaleSlider.gameObject.SetActive(scaleSliderActive);
                 if (scaleSliderActive)
                 {
                     scaleButton.image.sprite = spriteWhenBtnPressed;
+                    deltaTime = Time.time + titleTime;
+                    title.CrossFadeAlpha(1, 0, false);
                 }
                 else
                 {
@@ -85,6 +97,8 @@ public class ExecuteAction : MonoBehaviour
                 if (measureActive)
                 {
                     measureButton.image.sprite = spriteWhenBtnPressed;
+                    deltaTime = Time.time + titleTime;
+                    title.CrossFadeAlpha(1, 0, false);
                 }
                 else
                 {
@@ -96,6 +110,8 @@ public class ExecuteAction : MonoBehaviour
                 if (selectPlant)
                 {
                     selectPlantButon.image.sprite = spriteWhenBtnPressed;
+                    deltaTime = Time.time + titleTime;
+                    title.CrossFadeAlpha(1, 0, false);
                 }
                 else
                 {
@@ -103,6 +119,12 @@ public class ExecuteAction : MonoBehaviour
                 }
                 break;
 
+        }
+        //wenn pflanzenart ausgewählt wird soll der name ebenfalls oben erscheinen
+        if (title.text=="Tomate"|| title.text == "Aloe Vera" || title.text == "Apfelbaum")
+        {
+            deltaTime = Time.time + titleTime;
+            title.CrossFadeAlpha(1, 0, false);
         }
              
     }
