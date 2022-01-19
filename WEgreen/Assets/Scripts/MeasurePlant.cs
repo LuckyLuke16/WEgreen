@@ -21,12 +21,12 @@ public class MeasurePlant : MonoBehaviour
     private List<MeshFilter> meshFilter;
     void Start()
     {
+        //required components and gameobjects are found and set
         measurePrefab = transform.Find("MeasurePrefab").gameObject;
         xText = measurePrefab.transform.Find("xText").GetComponent<TextMeshPro>();
         yText = measurePrefab.transform.Find("yText").GetComponent<TextMeshPro>();
         zText = measurePrefab.transform.Find("zText").GetComponent<TextMeshPro>();
         plantScale = transform.localScale;
-        //combine();
         meshFilters = GetComponentsInChildren<MeshFilter>();
         meshFilter = new List<MeshFilter>();
         //Debug.Log(meshFilters.Length);
@@ -45,6 +45,8 @@ public class MeasurePlant : MonoBehaviour
         measure();
     }
 
+    //all individual meshes of the plant model are combined to create a new unified mesh
+    //labels are then set given this mesh
     public void combine()
     {
         //MeshFilter[]  meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -71,6 +73,7 @@ public class MeasurePlant : MonoBehaviour
         setLabels();
     }
 
+    // text labels of x,y, and z values are set using the bounds of the combined mesh
     public void setLabels()
     {
         xSize = bounds.size.x;
@@ -82,6 +85,8 @@ public class MeasurePlant : MonoBehaviour
         zLabel = new Vector3(0, 0, zSize);
     }
 
+    //positions of text is set and constantly being updated using the combined mesh bounds
+    //scale of text depends on the scale of the respective plant model
     public void measure()
     {
         xText.transform.position = transform.position + -zLabel + offsetMeasurement;
