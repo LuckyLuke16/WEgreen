@@ -33,7 +33,7 @@ public class ExecuteAction : MonoBehaviour
 
         foreach(Transform child in plantModels)
         {
-            if(child.transform.gameObject.active)
+            if(child.transform.gameObject.activeInHierarchy)
             {
                measurePrefab = child.transform.Find("MeasurePrefab").gameObject; 
             }
