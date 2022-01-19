@@ -79,6 +79,7 @@ public class ExecuteAction : MonoBehaviour
                 {
                     scaleButton.image.sprite = spriteWhenBtnPressed;
                     deltaTime = Time.time + titleTime;
+                    //titel verschwindet nach gewisser zeit und löst sich langsam auf ebenso bei den anderen funktionen
                     title.CrossFadeAlpha(1, 0, false);
                 }
                 else

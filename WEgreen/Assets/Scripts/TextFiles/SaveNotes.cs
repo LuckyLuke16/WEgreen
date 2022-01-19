@@ -33,7 +33,7 @@ public class SaveNotes : MonoBehaviour
     {
         if (loadTextFromFile)
         {
-           path = Application.persistentDataPath + "/Notes.txt";
+            path = Application.persistentDataPath + "/Notes.txt";
             //vor dem speichern löschen des gesamten textes damit text "überschrieben" werden kann
             File.WriteAllText(path, String.Empty);
             this.notesString = inputFieldText.text;

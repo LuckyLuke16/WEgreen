@@ -104,7 +104,6 @@ public class AR_Cursor : MonoBehaviour
     public void pressedOkWhenMaxPlants()
     {
         maxPlantReachedDialouge.SetActive(false);
-        useCursor = true;
         
     }
     //sichtbarkeit der pflanze + cursor wird mit taste aktiviert/deaktiviert
@@ -124,5 +123,10 @@ public class AR_Cursor : MonoBehaviour
             placedPlants[i].SetActive(false);
         }
         amountOfPlants = 0;
+        if (visibility)
+        {
+            useCursor = true;
+        }
+        
     }
 }
