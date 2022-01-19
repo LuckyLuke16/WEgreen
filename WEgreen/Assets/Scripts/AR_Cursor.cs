@@ -13,7 +13,7 @@ public class AR_Cursor : MonoBehaviour
     public ARPlaneManager aRPlaneManager;
     public GameObject movingPlantToPlace;
     
-    //maximale anzahl an platzierbaren pflanzen und counter für pflanzenanzahl
+    //maximale anzahl an platzierbaren pflanzen und counter fï¿½r pflanzenanzahl
     private int amountOfPlants = 0;
     private int maxAmountOfPlants = 3;
 
@@ -75,20 +75,30 @@ public class AR_Cursor : MonoBehaviour
     }
 
     //skalierfunktion, die beim benutzen des sliders verwendet wird
-    //scaleValue wird vom slider übergeben
+    //scaleValue wird vom slider ï¿½bergeben
     public void changeScale(float scaleValue)
     {
         movingPlantToPlace.transform.localScale = Vector3.one * scaleValue;
 
     }
 
-    //pflanze wird auf die derzeitige position des cursors platziert, wenn mehr als 3 pflanzen hinzugefügt sind wird ein dialog angezeigt
+    //pflanze wird auf die derzeitige position des cursors platziert, wenn mehr als 3 pflanzen hinzugefï¿½gt sind wird ein dialog angezeigt
     public void addPlant()
     {
         if (hits.Count > 0 && amountOfPlants < maxAmountOfPlants && visibility)
         {
             //GameObject placedPlant = GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
             placedPlants[amountOfPlants] = GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
+            for(int i = 0; i < placedPlants[amountOfPlants].transform.childCount; i++)
+            {
+                if(placedPlants[amountOfPlants].transform.GetChild(i).gameObject.activeInHierarchy)
+                {
+                    placedPlants[amountOfPlants].transform.GetChild(i).Find("MeasurePrefab").gameObject.SetActive(false);
+                }
+            }
+            //placedPlants[amountOfPlants].transform.Find("MeasurePrefab").gameObject;
+            //placedPlants[amountOfPlants].SetActive(false);
+
             amountOfPlants++;
         }
         else
@@ -100,7 +110,7 @@ public class AR_Cursor : MonoBehaviour
             }
         }
     }
-    //ok taste bei max. pflanzen-erreicht-dialog schließt diesen
+    //ok taste bei max. pflanzen-erreicht-dialog schlieï¿½t diesen
     public void pressedOkWhenMaxPlants()
     {
         maxPlantReachedDialouge.SetActive(false);
@@ -115,7 +125,7 @@ public class AR_Cursor : MonoBehaviour
         useCursor = visibility;
     }
 
-    //die mülleimer-taste löscht alle gesetzten pflanzen
+    //die mï¿½lleimer-taste lï¿½scht alle gesetzten pflanzen
     public void deletePlacedPlants()
     {
         for(int i = 0; i < maxAmountOfPlants; i++)
