@@ -313,15 +313,23 @@ public class CalendarManager : MonoBehaviour
     public void MarkWateringDays()
     {
         k = Convert.ToInt32(waterIntervallValueText.text);
-        Debug.Log("k: " + k);
+        //Debug.Log("k: " + k);
         for (int i = 0; i < yellowWateringGameobjectList.Length; i += k)
         {
-            Debug.Log(yellowWateringGameobjectList.Length + "_" + i + "k" + k + "heute" + currentDay + currentMonth.ToString() + currentPage);
+            //Debug.Log(yellowWateringGameobjectList.Length + "_" + i + "k" + k + "heute" + currentDay + currentMonth.ToString() + currentPage);
             if (i >= currentDay && System.DateTime.UtcNow.ToLocalTime().ToString("MMMM") == currentPage)
             {
                 yellowWateringGameobjectList[i].SetActive(true);
-                Debug.Log("TEST FUNKTIONIERT 1");
+                //Debug.Log("TEST FUNKTIONIERT 1");
             }
+            /* else if (currentPage ist kleiner als aktueller Monat ODER currentPage ist gleich groﬂ wie aktueller Monat UND Tag ist kleiner als aktueller Tag)
+             *      if(markierung ist gleich true (also gegossen)
+             *          markiere diese Tage gruen
+             *      else
+             *          marikiere die anderen Tag rot
+             * 
+             * 
+             * */
         }
     }
 
