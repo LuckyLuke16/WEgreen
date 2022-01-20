@@ -972,9 +972,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 585157284}
-        m_TargetAssemblyTypeName: SaveLoadDelete, Assembly-CSharp
-        m_MethodName: Delete
+      - m_Target: {fileID: 585157281}
+        m_TargetAssemblyTypeName: CalendarManager, Assembly-CSharp
+        m_MethodName: ResetData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5653,7 +5653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterinPlantName: {fileID: 1416407400}
   wateringPlantIntervall: {fileID: 1155791218}
-  wateringPlantsOverviewText: {fileID: 1712761149}
 --- !u!1 &585774771
 GameObject:
   m_ObjectHideFlags: 0
