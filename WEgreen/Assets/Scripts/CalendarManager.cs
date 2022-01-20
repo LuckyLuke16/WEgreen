@@ -33,7 +33,9 @@ public class CalendarManager : MonoBehaviour
     public Text wateringPlantNameLoaded;
     public Text wateringPlantIntervallLoaded;
     public Text wateringPlantCollectionOverviewText;
+    public Text monthIndexText;
     private Text[] weekdaysText;
+    //private Text[] monthDaysText;
     private string[] monthsList;
     private string[] weekdaysAligned;
     public Sprite greenArrow;
@@ -85,6 +87,11 @@ public class CalendarManager : MonoBehaviour
         {
             weekdaysText[i] = GameObject.Find("D" + (i + 1)).GetComponent<Text>();
         }
+
+        //for(int i = 0; i < 31; i++)
+        //{
+        //    monthDaysText[i] = GameObject.Find("MarkText" + (i + 1)).GetComponent<Text>();
+        //}
 
         // check corectness routine
         CheckCurrentDay();
@@ -188,6 +195,7 @@ public class CalendarManager : MonoBehaviour
     {
         // update current page
         currentPage = monthsList[monthIndex];
+        monthIndexText.text = (monthIndex + 1).ToString();
         yearText.text = intYear.ToString();
 
         if (System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy") == currentPage + "." + yearText.text)
@@ -310,28 +318,45 @@ public class CalendarManager : MonoBehaviour
     }
 
     // mark the watering days with correct intervalls
-    public void MarkWateringDays()
-    {
-        k = Convert.ToInt32(waterIntervallValueText.text);
-        //Debug.Log("k: " + k);
-        for (int i = 0; i < yellowWateringGameobjectList.Length; i += k)
-        {
-            //Debug.Log(yellowWateringGameobjectList.Length + "_" + i + "k" + k + "heute" + currentDay + currentMonth.ToString() + currentPage);
-            if (i >= currentDay && System.DateTime.UtcNow.ToLocalTime().ToString("MMMM") == currentPage)
-            {
-                yellowWateringGameobjectList[i].SetActive(true);
-                //Debug.Log("TEST FUNKTIONIERT 1");
-            }
-            /* else if (currentPage ist kleiner als aktueller Monat ODER currentPage ist gleich groﬂ wie aktueller Monat UND Tag ist kleiner als aktueller Tag)
-             *      if(markierung ist gleich true (also gegossen)
-             *          markiere diese Tage gruen
-             *      else
-             *          marikiere die anderen Tag rot
-             * 
-             * 
-             * */
-        }
-    }
+    //public void MarkWateringDays()
+    //{
+    //    string wateringPlantCounter = File.ReadAllText(Application.persistentDataPath + "/wateringPlantCounter.txt");
+    //    if (waterIntervallValueText.text != null || File.Exists(Application.persistentDataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
+    //    {
+    //        k = Convert.ToInt32(waterIntervallValueText.text);
+    //        for (int i = 0; i < monthDaysText.Length; i += k)
+    //        {
+    //            if (currentPage == System.DateTime.UtcNow.ToLocalTime().ToString("MMMM") && i >= currentDay)
+    //            {
+    //                monthDaysText[i].text = "1";
+    //            }
+    //            else if (monthIndex > Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("MM")))
+    //            {
+    //                monthDaysText[i].text = "1";
+
+    //            }
+    //        }
+    //    }
+    //    k = Convert.ToInt32(waterIntervallValueText.text);
+    //    //Debug.Log("k: " + k);
+    //    for (int i = 0; i < monthDaysText.Length; i += k)
+    //    {
+    //        //Debug.Log(yellowWateringGameobjectList.Length + "_" + i + "k" + k + "heute" + currentDay + currentMonth.ToString() + currentPage);
+    //        if (i >= currentDay && System.DateTime.UtcNow.ToLocalTime().ToString("MMMM") == currentPage)
+    //        {
+    //            yellowWateringGameobjectList[i].SetActive(true);
+    //            //Debug.Log("TEST FUNKTIONIERT 1");
+    //        }
+    //        /* else if (currentPage ist kleiner als aktueller Monat ODER currentPage ist gleich groﬂ wie aktueller Monat UND Tag ist kleiner als aktueller Tag)
+    //         *      if(markierung ist gleich true (also gegossen)
+    //         *          markiere diese Tage gruen
+    //         *      else
+    //         *          marikiere die anderen Tag rot
+    //         * 
+    //         * 
+    //         * */
+    //    }
+    //}
 
     public void OpenWateringPlantCollectionOverview()
     {
