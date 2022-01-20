@@ -17,7 +17,7 @@ public class SaveLoadDelete : MonoBehaviour
     private Text wateringPlantsOverviewText;
 
 
-    private string wateringPlantCounter = "";
+    private string wateringPlantCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -48,15 +48,15 @@ public class SaveLoadDelete : MonoBehaviour
         if(counter < 4)
         {
             // if file exists then create a new file with a higher counter, otherwise create file with current counter
-            if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
+            if (File.Exists(Application.dataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
             {
                 SaveWateringPlantCounter("increase");
-                File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt", saveString);
+                File.WriteAllText(Application.dataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt", saveString);
             }
             else
             {
                 SaveWateringPlantCounter("increase");
-                File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt", saveString);
+                File.WriteAllText(Application.dataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt", saveString);
             }
             Load();
             Debug.Log("FILE " + wateringPlantCounter + " SAVED.");
@@ -71,14 +71,12 @@ public class SaveLoadDelete : MonoBehaviour
     public void Load()
     {
         LoadWateringPlantCounter();
-        int counter = int.Parse(wateringPlantCounter);
-        string[] savedStrings;
-        savedStrings = new string[int.Parse(wateringPlantCounter) + 1];
+        string[] savedStrings = new string[int.Parse(wateringPlantCounter) + 1];
         string[] wateringPlantsData = new string[2];
         string wateringPlantsDataString = "\n";
         for (int i = 0; i < savedStrings.Length; i++)
         {
-            savedStrings[i] = File.ReadAllText(System.IO.Directory.GetCurrentDirectory() + "/PLANT_DATA_TEXT_FILE_NAME" + i + ".txt");
+            savedStrings[i] = File.ReadAllText(Application.dataPath + "/PLANT_DATA_TEXT_FILE_NAME" + i + ".txt");
             wateringPlantsData = savedStrings[i].Split(new[] { SAVE_SEPARATOR }, System.StringSplitOptions.None);
             wateringPlantsDataString += "Pflanze " + (i + 1) + ": " + wateringPlantsData[0] + "\n";
             wateringPlantsDataString += "Intervall: " + wateringPlantsData[1] + "\n\n";
@@ -96,13 +94,13 @@ public class SaveLoadDelete : MonoBehaviour
         {
             counter++;
             wateringPlantCounter = counter.ToString();
-            File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "/wateringPlantCounter.txt", wateringPlantCounter);
+            File.WriteAllText(Application.dataPath + "/wateringPlantCounter.txt", wateringPlantCounter);
         } 
         else if(update == "decrease")
         {
             counter--;
             wateringPlantCounter = counter.ToString();
-            File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "/wateringPlantCounter.txt", wateringPlantCounter);
+            File.WriteAllText(Application.dataPath + "/wateringPlantCounter.txt", wateringPlantCounter);
         }
         else
         {
@@ -113,14 +111,13 @@ public class SaveLoadDelete : MonoBehaviour
     // loads counter
     private void LoadWateringPlantCounter()
     {
-        if(File.Exists(System.IO.Directory.GetCurrentDirectory() + "/wateringPlantCounter.txt"))
+        if(File.Exists(Application.dataPath + "/wateringPlantCounter.txt"))
         {
-            wateringPlantCounter = File.ReadAllText(System.IO.Directory.GetCurrentDirectory() + "/wateringPlantCounter.txt");
+            wateringPlantCounter = File.ReadAllText(Application.dataPath + "/wateringPlantCounter.txt");
         }
         else
         {
-            File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "/wateringPlantCounter.txt", "-1");
-            Debug.Log("The text file 'wateringPlantCounter.txt' does not exist. Therefore this file with the content '-1' has been created.");
+            Debug.Log("The text file 'wateringPlantCounter.txt' does not exist.");
         }
     }
 
@@ -131,9 +128,9 @@ public class SaveLoadDelete : MonoBehaviour
         if (counter >= 0)
         {
             // if file exists then create a new file with a higher counter, otherwise create file with current counter
-            if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
+            if (File.Exists(Application.dataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
             {
-                File.Delete(System.IO.Directory.GetCurrentDirectory() + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt");
+                File.Delete(Application.dataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt");
                 Debug.Log("FILE " + wateringPlantCounter + " DELETED.");
                 SaveWateringPlantCounter("decrease");
                 Load();
