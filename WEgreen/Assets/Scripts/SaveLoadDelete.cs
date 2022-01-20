@@ -17,7 +17,7 @@ public class SaveLoadDelete : MonoBehaviour
     private Text wateringPlantsOverviewText;
 
 
-    private string wateringPlantCounter;
+    private string wateringPlantCounter = "";
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class SaveLoadDelete : MonoBehaviour
     // saves plant data
     public void Save()
     {
+        LoadWateringPlantCounter();
         // put input data into string array
         string[] plantData = new string[] {
             waterinPlantName.text,
@@ -43,7 +44,6 @@ public class SaveLoadDelete : MonoBehaviour
         // split the string elements with a separator and put them into a string and save the string by writing it into a text file
         string saveString = string.Join(SAVE_SEPARATOR, plantData);
         // load counter
-        LoadWateringPlantCounter();
         int counter = int.Parse(wateringPlantCounter);
         if(counter < 4)
         {
@@ -72,7 +72,8 @@ public class SaveLoadDelete : MonoBehaviour
     {
         LoadWateringPlantCounter();
         string[] savedStrings = new string[int.Parse(wateringPlantCounter) + 1];
-        string[] wateringPlantsData = new string[2];
+        string[] wateringPlantsData;
+        wateringPlantsData = new string[2];
         string wateringPlantsDataString = "\n";
         for (int i = 0; i < savedStrings.Length; i++)
         {
@@ -117,6 +118,7 @@ public class SaveLoadDelete : MonoBehaviour
         }
         else
         {
+            File.WriteAllText(Application.dataPath + "/wateringPlantCounter.txt", "-1");
             Debug.Log("The text file 'wateringPlantCounter.txt' does not exist.");
         }
     }
