@@ -125,7 +125,7 @@ public class AR_Cursor : MonoBehaviour
         useCursor = visibility;
     }
 
-    //die m�lleimer-taste l�scht alle gesetzten pflanzen
+    //die m�lleimer-taste loescht alle gesetzten pflanzen
     public void deletePlacedPlants()
     {
         for(int i = 0; i < maxAmountOfPlants; i++)

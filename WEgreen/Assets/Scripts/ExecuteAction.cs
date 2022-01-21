@@ -12,6 +12,10 @@ public class ExecuteAction : MonoBehaviour
     public Sprite spriteWhenBtnPressed;
     public Sprite spriteBtnNotPressed;
     bool vis = false;
+    //pflanzensprites an slider fuer pflanzenstages
+    public GameObject aloeSprites;
+    public GameObject tomatoSprites;
+    public GameObject appleSprites;
     //Hauptfunktions-Buttons 
     public Button scaleButton;
     public Button measureButton;
@@ -119,6 +123,22 @@ public class ExecuteAction : MonoBehaviour
                     selectPlantButon.image.sprite = spriteBtnNotPressed;
                 }
                 break;
+            case "Aloe Vera":
+                aloeSprites.SetActive(true);
+                tomatoSprites.SetActive(false);
+                appleSprites.SetActive(false);
+                break;
+            case "Tomate":
+                aloeSprites.SetActive(false);
+                tomatoSprites.SetActive(true);
+                appleSprites.SetActive(false);
+                break;
+            case "Apfelbaum":
+                aloeSprites.SetActive(false);
+                tomatoSprites.SetActive(false);
+                appleSprites.SetActive(true);
+                break;
+
 
         }
         //wenn pflanzenart ausgewählt wird soll der name ebenfalls oben erscheinen
@@ -127,6 +147,7 @@ public class ExecuteAction : MonoBehaviour
             deltaTime = Time.time + titleTime;
             title.CrossFadeAlpha(1, 0, false);
         }
+        
              
     }
 
