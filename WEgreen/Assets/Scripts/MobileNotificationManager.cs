@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Notifications.Android;
@@ -5,12 +6,19 @@ using UnityEngine;
 
 public class MobileNotificationManager : MonoBehaviour
 {
+    // define two dates
+    //DateTime date1 = new DateTime(2021, 1, 1, 9, 0, 0); 
+    //DateTime date2 = new DateTime(2021, 1, 2, 9, 0, 0); // 02.01.2021 - 09:00:00 Uhr
+    // Calculate the interval between the two dates.
+    TimeSpan interval;
+
     AndroidNotificationChannel defaultNotificationChannel;
     int id;
     AndroidNotification notification;
     // Start is called before the first frame update
     void Start()
     {
+        //interval = date2 - date1;
         // remove notifications that have been displayed
         AndroidNotificationCenter.CancelAllDisplayedNotifications();
 
@@ -28,7 +36,6 @@ public class MobileNotificationManager : MonoBehaviour
 
         // send notification
         id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
-
 
         //defaultNotificationChannel = new AndroidNotificationChannel()
         //{
@@ -61,9 +68,11 @@ public class MobileNotificationManager : MonoBehaviour
     {
         // create notification that is going to be sent
         notification = new AndroidNotification();
-        notification.Title = "I AM NOTIFICATION";
-        notification.Text = "COME BACK AND BE WATER!!!";
+        notification.Title = "ERINNERUNG";
+        notification.Text = "Deine Pflanze hat durst: 'Gieﬂ mich bitte!'";
         notification.FireTime = System.DateTime.Now.AddSeconds(1);
+        //notification.CustomTimestamp = Convert.ToDateTime(interval);
+        notification.RepeatInterval = new TimeSpan(0, 0, 2, 0);
     }
 
     public void SendNotification()
