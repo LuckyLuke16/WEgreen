@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlantSelector : MonoBehaviour
 {
@@ -12,9 +13,6 @@ public class PlantSelector : MonoBehaviour
     public static bool ShowPlantStage2 = false;
     public static bool ShowPlantStage3 = false;
     public GameObject PlantStageSelectOn;
-    public GameObject PlantSelect1;
-    public GameObject PlantSelect2;
-    public GameObject PlantSelect3;
     public GameObject Plant1Stage1;
     public GameObject Plant1Stage2;
     public GameObject Plant1Stage3;
@@ -25,24 +23,85 @@ public class PlantSelector : MonoBehaviour
     public GameObject Plant3Stage2;
     public GameObject Plant3Stage3;
 
+    //slider fuer stage der pflanzen
+    public GameObject slider;
+    private int selectedStage=1;
+    //sprites fuer button aktiv und inaktiv
+    public Sprite spriteWhenBtnPressed;
+    public Sprite spriteBtnNotPressed;
+    //pflanzen auswahl buttons
+    public Button aloaeButton;
+    public Button tomatoButton;
+    public Button appleButton;
+
     public void PlantSelectVisible()
     {
         ShowStageSelect = !ShowStageSelect;
         PlantStageSelectOn.SetActive(ShowStageSelect);
+        slider.SetActive(ShowStageSelect);
     }
 
+    //when slider changedValue
+    public void onSliderValueChanged(float value)
+    {
+        selectedStage = (int)value;
+        if (ShowPlant1)
+        {
+            switch (selectedStage)
+            {
+                case (0):
+                    P1Stage1();
+                    break;
+                case (1):
+                    P1Stage2();
+                    break;
+                case (2):
+                    P1Stage3();
+                    break;
+            }
+        }
+        if (ShowPlant2)
+        {
+            switch (selectedStage)
+            {
+                case (0):
+                    P2Stage1();
+                    break;
+                case (1):
+                    P2Stage2();
+                    break;
+                case (2):
+                    P2Stage3();
+                    break;
+            }
+        }
+        if (ShowPlant3)
+        {
+            switch (selectedStage)
+            {
+                case (0):
+                    P3Stage1();
+                    break;
+                case (1):
+                    P3Stage2();
+                    break;
+                case (2):
+                    P3Stage3();
+                    break;
+            }
+        }
+    }
     // Plant Select Start
 
     public void SelectPlant1()
     {
-        ShowPlant1 = !ShowPlant1;
-        PlantSelect1.SetActive(ShowPlant1);
-
+        //change buttons sprite when activated
+        ShowPlant1 = true;
         ShowPlant2 = false;
-        PlantSelect2.SetActive(false);
-
         ShowPlant3 = false;
-        PlantSelect3.SetActive(false);
+        tomatoButton.image.sprite = spriteBtnNotPressed;
+        aloaeButton.image.sprite = spriteWhenBtnPressed;
+        appleButton.image.sprite = spriteBtnNotPressed;
 
         // Set all other plants to inacitve 
         Plant2Stage1.SetActive(false);
@@ -56,18 +115,19 @@ public class PlantSelector : MonoBehaviour
         Plant3Stage2.SetActive(false);
         Plant3Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage3.SetActive(false);
+        onSliderValueChanged(selectedStage);
         Plant3Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
     }
     public void SelectPlant2()
     {
+        //change buttons sprite when activated
+        ShowPlant2 = true;
         ShowPlant1 = false;
-        PlantSelect1.SetActive(false);
-
-        ShowPlant2 = !ShowPlant2;
-        PlantSelect2.SetActive(ShowPlant2);
-
         ShowPlant3 = false;
-        PlantSelect3.SetActive(false);
+        tomatoButton.image.sprite = spriteWhenBtnPressed;
+        aloaeButton.image.sprite = spriteBtnNotPressed;
+        appleButton.image.sprite = spriteBtnNotPressed;
+
 
         // Set all other plants to inacitve 
         Plant1Stage1.SetActive(false);
@@ -81,19 +141,19 @@ public class PlantSelector : MonoBehaviour
         Plant3Stage2.SetActive(false);
         Plant3Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage3.SetActive(false);
+        onSliderValueChanged(selectedStage);
         Plant3Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
     }
 
     public void SelectPlant3()
     {
-        ShowPlant1 = false;
-        PlantSelect1.SetActive(false);
-
+        //change buttons sprite when activated
         ShowPlant2 = false;
-        PlantSelect2.SetActive(false);
-
-        ShowPlant3 = !ShowPlant3;
-        PlantSelect3.SetActive(ShowPlant3);
+        ShowPlant1 = false;
+        ShowPlant3 = true;
+        tomatoButton.image.sprite = spriteBtnNotPressed;
+        aloaeButton.image.sprite = spriteBtnNotPressed;
+        appleButton.image.sprite = spriteWhenBtnPressed;
 
         // Set all other plants to inacitve 
         Plant1Stage1.SetActive(false);
@@ -107,6 +167,10 @@ public class PlantSelector : MonoBehaviour
         Plant2Stage2.SetActive(false);
         Plant2Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant2Stage3.SetActive(false);
+        Plant2Stage1.SetActive(false);
+        Plant2Stage2.SetActive(false);
+        Plant2Stage3.SetActive(false);
+        onSliderValueChanged(selectedStage);
         Plant2Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
     }
     // Plant Select End
