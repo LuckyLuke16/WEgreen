@@ -14,6 +14,8 @@ public class PlantCubeSize : MonoBehaviour
         plant = transform.parent.parent.gameObject;
         MeasurePlant = plant.GetComponent<MeasurePlant>();
     }
+    //calculate scales of aloe and other plants separately, due to unique scaling in the aloe models
+    //set scales, positions to be in line with ar cursor
     void Update()
     {
         //transform.GetComponent<MeshFilter>().mesh.bounds = MeasurePlant.bounds;
@@ -33,7 +35,7 @@ public class PlantCubeSize : MonoBehaviour
     }
 
 
-
+    //different scaling used by aloe models
     public void calculateScalesAloe()
     {
         xScale = MeasurePlant.xSize + (plant.transform.localScale.x * 100);

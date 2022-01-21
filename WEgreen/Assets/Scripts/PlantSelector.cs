@@ -105,12 +105,18 @@ public class PlantSelector : MonoBehaviour
 
         // Set all other plants to inacitve 
         Plant2Stage1.SetActive(false);
+        Plant2Stage1.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant2Stage2.SetActive(false);
+        Plant2Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant2Stage3.SetActive(false);
+        Plant2Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage1.SetActive(false);
+        Plant3Stage1.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage2.SetActive(false);
+        Plant3Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage3.SetActive(false);
         onSliderValueChanged(selectedStage);
+        Plant3Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
     }
     public void SelectPlant2()
     {
@@ -125,12 +131,18 @@ public class PlantSelector : MonoBehaviour
 
         // Set all other plants to inacitve 
         Plant1Stage1.SetActive(false);
+        Plant1Stage1.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant1Stage2.SetActive(false);
+        Plant1Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant1Stage3.SetActive(false);
+        Plant1Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage1.SetActive(false);
+        Plant3Stage1.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage2.SetActive(false);
+        Plant3Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant3Stage3.SetActive(false);
         onSliderValueChanged(selectedStage);
+        Plant3Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
     }
 
     public void SelectPlant3()
@@ -144,13 +156,22 @@ public class PlantSelector : MonoBehaviour
         appleButton.image.sprite = spriteWhenBtnPressed;
 
         // Set all other plants to inacitve 
+        Plant1Stage1.SetActive(false);
+        Plant1Stage1.transform.Find("MeasurePrefab").gameObject.SetActive(false);
+        Plant1Stage2.SetActive(false);
+        Plant1Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
+        Plant1Stage3.SetActive(false);
+        Plant1Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant2Stage1.SetActive(false);
+        Plant2Stage1.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant2Stage2.SetActive(false);
+        Plant2Stage2.transform.Find("MeasurePrefab").gameObject.SetActive(false);
         Plant2Stage3.SetActive(false);
         Plant2Stage1.SetActive(false);
         Plant2Stage2.SetActive(false);
         Plant2Stage3.SetActive(false);
         onSliderValueChanged(selectedStage);
+        Plant2Stage3.transform.Find("MeasurePrefab").gameObject.SetActive(false);
     }
     // Plant Select End
 
