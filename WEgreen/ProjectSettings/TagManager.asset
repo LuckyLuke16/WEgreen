@@ -8,6 +8,12 @@ TagManager:
   - yellowWatering
   - redWatering
   - wateringMark
+  - plant
+  - aloe
+  - apfel
+  - tomaten
+  - tomaten2
+  - tomaten3
   layers:
   - Default
   - TransparentFX
