@@ -9,9 +9,6 @@ public class PlantSelector : MonoBehaviour
     public static bool ShowPlant1 = false;
     public static bool ShowPlant2 = false;
     public static bool ShowPlant3 = false;
-    public static bool ShowPlantStage1 = false;
-    public static bool ShowPlantStage2 = false;
-    public static bool ShowPlantStage3 = false;
     public GameObject PlantStageSelectOn;
     public GameObject Plant1Stage1;
     public GameObject Plant1Stage2;
@@ -179,38 +176,29 @@ public class PlantSelector : MonoBehaviour
 
     public void P1Stage1()
     {
-        ShowPlantStage1 = !ShowPlantStage1;
-        Plant1Stage1.SetActive(ShowPlantStage1);
+        Plant1Stage1.SetActive(true);
 
-        ShowPlantStage2 = false;
         Plant1Stage2.SetActive(false);
 
-        ShowPlantStage3 = false;
         Plant1Stage3.SetActive(false);
     }
 
     public void P1Stage2()
     {
-        ShowPlantStage1 = false;
         Plant1Stage1.SetActive(false);
 
-        ShowPlantStage2 = !ShowPlantStage2;
-        Plant1Stage2.SetActive(ShowPlantStage2);
+        Plant1Stage2.SetActive(true);
 
-        ShowPlantStage3 = false;
         Plant1Stage3.SetActive(false);
     }
 
     public void P1Stage3()
     {
-        ShowPlantStage1 = false;
         Plant1Stage1.SetActive(false);
 
-        ShowPlantStage2 = false;
         Plant1Stage2.SetActive(false);
 
-        ShowPlantStage3 = !ShowPlantStage3;
-        Plant1Stage3.SetActive(ShowPlantStage3);
+        Plant1Stage3.SetActive(true);
     }
     // Plant1 Stage Select End
 
@@ -218,13 +206,10 @@ public class PlantSelector : MonoBehaviour
 
     public void P2Stage1()
     {
-        ShowPlantStage1 = !ShowPlantStage1;
-        Plant2Stage1.SetActive(ShowPlantStage1);
+        Plant2Stage1.SetActive(true);
 
-        ShowPlantStage2 = false;
         Plant2Stage2.SetActive(false);
 
-        ShowPlantStage3 = false;
         Plant2Stage3.SetActive(false);
 
 
@@ -232,26 +217,16 @@ public class PlantSelector : MonoBehaviour
 
     public void P2Stage2()
     {
-        ShowPlantStage1 = false;
         Plant2Stage1.SetActive(false);
-
-        ShowPlantStage2 = !ShowPlantStage2;
-        Plant2Stage2.SetActive(ShowPlantStage2);
-
-        ShowPlantStage3 = false;
+        Plant2Stage2.SetActive(true);
         Plant2Stage3.SetActive(false);
     }
 
     public void P2Stage3()
     {
-        ShowPlantStage1 = false;
         Plant2Stage1.SetActive(false);
-
-        ShowPlantStage2 = false;
         Plant2Stage2.SetActive(false);
-
-        ShowPlantStage3 = !ShowPlantStage3;
-        Plant2Stage3.SetActive(ShowPlantStage3);
+        Plant2Stage3.SetActive(true);
     }
     // Plant2 Stage Select End
 
@@ -259,40 +234,24 @@ public class PlantSelector : MonoBehaviour
 
     public void P3Stage1()
     {
-        ShowPlantStage1 = !ShowPlantStage1;
-        Plant3Stage1.SetActive(ShowPlantStage1);
-
-        ShowPlantStage2 = false;
+        Plant3Stage1.SetActive(true);
         Plant3Stage2.SetActive(false);
-
-        ShowPlantStage3 = false;
         Plant3Stage3.SetActive(false);
     }
 
     public void P3Stage2()
     {
-        ShowPlantStage1 = false;
         Plant3Stage1.SetActive(false);
-
-        ShowPlantStage2 = !ShowPlantStage2;
-        Plant3Stage2.SetActive(ShowPlantStage2);
-
-        ShowPlantStage3 = false;
+        Plant3Stage2.SetActive(true);
         Plant3Stage3.SetActive(false);
     }
 
     public void P3Stage3()
     {
-        ShowPlantStage1 = false;
         Plant3Stage1.SetActive(false);
-
-        ShowPlantStage2 = false;
         Plant3Stage2.SetActive(false);
-
-        ShowPlantStage3 = !ShowPlantStage3;
-        Plant3Stage3.SetActive(ShowPlantStage3);
+        Plant3Stage3.SetActive(true);
     }
-    // Plant3 Stage Select End
 
 }
 
