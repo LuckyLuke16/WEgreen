@@ -31,9 +31,20 @@ public class SaveLoadDelete : MonoBehaviour
     private Text monthIndexText;
     [SerializeField]
     private Text displayedYearText;
+    [SerializeField]
+    private Text debugg1;
+    [SerializeField]
+    private Text debugg2;
+    [SerializeField]
+    private Text debugg3;
+    [SerializeField]
+    private Text debugg4;
 
 
     private GameObject[] monthDays;
+    private GameObject[] monthDaysImage;
+    private GameObject[] monthDaysName;
+    private GameObject monthDaysNameElement;
     //private Text[] monthDaysText;
 
     private int intervall = 1;
@@ -55,6 +66,17 @@ public class SaveLoadDelete : MonoBehaviour
 
 
         monthDays = GameObject.FindGameObjectsWithTag("wateringMark");
+        monthDaysImage = GameObject.FindGameObjectsWithTag("month_days");
+        monthDaysName = new GameObject[31];
+        for (int i = 1; i < 32; i++)
+        {
+            //monthDaysNameElement = GameObject.Find(i.ToString());
+            //monthDaysName[i] = monthDaysNameElement;
+            monthDaysName[i - 1] = GameObject.Find(i.ToString());
+            Debug.Log("monthdayname" + monthDaysName[i - 1].name);
+        }
+        debugg3.text = "montsdays length1: " + monthDays.Length;
+
         //monthDaysText = new Text[monthDays.Length];
 
         //for (int i = 0; i < monthDays.Length; i++)
@@ -207,8 +229,9 @@ public class SaveLoadDelete : MonoBehaviour
         // get counter
         string wateringPlantCounter = File.ReadAllText(Application.persistentDataPath + "/wateringPlantCounter.txt");
         // get last day of month which gives us the amount of days a month has
-        DateTime firstDayOfMonth = new DateTime(Convert.ToInt32(displayedYearText.text), Convert.ToInt32(monthIndexText.text), 1);
+        DateTime firstDayOfMonth = new DateTime(int.Parse(displayedYearText.text), int.Parse(monthIndexText.text), 1);
         DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
         // if file exists then access the data to mark the calendar
         if (/*waterIntervallValueText.text != null || */File.Exists(Application.persistentDataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
         {
@@ -224,7 +247,7 @@ public class SaveLoadDelete : MonoBehaviour
                 wateringPlantsData = savedStrings[i].Split(new[] { SAVE_SEPARATOR }, System.StringSplitOptions.None);
 
                 // get the intervall of all the existing plants one by one
-                intervall = Convert.ToInt32(wateringPlantsData[1]);
+                intervall = int.Parse(wateringPlantsData[1]);
                 // calculate for the offset for the other months, so the intervall is still remains correct
                 currentMonathDay = int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("dd"));
                 lastDayOfMonthInt = int.Parse(lastDayOfMonth.ToString("dd"));
@@ -239,6 +262,9 @@ public class SaveLoadDelete : MonoBehaviour
             for (int i = 0; i < monthDays.Length; i++)
             {
                 monthDays[i].GetComponent<Text>().text = "";
+                //monthDaysImage[i].GetComponent<Image>().color = Color.white;
+                monthDaysName[i].GetComponent<Image>().color = Color.white;
+
             }
 
             // mark the calendar(each month) correcetly
@@ -247,13 +273,16 @@ public class SaveLoadDelete : MonoBehaviour
                 // if displayed month is equal to current month AND displayed year is equal to current year
                 // AND i is equal to current day of month (basically: start marking the days from today on)
                 if (displayedMonthText.text == System.DateTime.UtcNow.ToLocalTime().ToString("MMMM") 
-                    && Convert.ToInt32(displayedYearText.text) == Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
+                    && int.Parse(displayedYearText.text) == int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
                 {
-                    if (i == Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("dd")))
+                    if (i == int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("dd")))
                     {
                         for (int j = i - 1; j < monthDays.Length; j += intervall)
                         {
                             monthDays[j].GetComponent<Text>().text = "1";
+                            //monthDaysImage[j].GetComponent<Image>().color = Color.black;
+                            monthDaysName[j].GetComponent<Image>().color = Color.black;
+                            debugg1.text = "DEBUG1: i" + i + ", j: " + j;
                             //string increaseMarkerString = monthDays[j].GetComponent<Text>().text.ToString();
                             //int increaseMarker = int.Parse(increaseMarkerString) + 1;
                             //monthDays[j].GetComponent<Text>().text = increaseMarker.ToString();
@@ -261,12 +290,12 @@ public class SaveLoadDelete : MonoBehaviour
                     }
                 }
                 // if displayed month is smaller than current month OR displayed year is smaller than current year
-                else if (Convert.ToInt32(monthIndexText.text) < Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("MM")) || Convert.ToInt32(displayedYearText.text) < Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
+                else if (int.Parse(monthIndexText.text) < int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("MM")) || int.Parse(displayedYearText.text) < int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
                 {
                     monthDays[i].GetComponent<Text>().text = "";
                 }
                 // if displayed month is bigger than current month OR displayed year is bigger than current year
-                else if (Convert.ToInt32(monthIndexText.text) > Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("MM")) || Convert.ToInt32(displayedYearText.text) > Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
+                else if (int.Parse(monthIndexText.text) > int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("MM")) || int.Parse(displayedYearText.text) > int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
                 {
                     if (i == offsetRef)
                     {
@@ -274,6 +303,11 @@ public class SaveLoadDelete : MonoBehaviour
                         for (int j = i - 1; j < monthDays.Length; j += intervall)
                         {
                             monthDays[j].GetComponent<Text>().text = "1";
+                            //monthDaysImage[j].GetComponent<Image>().color = Color.blue;
+                            monthDaysName[j].GetComponent<Image>().color = Color.blue;
+                            debugg4.text = "montsdays length2: " + monthDays.Length;
+                            debugg2.text = "DEBUG2: i" + i + ", j: " + j;
+
                             //string increaseMarkerString = monthDays[j].GetComponent<Text>().text.ToString();
                             //int increaseMarker = int.Parse(increaseMarkerString) + 1;
                             //monthDays[j].GetComponent<Text>().text = increaseMarker.ToString();
@@ -291,6 +325,7 @@ public class SaveLoadDelete : MonoBehaviour
                 Debug.Log("intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + currentMonathDay + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall)));
                 offsetNext = intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall);
                 offsetRef = offsetNext;
+                //debugg3.text = "DEBUG3: " + "intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + currentMonathDay + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall));
             }
             //else if (isNavLeft)
             //{
@@ -303,6 +338,7 @@ public class SaveLoadDelete : MonoBehaviour
                 Debug.Log("intervall - ((lastDayOfMonthInt - offsetRef) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + offsetRef + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - offsetRef) % intervall)));
                 offsetNext = intervall - ((lastDayOfMonthInt - offsetRef) % intervall);
                 offsetRef = offsetNext;
+                //debugg4.text = "DEBUG4: " + "intervall - ((lastDayOfMonthInt - offsetRef) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + offsetRef + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - offsetRef) % intervall));
             }
             Debug.Log("!!!OFFSETREF: " + offsetRef);
 
