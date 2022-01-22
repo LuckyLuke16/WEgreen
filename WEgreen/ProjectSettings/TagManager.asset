@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - greenWatering
+  - yellowWatering
+  - redWatering
+  - wateringMark
   - plant
   - aloe
   - apfel
