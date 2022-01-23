@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Notifications.Android;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MobileNotificationManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class MobileNotificationManager : MonoBehaviour
     AndroidNotificationChannel defaultNotificationChannel;
     int id;
     AndroidNotification notification;
+    [SerializeField]
+    private Text wateringPlantIntervall;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,9 +73,9 @@ public class MobileNotificationManager : MonoBehaviour
         notification = new AndroidNotification();
         notification.Title = "ERINNERUNG";
         notification.Text = "Deine Pflanze hat durst: 'Gieﬂ mich bitte!'";
-        notification.FireTime = System.DateTime.Now.AddSeconds(1);
+        notification.FireTime = System.DateTime.Now.AddSeconds(3);
         //notification.CustomTimestamp = Convert.ToDateTime(interval);
-        notification.RepeatInterval = new TimeSpan(0, 0, 2, 0);
+        notification.RepeatInterval = new TimeSpan(int.Parse(wateringPlantIntervall.text), 0, 0, 0);
     }
 
     public void SendNotification()
