@@ -13,7 +13,7 @@ public class CalendarManager : MonoBehaviour
     //public Button buttonB;
     public bool isButtonA;
     public bool isButtonB;
-    private Button[] buttonList;
+    private GameObject[] buttonList;
     private Button addWateringPlantButton;
     //public Button navLeft;
     public string time;
@@ -43,7 +43,7 @@ public class CalendarManager : MonoBehaviour
     public Sprite grayArrow;
     public Image navRightImg;
     public Image navLeftImg;
-    private Image currentDayImg;
+    private GameObject currentDayImg;
     public GameObject addingWindow;
     public GameObject wateringPlantOverview;
     public GameObject[] buttonGameobjectList = new GameObject[3];
@@ -60,11 +60,11 @@ public class CalendarManager : MonoBehaviour
         monthsList = new string[] { "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" };
         monthIndex = currentMonth - 1;
         // creating array and put all the buttons(31 days) in it
-        buttonList = new Button[31];
+        buttonList = new GameObject[31];
         //Debug.Log(buttonList.Length);
         for (int i = 1; i < 31; i++)
         {
-            buttonList[i - 1] = GameObject.Find(i.ToString()).GetComponent<Button>();
+            buttonList[i - 1] = GameObject.Find(i.ToString());
             //Debug.Log(i);
         }
 
@@ -73,7 +73,7 @@ public class CalendarManager : MonoBehaviour
         // find current page the user is on
         dayIndex = currentDay - 1;
         monthIndex = currentMonth - 1;
-        currentDayImg = buttonList[dayIndex].GetComponent<Image>();
+        currentDayImg = buttonList[dayIndex];
         //Debug.Log("OKKKK: " + currentPage + "." + currentYear + "\n" + System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy"));
 
         // initialize current month text, year text and casting year text to int
@@ -200,12 +200,13 @@ public class CalendarManager : MonoBehaviour
 
         if (System.DateTime.UtcNow.ToLocalTime().ToString("MMMM.yyyy") == currentPage + "." + yearText.text)
         {
-            currentDayImg.color = Color.red;
+            currentDayImg.GetComponentInChildren<Text>().color = Color.red;
         }
         else
         {
             Debug.Log("NOTTTTTTT Current DAY!!!!!");
-            currentDayImg.color = Color.white;
+            currentDayImg.GetComponentInChildren<Text>().color = Color.black;
+            //currentDayImg.color = Color.white;
         }
     }
 
@@ -361,10 +362,12 @@ public class CalendarManager : MonoBehaviour
     public void OpenWateringPlantCollectionOverview()
     {
         wateringPlantOverview.SetActive(true);
+        GameObject.Find("OpenWateringPlantOverview_Bg").GetComponent<Button>().image.color = Color.gray;
     }
 
     public void CloseWateringPlantCollectionOverview()
     {
         wateringPlantOverview.SetActive(false);
+        GameObject.Find("OpenWateringPlantOverview_Bg").GetComponent<Button>().image.color = Color.white;
     }
 }
