@@ -5,6 +5,11 @@ using Unity.Notifications.Android;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+* @brief
+* @param
+* @return
+*/
 public class MobileNotificationManager : MonoBehaviour
 {
     // define two dates
@@ -67,6 +72,11 @@ public class MobileNotificationManager : MonoBehaviour
         RescheduleNotification();
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     private void CreateNotification()
     {
         // create notification that is going to be sent
@@ -78,11 +88,21 @@ public class MobileNotificationManager : MonoBehaviour
         notification.RepeatInterval = new TimeSpan(int.Parse(wateringPlantIntervall.text), 0, 0, 0);
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void SendNotification()
     {
         AndroidNotificationCenter.SendNotification(notification, "channel_id"); 
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     private void RescheduleNotification()
     {
         // if the script is running and a notification is already scheduled, cancel it and re-schedule another message

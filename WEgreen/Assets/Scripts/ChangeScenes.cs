@@ -4,8 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/**
+* @brief
+* @param
+* @return
+*/
 public class ChangeScenes : MonoBehaviour
 {
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     // funktion dient dazu mittels der button die Szenen zu ändern
     public void LoadScene(string SceneName)
     {
@@ -13,6 +23,11 @@ public class ChangeScenes : MonoBehaviour
         Debug.Log("button pressed: " + SceneName);
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void BackToHomeButton()
     {
         if (SceneManager.GetActiveScene().name != "MainMenu")
@@ -25,6 +40,11 @@ public class ChangeScenes : MonoBehaviour
         }
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void ExitButton()
     {
         Application.Quit();

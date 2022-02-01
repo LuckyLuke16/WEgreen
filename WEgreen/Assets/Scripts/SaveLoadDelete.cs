@@ -5,6 +5,11 @@ using System.IO;
 using UnityEngine.UI;
 using System;
 
+/**
+* @brief
+* @param
+* @return
+*/
 public class SaveLoadDelete : MonoBehaviour
 {
     private const string SAVE_SEPARATOR = " -#SAVE_SEPARATOR#- ";
@@ -96,6 +101,11 @@ public class SaveLoadDelete : MonoBehaviour
 
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     // saves plant data
     public void Save()
     {
@@ -147,6 +157,11 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     // loads plant data
     public void Load()
     {
@@ -156,6 +171,11 @@ public class SaveLoadDelete : MonoBehaviour
         wateringPlantsOverviewText.text = wateringPlantsDataString;
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     // saves / updates counter
     private void SaveWateringPlantCounter(string update)
     {
@@ -179,6 +199,11 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     // loads counter
     private void LoadWateringPlantCounter()
     {
@@ -193,6 +218,11 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void Delete()
     {
         LoadWateringPlantCounter();
@@ -219,6 +249,11 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     private void CollectWateringPlantData()
     {
         string[] savedStrings = new string[int.Parse(wateringPlantCounter) + 1];
@@ -234,6 +269,11 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void MarkWateringDays()
     {
         // get counter
@@ -383,12 +423,24 @@ public class SaveLoadDelete : MonoBehaviour
             Debug.Log("!!!OFFSETREF: " + offsetRef);
         }
     }
+
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void IsNavLeft()
     {
         isNavLeft = true;
         isNavRight = false;
         Debug.Log("navleft: true");
     }
+
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void IsNavRight()
     {
         isNavRight = true;
@@ -396,10 +448,22 @@ public class SaveLoadDelete : MonoBehaviour
         Debug.Log("navright: true");
 
     }
+
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void OpenErrorMessageWindow()
     {
         errorMessageWindow.SetActive(true);
     }
+
+    /**
+     * @brief
+     * @param
+     * @return
+     */
     public void CloseErrorMessageWindow()
     {
         errorMessageWindow.SetActive(false);

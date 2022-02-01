@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['objecttoplace_0',['objectToPlace',['../class_a_r___cursor.html#a76ea197553d2786db33dbe285338fd22',1,'AR_Cursor']]],
-  ['onslidervaluechanged_1',['onSliderValueChanged',['../class_plant_selector.html#a12bf1c9e2581a146476302d6fa361335',1,'PlantSelector']]],
-  ['openaddingwindow_2',['OpenAddingWindow',['../class_calendar_manager.html#a10b7d604d69686b13b8543015dba9e78',1,'CalendarManager']]],
-  ['openerrormessagewindow_3',['OpenErrorMessageWindow',['../class_save_load_delete.html#a085ef25c3536095deecd283c876345d9',1,'SaveLoadDelete']]],
-  ['openwateringplantcollectionoverview_4',['OpenWateringPlantCollectionOverview',['../class_calendar_manager.html#a5211a2cd59df673b36ce0e4a1e4bd57b',1,'CalendarManager']]]
+  ['navigateleft_0',['NavigateLeft',['../class_calendar_manager.html#a4141bc4d484ccc354e3ee9f64403a9d1',1,'CalendarManager']]],
+  ['navigateright_1',['NavigateRight',['../class_calendar_manager.html#aadd14c4ab9df2fff596b0d58f73b4edd',1,'CalendarManager']]],
+  ['navleftimg_2',['navLeftImg',['../class_calendar_manager.html#a3a62c9d6cf24f1866b8f7ee71e3ad550',1,'CalendarManager']]],
+  ['navrightimg_3',['navRightImg',['../class_calendar_manager.html#a941d3cfcb76a231af1c7ca0851a70699',1,'CalendarManager']]],
+  ['notesinputfield_4',['notesInputField',['../class_save_notes.html#a4b9694e2dc1b659ede4f9b6908a4eb47',1,'SaveNotes']]]
 ];
