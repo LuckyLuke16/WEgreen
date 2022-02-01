@@ -14,28 +14,39 @@ public class CalendarManager : MonoBehaviour
     // declaring variables
     private GameObject[] buttonList;
     private string currentPage;
-    public int intTime;
-    public int intYear;
+    private int intTime;
+    private int intYear;
     private int currentDay;
     private int currentMonth;
     private int currentYear;
     private int monthIndex;
     private int dayIndex;
-    public Text monthText;
-    public Text yearText;
-    public Text monthIndexText;
+    [SerializeField] 
+    private Text monthText;
+    [SerializeField]
+    private Text yearText;
+    [SerializeField]
+    private Text monthIndexText;
     private Text[] weekdaysText;
     private string[] monthsList;
     private string[] weekdaysAligned;
-    public Sprite greenArrow;
-    public Sprite redArrow;
-    public Sprite grayArrow;
-    public Image navRightImg;
-    public Image navLeftImg;
+    [SerializeField]
+    private Sprite greenArrow;
+    [SerializeField]
+    private Sprite redArrow;
+    [SerializeField]
+    private Sprite grayArrow;
+    [SerializeField]
+    private Image navRightImg;
+    [SerializeField]
+    private Image navLeftImg;
     private GameObject currentDayImg;
-    public GameObject addingWindow;
-    public GameObject wateringPlantOverview;
-    public GameObject[] buttonGameobjectList = new GameObject[3];
+    [SerializeField]
+    private GameObject addingWindow;
+    [SerializeField]
+    private GameObject wateringPlantOverview;
+    [SerializeField]
+    private GameObject[] buttonGameobjectList = new GameObject[3];
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +89,7 @@ public class CalendarManager : MonoBehaviour
      * @brief Updates the variables currentDay, currentMonth and currentYear to current date of system.
      * @return void
      */
-    public void FindCurrentYearMonthDay()
+    private void FindCurrentYearMonthDay()
     {
         // find current day and cast from string to int
         currentDay = Convert.ToInt32(System.DateTime.UtcNow.ToLocalTime().ToString("dd"));
@@ -236,7 +247,7 @@ public class CalendarManager : MonoBehaviour
      * @brief Find out how many total days the current displayed month has(28, 29, 30 or 31). Display the correct amount of days on the UI.
      * @return void
      */
-    public void TotalDaysInMonth()
+    private void TotalDaysInMonth()
     {
         FindCurrentYearMonthDay();
         DateTime firstDayOfMonth = new DateTime(intYear, monthIndex + 1, 1);

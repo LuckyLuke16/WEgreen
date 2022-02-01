@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['navigateleft_0',['NavigateLeft',['../class_calendar_manager.html#a4141bc4d484ccc354e3ee9f64403a9d1',1,'CalendarManager']]],
-  ['navigateright_1',['NavigateRight',['../class_calendar_manager.html#aadd14c4ab9df2fff596b0d58f73b4edd',1,'CalendarManager']]]
+  ['onslidervaluechanged_0',['onSliderValueChanged',['../class_plant_selector.html#a12bf1c9e2581a146476302d6fa361335',1,'PlantSelector']]],
+  ['openaddingwindow_1',['OpenAddingWindow',['../class_calendar_manager.html#a10b7d604d69686b13b8543015dba9e78',1,'CalendarManager']]],
+  ['openerrormessagewindow_2',['OpenErrorMessageWindow',['../class_save_load_delete.html#a085ef25c3536095deecd283c876345d9',1,'SaveLoadDelete']]],
+  ['openwateringplantcollectionoverview_3',['OpenWateringPlantCollectionOverview',['../class_calendar_manager.html#a5211a2cd59df673b36ce0e4a1e4bd57b',1,'CalendarManager']]]
 ];
