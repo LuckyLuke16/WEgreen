@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/**
+* This  class is designed to measure different plants.
+* weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+* @author Will Kupec
+*/
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
 public class MeasurePlant : MonoBehaviour
