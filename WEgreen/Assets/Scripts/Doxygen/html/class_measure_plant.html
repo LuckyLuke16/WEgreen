@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Doxygen: MeasurePlant Class Reference</title>
+<title>WEgreen: MeasurePlant Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,8 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Doxygen
+   <div id="projectname">WEgreen
    </div>
+   <div id="projectbrief">AR Pflanzlernen-App</div>
   </td>
  </tr>
  </tbody>
@@ -87,12 +88,14 @@ $(document).ready(function(){initNavTree('class_measure_plant.html',''); initRes
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_measure_plant-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MeasurePlant Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This class is designed to measure different plants.  
+<p>Used solely for the AR measuring function and serves to combine all the meshes within a given plant model.  
  <a href="class_measure_plant.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for MeasurePlant:</div>
@@ -104,13 +107,14 @@ Inheritance diagram for MeasurePlant:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac421d6ea79e8e30d00f57778a833b626"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#ac421d6ea79e8e30d00f57778a833b626">combine</a> ()</td></tr>
+<tr class="memdesc:ac421d6ea79e8e30d00f57778a833b626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Individual meshes of the plant model are combined to create a new unified mesh.  <a href="class_measure_plant.html#ac421d6ea79e8e30d00f57778a833b626">More...</a><br /></td></tr>
 <tr class="separator:ac421d6ea79e8e30d00f57778a833b626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2d9b9798e8e137185bda692f1981f26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#ab2d9b9798e8e137185bda692f1981f26">setLabels</a> ()</td></tr>
+<tr class="memdesc:ab2d9b9798e8e137185bda692f1981f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text labels of x, y and z values are set using the bounds of the combined mesh.  <a href="class_measure_plant.html#ab2d9b9798e8e137185bda692f1981f26">More...</a><br /></td></tr>
 <tr class="separator:ab2d9b9798e8e137185bda692f1981f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfb0e730433c2a4f7a8c57ad64800afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#abfb0e730433c2a4f7a8c57ad64800afa">measure</a> ()</td></tr>
+<tr class="memdesc:abfb0e730433c2a4f7a8c57ad64800afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of text are set and constantly updated using the combined mesh bounds.  <a href="class_measure_plant.html#abfb0e730433c2a4f7a8c57ad64800afa">More...</a><br /></td></tr>
 <tr class="separator:abfb0e730433c2a4f7a8c57ad64800afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cd4d6355b57988beb57b46881ee16b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a1cd4d6355b57988beb57b46881ee16b4">isScaling</a> ()</td></tr>
-<tr class="separator:a1cd4d6355b57988beb57b46881ee16b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -120,10 +124,49 @@ Public Attributes</h2></td></tr>
 <tr class="separator:afea015f1098e0cdda871625d6def8561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad17cc3961bcff981d8671e3bdf70a5d7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#ad17cc3961bcff981d8671e3bdf70a5d7">zSize</a></td></tr>
 <tr class="separator:ad17cc3961bcff981d8671e3bdf70a5d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aca691083cfb5dd710bdd6e79ac9af758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#aca691083cfb5dd710bdd6e79ac9af758">Start</a> ()</td></tr>
+<tr class="memdesc:aca691083cfb5dd710bdd6e79ac9af758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Required components and gameobjects needed for methods are found and set.  <a href="class_measure_plant.html#aca691083cfb5dd710bdd6e79ac9af758">More...</a><br /></td></tr>
+<tr class="separator:aca691083cfb5dd710bdd6e79ac9af758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc8b110c51a14594e801352ea299782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#aebc8b110c51a14594e801352ea299782">Update</a> ()</td></tr>
+<tr class="memdesc:aebc8b110c51a14594e801352ea299782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the combine and measure methods each frame.  <a href="class_measure_plant.html#aebc8b110c51a14594e801352ea299782">More...</a><br /></td></tr>
+<tr class="separator:aebc8b110c51a14594e801352ea299782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aacbc534a6ce8924597e74a81a2303730"><td class="memItemLeft" align="right" valign="top">TextMeshPro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#aacbc534a6ce8924597e74a81a2303730">xText</a></td></tr>
+<tr class="separator:aacbc534a6ce8924597e74a81a2303730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336c3a3c24830a788c7e1af2c88a8aba"><td class="memItemLeft" align="right" valign="top">TextMeshPro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a336c3a3c24830a788c7e1af2c88a8aba">yText</a></td></tr>
+<tr class="separator:a336c3a3c24830a788c7e1af2c88a8aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d057644ae70f0ad9605e4e7361e6992"><td class="memItemLeft" align="right" valign="top">TextMeshPro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a1d057644ae70f0ad9605e4e7361e6992">zText</a></td></tr>
+<tr class="separator:a1d057644ae70f0ad9605e4e7361e6992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a03d24be23473d4914997c0aa7c997"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a96a03d24be23473d4914997c0aa7c997">offsetMeasurement</a></td></tr>
+<tr class="separator:a96a03d24be23473d4914997c0aa7c997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919bf3da2bd1a8c8d3396df7884931be"><td class="memItemLeft" align="right" valign="top">Bounds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a919bf3da2bd1a8c8d3396df7884931be">bounds</a></td></tr>
+<tr class="memdesc:a919bf3da2bd1a8c8d3396df7884931be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundaries of combined mesh.  <a href="class_measure_plant.html#a919bf3da2bd1a8c8d3396df7884931be">More...</a><br /></td></tr>
+<tr class="separator:a919bf3da2bd1a8c8d3396df7884931be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03eaa6563e603d2a3b84ad878e6a905d"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a03eaa6563e603d2a3b84ad878e6a905d">xLabel</a></td></tr>
+<tr class="separator:a03eaa6563e603d2a3b84ad878e6a905d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500934b6363fa65a0fbf949d6c211e51"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a500934b6363fa65a0fbf949d6c211e51">yLabel</a></td></tr>
+<tr class="separator:a500934b6363fa65a0fbf949d6c211e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a039605cca32f2685db243838a68f02"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a7a039605cca32f2685db243838a68f02">zLabel</a></td></tr>
+<tr class="separator:a7a039605cca32f2685db243838a68f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc26123a1b1f8d6e002e84165f4ca1cb"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#abc26123a1b1f8d6e002e84165f4ca1cb">measurePrefab</a></td></tr>
+<tr class="memdesc:abc26123a1b1f8d6e002e84165f4ca1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab that executes code.  <a href="class_measure_plant.html#abc26123a1b1f8d6e002e84165f4ca1cb">More...</a><br /></td></tr>
+<tr class="separator:abc26123a1b1f8d6e002e84165f4ca1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a148f8f50bb0e2913f58bc9d0616c3f97"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a148f8f50bb0e2913f58bc9d0616c3f97">plantScale</a></td></tr>
+<tr class="memdesc:a148f8f50bb0e2913f58bc9d0616c3f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale of plant model.  <a href="class_measure_plant.html#a148f8f50bb0e2913f58bc9d0616c3f97">More...</a><br /></td></tr>
+<tr class="separator:a148f8f50bb0e2913f58bc9d0616c3f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39b86bdad3d305c513607f6b4b4cddf"><td class="memItemLeft" align="right" valign="top">MeshFilter[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#af39b86bdad3d305c513607f6b4b4cddf">meshFilters</a></td></tr>
+<tr class="separator:af39b86bdad3d305c513607f6b4b4cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930d97d0fab5e58c77020bc2e697f44b"><td class="memItemLeft" align="right" valign="top">List&lt; MeshFilter &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_measure_plant.html#a930d97d0fab5e58c77020bc2e697f44b">meshFilter</a></td></tr>
+<tr class="separator:a930d97d0fab5e58c77020bc2e697f44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This class is designed to measure different plants. </p>
-<p >weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee </p><dl class="section author"><dt>Author</dt><dd>Will Kupec </dd></dl>
+<div class="textblock"><p >Used solely for the AR measuring function and serves to combine all the meshes within a given plant model. </p>
+<p >Each frame, it combines these meshes and uses their boundaries to create visble text objects for the user to see in AR. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac421d6ea79e8e30d00f57778a833b626" name="ac421d6ea79e8e30d00f57778a833b626"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac421d6ea79e8e30d00f57778a833b626">&#9670;&nbsp;</a></span>combine()</h2>
@@ -140,22 +183,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a1cd4d6355b57988beb57b46881ee16b4" name="a1cd4d6355b57988beb57b46881ee16b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cd4d6355b57988beb57b46881ee16b4">&#9670;&nbsp;</a></span>isScaling()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MeasurePlant.isScaling </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Individual meshes of the plant model are combined to create a new unified mesh. </p>
+<p >An array of CombineInstance objects is created using the length of all meshFilters within the plant model. This array is then filled by looping through all the mesh filters and retrieving the individual meshes and transform values. The mesh filter of the complete model is then created with the CombineMeshes() method and teh mesh renderer is disabled so only the compiled mesh is visible. The bounds variable is then set to the boundaries of this final mesh and the bounds/labels are assigned with <a class="el" href="class_measure_plant.html#ab2d9b9798e8e137185bda692f1981f26" title="Text labels of x, y and z values are set using the bounds of the combined mesh.">setLabels()</a>. </p>
 
 </div>
 </div>
@@ -174,6 +203,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Positions of text are set and constantly updated using the combined mesh bounds. </p>
+<p >The positions of the text objects are determined using the position of the plant, the label objects and a predetermined offset variable. Due to variations in the scaling of the different plant models, the aloe models are scaled differently than the rest. Thus, there is a tag check for aloe to apply specific scaling to the text. The text is then set using the respective size variables and set to display 2 decimal places. </p>
+
 </div>
 </div>
 <a id="ab2d9b9798e8e137185bda692f1981f26" name="ab2d9b9798e8e137185bda692f1981f26"></a>
@@ -191,9 +223,227 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Text labels of x, y and z values are set using the bounds of the combined mesh. </p>
+<p >The sizes of each axis are applied to their respective variables. These variables are then used to create the labels as new Vector3 objects. </p>
+
+</div>
+</div>
+<a id="aca691083cfb5dd710bdd6e79ac9af758" name="aca691083cfb5dd710bdd6e79ac9af758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca691083cfb5dd710bdd6e79ac9af758">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MeasurePlant.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Required components and gameobjects needed for methods are found and set. </p>
+<p >Additionally, an array of all the mesh filters in the plant model is created via a loop. </p>
+
+</div>
+</div>
+<a id="aebc8b110c51a14594e801352ea299782" name="aebc8b110c51a14594e801352ea299782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc8b110c51a14594e801352ea299782">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MeasurePlant.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs the combine and measure methods each frame. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a919bf3da2bd1a8c8d3396df7884931be" name="a919bf3da2bd1a8c8d3396df7884931be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919bf3da2bd1a8c8d3396df7884931be">&#9670;&nbsp;</a></span>bounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bounds MeasurePlant.bounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Boundaries of combined mesh. </p>
+
+</div>
+</div>
+<a id="abc26123a1b1f8d6e002e84165f4ca1cb" name="abc26123a1b1f8d6e002e84165f4ca1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc26123a1b1f8d6e002e84165f4ca1cb">&#9670;&nbsp;</a></span>measurePrefab</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject MeasurePlant.measurePrefab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prefab that executes code. </p>
+
+</div>
+</div>
+<a id="a930d97d0fab5e58c77020bc2e697f44b" name="a930d97d0fab5e58c77020bc2e697f44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a930d97d0fab5e58c77020bc2e697f44b">&#9670;&nbsp;</a></span>meshFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;MeshFilter&gt; MeasurePlant.meshFilter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af39b86bdad3d305c513607f6b4b4cddf" name="af39b86bdad3d305c513607f6b4b4cddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39b86bdad3d305c513607f6b4b4cddf">&#9670;&nbsp;</a></span>meshFilters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MeshFilter [] MeasurePlant.meshFilters</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96a03d24be23473d4914997c0aa7c997" name="a96a03d24be23473d4914997c0aa7c997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a03d24be23473d4914997c0aa7c997">&#9670;&nbsp;</a></span>offsetMeasurement</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 MeasurePlant.offsetMeasurement</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a148f8f50bb0e2913f58bc9d0616c3f97" name="a148f8f50bb0e2913f58bc9d0616c3f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148f8f50bb0e2913f58bc9d0616c3f97">&#9670;&nbsp;</a></span>plantScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 MeasurePlant.plantScale</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scale of plant model. </p>
+
+</div>
+</div>
+<a id="a03eaa6563e603d2a3b84ad878e6a905d" name="a03eaa6563e603d2a3b84ad878e6a905d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03eaa6563e603d2a3b84ad878e6a905d">&#9670;&nbsp;</a></span>xLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 MeasurePlant.xLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a5e2b1569202330ee6db386f24691af19" name="a5e2b1569202330ee6db386f24691af19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e2b1569202330ee6db386f24691af19">&#9670;&nbsp;</a></span>xSize</h2>
 
@@ -204,6 +454,50 @@ Public Attributes</h2></td></tr>
           <td class="memname">float MeasurePlant.xSize</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aacbc534a6ce8924597e74a81a2303730" name="aacbc534a6ce8924597e74a81a2303730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbc534a6ce8924597e74a81a2303730">&#9670;&nbsp;</a></span>xText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextMeshPro MeasurePlant.xText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a500934b6363fa65a0fbf949d6c211e51" name="a500934b6363fa65a0fbf949d6c211e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500934b6363fa65a0fbf949d6c211e51">&#9670;&nbsp;</a></span>yLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 MeasurePlant.yLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -222,6 +516,50 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a336c3a3c24830a788c7e1af2c88a8aba" name="a336c3a3c24830a788c7e1af2c88a8aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336c3a3c24830a788c7e1af2c88a8aba">&#9670;&nbsp;</a></span>yText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextMeshPro MeasurePlant.yText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a039605cca32f2685db243838a68f02" name="a7a039605cca32f2685db243838a68f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a039605cca32f2685db243838a68f02">&#9670;&nbsp;</a></span>zLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 MeasurePlant.zLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad17cc3961bcff981d8671e3bdf70a5d7" name="ad17cc3961bcff981d8671e3bdf70a5d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad17cc3961bcff981d8671e3bdf70a5d7">&#9670;&nbsp;</a></span>zSize</h2>
 
@@ -236,6 +574,28 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1d057644ae70f0ad9605e4e7361e6992" name="a1d057644ae70f0ad9605e4e7361e6992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d057644ae70f0ad9605e4e7361e6992">&#9670;&nbsp;</a></span>zText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextMeshPro MeasurePlant.zText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>G:/Users/Admin/Collapse/WEgreen/WEgreen/Assets/Scripts/<a class="el" href="_measure_plant_8cs.html">MeasurePlant.cs</a></li>
 </ul>
@@ -245,7 +605,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_measure_plant.html">MeasurePlant</a></li>
-    <li class="footer">Generated on Tue Feb 1 2022 12:50:36 for Doxygen by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Wed Feb 2 2022 16:41:11 for WEgreen by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

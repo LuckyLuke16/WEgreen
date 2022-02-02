@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['raycastmanager_0',['raycastManager',['../class_a_r___cursor.html#adcc10fe4215ae8b2789a9994e1ab4f28',1,'AR_Cursor']]],
-  ['redarrow_1',['redArrow',['../class_calendar_manager.html#a9d81afffc07248f0abdcaf1fcca96288',1,'CalendarManager']]],
-  ['redwateringgameobjectlist_2',['redWateringGameobjectList',['../class_calendar_manager.html#ad4cc6d1812a9f460c43b3e071b0d40b7',1,'CalendarManager']]]
+  ['lastdayofmonth_0',['lastDayOfMonth',['../class_save_load_delete.html#ab2d346d5741d87e28073ceee93ef6630',1,'SaveLoadDelete']]],
+  ['lastdayofmonthint_1',['lastDayOfMonthInt',['../class_save_load_delete.html#af4e82cdbb10ca166072d8b19f27166c7',1,'SaveLoadDelete']]],
+  ['lastdayofprevmonth_2',['lastDayOfPrevMonth',['../class_save_load_delete.html#aa13048e0b4909c9098ce29ecb8d6357a',1,'SaveLoadDelete']]],
+  ['lastdayofprevmonthint_3',['lastDayOfPrevMonthInt',['../class_save_load_delete.html#afd7d63a42b2f58b850683cfbfa6a4f5d',1,'SaveLoadDelete']]],
+  ['loadtextfromfile_4',['loadTextFromFile',['../class_save_notes.html#a801c2b0ce9f5ef6a74ee03d7752cb8d4',1,'SaveNotes']]]
 ];
