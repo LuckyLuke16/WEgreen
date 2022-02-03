@@ -6,19 +6,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /**
-* @brief
-* @param
-* @return
+* @brief Creates, manages and sends notification to your andorid phone
 */
 public class MobileNotificationManager : MonoBehaviour
 {
-    // define two dates
-    //DateTime date1 = new DateTime(2021, 1, 1, 9, 0, 0); 
-    //DateTime date2 = new DateTime(2021, 1, 2, 9, 0, 0); // 02.01.2021 - 09:00:00 Uhr
-    // Calculate the interval between the two dates.
-    TimeSpan interval;
-
-    AndroidNotificationChannel defaultNotificationChannel;
+    // declaring variables
     int id;
     AndroidNotification notification;
     [SerializeField]
@@ -26,11 +18,10 @@ public class MobileNotificationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //interval = date2 - date1;
         // remove notifications that have been displayed
         AndroidNotificationCenter.CancelAllDisplayedNotifications();
 
-        // create android notificaiton channel to send messages thorugh
+        // create android notificaiton channel to send messages through
         var channel = new AndroidNotificationChannel()
         {
             Id = "channel_id",
@@ -44,26 +35,6 @@ public class MobileNotificationManager : MonoBehaviour
 
         // send notification
         id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
-
-        //defaultNotificationChannel = new AndroidNotificationChannel()
-        //{
-        //    Id = "default channel",
-        //    Name = "Default Channel",
-        //    Description = "For Generic notifications",
-        //    Importance = Importance.Default
-        //};
-        //AndroidNotificationCenter.RegisterNotificationChannel(defaultNotificationChannel);
-
-        //AndroidNotification notification = new AndroidNotification()
-        //{
-        //    Title = "Test Notification",
-        //    Text = "This is a test Notificaiton",
-        //    SmallIcon = "default",
-        //    LargeIcon = "default",
-        //    FireTime = System.DateTime.Now.AddSeconds(3),
-        //};
-
-        //identifier = AndroidNotificationCenter.SendNotification(notification, "default_channel");
     }
 
     // Update is called once per frame
@@ -73,9 +44,8 @@ public class MobileNotificationManager : MonoBehaviour
     }
 
     /**
-     * @brief
-     * @param
-     * @return
+     * @brief Create notification and assign values to specific attributes e.g. notification title
+     * @return void
      */
     private void CreateNotification()
     {
@@ -89,19 +59,18 @@ public class MobileNotificationManager : MonoBehaviour
     }
 
     /**
-     * @brief
-     * @param
-     * @return
+     * @brief Sends notification through a specific channel
+     * @return void
      */
     public void SendNotification()
     {
+        // first arg: the notification you want to send; second arg: the channel id and therefore the channel you want the notification to be sent through
         AndroidNotificationCenter.SendNotification(notification, "channel_id"); 
     }
 
     /**
-     * @brief
-     * @param
-     * @return
+     * @brief Reschedule the notifications by basically removing all already existing notifications when script is running and send new ones
+     * @return void
      */
     private void RescheduleNotification()
     {

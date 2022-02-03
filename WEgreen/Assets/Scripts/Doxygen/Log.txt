@@ -83,21 +83,19 @@ U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:104
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:136: warning: documented empty return type of CalendarManager.NavigateRight
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:289: warning: documented empty return type of CalendarManager.OpenAddingWindow
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:309: warning: documented empty return type of CalendarManager.OpenWateringPlantCollectionOverview
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:9: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:28: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:45: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:16: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:10: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:93: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:10: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:464: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:223: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:429: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:441: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:162: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:274: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:454: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
-U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:106: warning: unexpected token TK_COMMAND_AT in comment block while parsing the argument of command param
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:25: warning: documented empty return type of ChangeScenes.BackToHomeButton
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:41: warning: documented empty return type of ChangeScenes.ExitButton
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:14: warning: argument 'string' of command @param is not found in the argument list of ChangeScenes::LoadScene(string SceneName)
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:14: warning: documented empty return type of ChangeScenes.LoadScene
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:63: warning: documented empty return type of MobileNotificationManager.SendNotification
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:390: warning: documented empty return type of SaveLoadDelete.CloseErrorMessageWindow
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:193: warning: documented empty return type of SaveLoadDelete.Delete
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:358: warning: documented empty return type of SaveLoadDelete.IsNavLeft
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:369: warning: documented empty return type of SaveLoadDelete.IsNavRight
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:136: warning: documented empty return type of SaveLoadDelete.Load
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:242: warning: documented empty return type of SaveLoadDelete.MarkWateringDays
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:381: warning: documented empty return type of SaveLoadDelete.OpenErrorMessageWindow
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:82: warning: documented empty return type of SaveLoadDelete.Save
 Adding members to member groups.
 Computing member references...
 Inheriting documentation...
