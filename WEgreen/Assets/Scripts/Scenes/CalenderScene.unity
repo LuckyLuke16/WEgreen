@@ -6559,19 +6559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e31a336c5a207448b245527e2f3132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isButtonA: 0
-  isButtonB: 0
-  time: 
-  intTime: 0
-  intYear: 0
   monthText: {fileID: 2120635743}
   yearText: {fileID: 1588634600}
-  waterIntervallValueText: {fileID: 1155791218}
-  wateringPlantName: {fileID: 1416407400}
-  wateringPlantIntervall: {fileID: 1155791218}
-  wateringPlantNameLoaded: {fileID: 109228243}
-  wateringPlantIntervallLoaded: {fileID: 881743047}
-  wateringPlantCollectionOverviewText: {fileID: 1712761149}
   monthIndexText: {fileID: 345564149}
   greenArrow: {fileID: 21300000, guid: d0717bde1bcc4024aacc57aa265b1a24, type: 3}
   redArrow: {fileID: 21300000, guid: a1de3d7ea33b23045a8b0487fc6e9f4f, type: 3}
@@ -6584,9 +6573,6 @@ MonoBehaviour:
   - {fileID: 377537859}
   - {fileID: 689355253}
   - {fileID: 626173558}
-  greenWateringGameobjectList: []
-  yellowWateringGameobjectList: []
-  redWateringGameobjectList: []
 --- !u!114 &585157282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20524,7 +20510,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.85
   m_Text: 
 --- !u!222 &1712761150
 CanvasRenderer:

@@ -14,7 +14,7 @@ var dir_f13b41af88cf68434578284aaf699e39 =
       [ "ExecuteAction", "class_execute_action.html", "class_execute_action" ]
     ] ],
     [ "MeasurementController.cs", "_measurement_controller_8cs.html", [
-      [ "MeasurementController", "class_measurement_controller.html", null ]
+      [ "MeasurementController", "class_measurement_controller.html", "class_measurement_controller" ]
     ] ],
     [ "MeasurePlant.cs", "_measure_plant_8cs.html", [
       [ "MeasurePlant", "class_measure_plant.html", "class_measure_plant" ]

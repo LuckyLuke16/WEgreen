@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Doxygen: SaveLoadDelete Class Reference</title>
+<title>WEgreen: SaveLoadDelete Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Doxygen
+   <div id="projectname">WEgreen
    </div>
   </td>
  </tr>
@@ -87,10 +87,16 @@ $(document).ready(function(){initNavTree('class_save_load_delete.html',''); init
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_save_load_delete-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SaveLoadDelete Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages all the saving, loading and deleting activities for the watering plants.  
+ <a href="class_save_load_delete.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SaveLoadDelete:</div>
 <div class="dyncontent">
@@ -101,28 +107,112 @@ Inheritance diagram for SaveLoadDelete:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6691dce9857edca0da7aae4a1fcfd21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#aa6691dce9857edca0da7aae4a1fcfd21">Save</a> ()</td></tr>
+<tr class="memdesc:aa6691dce9857edca0da7aae4a1fcfd21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves plant data(name, interval) into a text file.  <a href="class_save_load_delete.html#aa6691dce9857edca0da7aae4a1fcfd21">More...</a><br /></td></tr>
 <tr class="separator:aa6691dce9857edca0da7aae4a1fcfd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcfd2b2b389af161464821cd7fa76a4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#afcfd2b2b389af161464821cd7fa76a4d">Load</a> ()</td></tr>
+<tr class="memdesc:afcfd2b2b389af161464821cd7fa76a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all the watering plant data that has already been saved.  <a href="class_save_load_delete.html#afcfd2b2b389af161464821cd7fa76a4d">More...</a><br /></td></tr>
 <tr class="separator:afcfd2b2b389af161464821cd7fa76a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5c30a1ad30f3d2342289cd99b0b24e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#ac5c30a1ad30f3d2342289cd99b0b24e8">Delete</a> ()</td></tr>
+<tr class="memdesc:ac5c30a1ad30f3d2342289cd99b0b24e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the last added watering plant data.  <a href="class_save_load_delete.html#ac5c30a1ad30f3d2342289cd99b0b24e8">More...</a><br /></td></tr>
 <tr class="separator:ac5c30a1ad30f3d2342289cd99b0b24e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0112b908cb8698f52f074538dee211e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a0112b908cb8698f52f074538dee211e9">MarkWateringDays</a> ()</td></tr>
+<tr class="memdesc:a0112b908cb8698f52f074538dee211e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responsible for all the calculations so that the calendar marks all the days that need to be watered depending on the intervall of the added(most recent) watering plant.  <a href="class_save_load_delete.html#a0112b908cb8698f52f074538dee211e9">More...</a><br /></td></tr>
 <tr class="separator:a0112b908cb8698f52f074538dee211e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83f350e825fb3151cb77f7bdf573ff4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a83f350e825fb3151cb77f7bdf573ff4f">IsNavLeft</a> ()</td></tr>
+<tr class="memdesc:a83f350e825fb3151cb77f7bdf573ff4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used fir when you navigate to the previous month.  <a href="class_save_load_delete.html#a83f350e825fb3151cb77f7bdf573ff4f">More...</a><br /></td></tr>
 <tr class="separator:a83f350e825fb3151cb77f7bdf573ff4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30591971b072842ffbf79dd54a18d3fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a30591971b072842ffbf79dd54a18d3fc">IsNavRight</a> ()</td></tr>
+<tr class="memdesc:a30591971b072842ffbf79dd54a18d3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used fir when you navigate to the previous month.  <a href="class_save_load_delete.html#a30591971b072842ffbf79dd54a18d3fc">More...</a><br /></td></tr>
 <tr class="separator:a30591971b072842ffbf79dd54a18d3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085ef25c3536095deecd283c876345d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a085ef25c3536095deecd283c876345d9">OpenErrorMessageWindow</a> ()</td></tr>
+<tr class="memdesc:a085ef25c3536095deecd283c876345d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates / Opens up the error message window when saving an watering plant with an invalid intervall.  <a href="class_save_load_delete.html#a085ef25c3536095deecd283c876345d9">More...</a><br /></td></tr>
 <tr class="separator:a085ef25c3536095deecd283c876345d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a811f3cc3a006fa388862ea8a22749627"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a811f3cc3a006fa388862ea8a22749627">CloseErrorMessageWindow</a> ()</td></tr>
+<tr class="memdesc:a811f3cc3a006fa388862ea8a22749627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivates / Closes the error message window.  <a href="class_save_load_delete.html#a811f3cc3a006fa388862ea8a22749627">More...</a><br /></td></tr>
 <tr class="separator:a811f3cc3a006fa388862ea8a22749627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3b7343964759c03032a203242466f1bb"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a3b7343964759c03032a203242466f1bb">errorMessageWindow</a></td></tr>
 <tr class="separator:a3b7343964759c03032a203242466f1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8a559e79c3d8af08e05b7c0b8393689f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a8a559e79c3d8af08e05b7c0b8393689f">Start</a> ()</td></tr>
+<tr class="separator:a8a559e79c3d8af08e05b7c0b8393689f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc23a996de4de1afd13b63b40b8711d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#adc23a996de4de1afd13b63b40b8711d5">SaveWateringPlantCounter</a> (string update)</td></tr>
+<tr class="memdesc:adc23a996de4de1afd13b63b40b8711d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves / updates watering plant counter.  <a href="class_save_load_delete.html#adc23a996de4de1afd13b63b40b8711d5">More...</a><br /></td></tr>
+<tr class="separator:adc23a996de4de1afd13b63b40b8711d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af016256789e884818ebd002662fd830c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#af016256789e884818ebd002662fd830c">LoadWateringPlantCounter</a> ()</td></tr>
+<tr class="memdesc:af016256789e884818ebd002662fd830c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the watering plant counter so the app doesn't always start from nothing even thought watering plant data already exsists.  <a href="class_save_load_delete.html#af016256789e884818ebd002662fd830c">More...</a><br /></td></tr>
+<tr class="separator:af016256789e884818ebd002662fd830c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4c210d6f203eaae86d6a2477964ce9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#afc4c210d6f203eaae86d6a2477964ce9">CollectWateringPlantData</a> ()</td></tr>
+<tr class="memdesc:afc4c210d6f203eaae86d6a2477964ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collets all the watering plant that exists(saved) and put them into a string in a formated way, so it can be used to display on the UI.  <a href="class_save_load_delete.html#afc4c210d6f203eaae86d6a2477964ce9">More...</a><br /></td></tr>
+<tr class="separator:afc4c210d6f203eaae86d6a2477964ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac40199bd1d2d118c0de43894ccc9d679"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#ac40199bd1d2d118c0de43894ccc9d679">waterinPlantName</a></td></tr>
+<tr class="separator:ac40199bd1d2d118c0de43894ccc9d679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e22e3d8dc4465384785ffa12216b009"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a3e22e3d8dc4465384785ffa12216b009">wateringPlantIntervall</a></td></tr>
+<tr class="separator:a3e22e3d8dc4465384785ffa12216b009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec33464c50b09a37e08b6502c931952"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a5ec33464c50b09a37e08b6502c931952">wateringPlantsOverviewText</a></td></tr>
+<tr class="separator:a5ec33464c50b09a37e08b6502c931952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241abb41817a7a0fd7e335df36d87fbf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a241abb41817a7a0fd7e335df36d87fbf">wateringPlantCounter</a> = &quot;&quot;</td></tr>
+<tr class="separator:a241abb41817a7a0fd7e335df36d87fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1444433a4b14c315d2cb31533eae315"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#aa1444433a4b14c315d2cb31533eae315">wateringPlantsDataString</a> = &quot;&quot;</td></tr>
+<tr class="separator:aa1444433a4b14c315d2cb31533eae315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010882c7e324fc56005e17452d69b142"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a010882c7e324fc56005e17452d69b142">debugText</a></td></tr>
+<tr class="separator:a010882c7e324fc56005e17452d69b142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6c31fde6b3ff79337911e7cc7a36cd"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a0f6c31fde6b3ff79337911e7cc7a36cd">waterIntervallValueText</a></td></tr>
+<tr class="separator:a0f6c31fde6b3ff79337911e7cc7a36cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93d21fe870b943eb36b060e55d67715"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#ad93d21fe870b943eb36b060e55d67715">displayedMonthText</a></td></tr>
+<tr class="separator:ad93d21fe870b943eb36b060e55d67715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1ad1e9118ed2a160613e192180320c"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#abb1ad1e9118ed2a160613e192180320c">monthIndexText</a></td></tr>
+<tr class="separator:abb1ad1e9118ed2a160613e192180320c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0f860aede6eaf32f21431f9ab06257"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#ade0f860aede6eaf32f21431f9ab06257">displayedYearText</a></td></tr>
+<tr class="separator:ade0f860aede6eaf32f21431f9ab06257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a906348d337062ee7919b407623441"><td class="memItemLeft" align="right" valign="top">GameObject[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a07a906348d337062ee7919b407623441">monthDays</a></td></tr>
+<tr class="separator:a07a906348d337062ee7919b407623441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbb0fdcd5fb9f5e3c074333cd49d9f6"><td class="memItemLeft" align="right" valign="top">GameObject[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a4bbb0fdcd5fb9f5e3c074333cd49d9f6">monthDaysImage</a></td></tr>
+<tr class="separator:a4bbb0fdcd5fb9f5e3c074333cd49d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9fc4751bd7969881df242745f3c7348"><td class="memItemLeft" align="right" valign="top">GameObject[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#af9fc4751bd7969881df242745f3c7348">monthDaysName</a></td></tr>
+<tr class="separator:af9fc4751bd7969881df242745f3c7348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4e05798940848b8a7656fa086e6e413"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#ad4e05798940848b8a7656fa086e6e413">intervall</a> = 1</td></tr>
+<tr class="separator:ad4e05798940848b8a7656fa086e6e413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c54f5f25cd8323c7fdc58bdfa565c09"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a4c54f5f25cd8323c7fdc58bdfa565c09">offsetPrev</a></td></tr>
+<tr class="separator:a4c54f5f25cd8323c7fdc58bdfa565c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ccfdd7e0faad87811b01e6f2669e68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a93ccfdd7e0faad87811b01e6f2669e68">offsetNext</a></td></tr>
+<tr class="separator:a93ccfdd7e0faad87811b01e6f2669e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb98881a4432ffb86daa6edebf39ee6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#aaeb98881a4432ffb86daa6edebf39ee6">offsetRef</a></td></tr>
+<tr class="separator:aaeb98881a4432ffb86daa6edebf39ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1321a4acb687a0c74f52f5340c18506d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a1321a4acb687a0c74f52f5340c18506d">currentMonthDay</a></td></tr>
+<tr class="separator:a1321a4acb687a0c74f52f5340c18506d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e82cdbb10ca166072d8b19f27166c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#af4e82cdbb10ca166072d8b19f27166c7">lastDayOfMonthInt</a></td></tr>
+<tr class="separator:af4e82cdbb10ca166072d8b19f27166c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd7d63a42b2f58b850683cfbfa6a4f5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#afd7d63a42b2f58b850683cfbfa6a4f5d">lastDayOfPrevMonthInt</a></td></tr>
+<tr class="separator:afd7d63a42b2f58b850683cfbfa6a4f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47797785c57db10413a74cff56997a43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a47797785c57db10413a74cff56997a43">isNavLeft</a></td></tr>
+<tr class="separator:a47797785c57db10413a74cff56997a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a120bd536610b4b217af091306e03ae86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a120bd536610b4b217af091306e03ae86">isNavRight</a> = true</td></tr>
+<tr class="separator:a120bd536610b4b217af091306e03ae86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb369b37e1ad6e453a975ec19b46b347"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#acb369b37e1ad6e453a975ec19b46b347">firstDayOfMonth</a></td></tr>
+<tr class="separator:acb369b37e1ad6e453a975ec19b46b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d346d5741d87e28073ceee93ef6630"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#ab2d346d5741d87e28073ceee93ef6630">lastDayOfMonth</a></td></tr>
+<tr class="separator:ab2d346d5741d87e28073ceee93ef6630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20be4a6db359e10b04835a0dbbedf982"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a20be4a6db359e10b04835a0dbbedf982">firstDayOfPrevMonth</a></td></tr>
+<tr class="separator:a20be4a6db359e10b04835a0dbbedf982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13048e0b4909c9098ce29ecb8d6357a"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#aa13048e0b4909c9098ce29ecb8d6357a">lastDayOfPrevMonth</a></td></tr>
+<tr class="separator:aa13048e0b4909c9098ce29ecb8d6357a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a9c352b96ed4572637dd30afca4c40253"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_save_load_delete.html#a9c352b96ed4572637dd30afca4c40253">SAVE_SEPARATOR</a> = &quot; -#SAVE_SEPARATOR#- &quot;</td></tr>
+<tr class="separator:a9c352b96ed4572637dd30afca4c40253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Manages all the saving, loading and deleting activities for the watering plants. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a811f3cc3a006fa388862ea8a22749627" name="a811f3cc3a006fa388862ea8a22749627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a811f3cc3a006fa388862ea8a22749627">&#9670;&nbsp;</a></span>CloseErrorMessageWindow()</h2>
 
@@ -137,6 +227,37 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Deactivates / Closes the error message window. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="afc4c210d6f203eaae86d6a2477964ce9" name="afc4c210d6f203eaae86d6a2477964ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4c210d6f203eaae86d6a2477964ce9">&#9670;&nbsp;</a></span>CollectWateringPlantData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveLoadDelete.CollectWateringPlantData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Collets all the watering plant that exists(saved) and put them into a string in a formated way, so it can be used to display on the UI. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -155,6 +276,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Deletes the last added watering plant data. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="a83f350e825fb3151cb77f7bdf573ff4f" name="a83f350e825fb3151cb77f7bdf573ff4f"></a>
@@ -171,6 +295,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is used fir when you navigate to the previous month. </p>
+<p >It will set the booleans isNavLeft to true and isNavRight to false, so that the correct offset is used for the calculations of marking the watering days </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -189,6 +316,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is used fir when you navigate to the previous month. </p>
+<p >It will set the booleans isNavRight to true and isNavLeft to false, so that the correct offset is used for the calculations of marking the watering days </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="afcfd2b2b389af161464821cd7fa76a4d" name="afcfd2b2b389af161464821cd7fa76a4d"></a>
@@ -205,6 +335,37 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads all the watering plant data that has already been saved. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="af016256789e884818ebd002662fd830c" name="af016256789e884818ebd002662fd830c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af016256789e884818ebd002662fd830c">&#9670;&nbsp;</a></span>LoadWateringPlantCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveLoadDelete.LoadWateringPlantCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the watering plant counter so the app doesn't always start from nothing even thought watering plant data already exsists. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -223,6 +384,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Responsible for all the calculations so that the calendar marks all the days that need to be watered depending on the intervall of the added(most recent) watering plant. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="a085ef25c3536095deecd283c876345d9" name="a085ef25c3536095deecd283c876345d9"></a>
@@ -239,6 +403,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Activates / Opens up the error message window when saving an watering plant with an invalid intervall. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -257,9 +424,160 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Saves plant data(name, interval) into a text file. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="adc23a996de4de1afd13b63b40b8711d5" name="adc23a996de4de1afd13b63b40b8711d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc23a996de4de1afd13b63b40b8711d5">&#9670;&nbsp;</a></span>SaveWateringPlantCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveLoadDelete.SaveWateringPlantCounter </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>update</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Saves / updates watering plant counter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">update(string)</td><td>expects either "increase" or "decrease" as argument, to adjust and save the watering plant counter (needed for adding limit and naming text files with the different watering plant data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a8a559e79c3d8af08e05b7c0b8393689f" name="a8a559e79c3d8af08e05b7c0b8393689f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a559e79c3d8af08e05b7c0b8393689f">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveLoadDelete.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1321a4acb687a0c74f52f5340c18506d" name="a1321a4acb687a0c74f52f5340c18506d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1321a4acb687a0c74f52f5340c18506d">&#9670;&nbsp;</a></span>currentMonthDay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.currentMonthDay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a010882c7e324fc56005e17452d69b142" name="a010882c7e324fc56005e17452d69b142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010882c7e324fc56005e17452d69b142">&#9670;&nbsp;</a></span>debugText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.debugText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad93d21fe870b943eb36b060e55d67715" name="ad93d21fe870b943eb36b060e55d67715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93d21fe870b943eb36b060e55d67715">&#9670;&nbsp;</a></span>displayedMonthText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.displayedMonthText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade0f860aede6eaf32f21431f9ab06257" name="ade0f860aede6eaf32f21431f9ab06257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0f860aede6eaf32f21431f9ab06257">&#9670;&nbsp;</a></span>displayedYearText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.displayedYearText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3b7343964759c03032a203242466f1bb" name="a3b7343964759c03032a203242466f1bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b7343964759c03032a203242466f1bb">&#9670;&nbsp;</a></span>errorMessageWindow</h2>
 
@@ -274,8 +592,514 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="acb369b37e1ad6e453a975ec19b46b347" name="acb369b37e1ad6e453a975ec19b46b347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb369b37e1ad6e453a975ec19b46b347">&#9670;&nbsp;</a></span>firstDayOfMonth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DateTime SaveLoadDelete.firstDayOfMonth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20be4a6db359e10b04835a0dbbedf982" name="a20be4a6db359e10b04835a0dbbedf982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20be4a6db359e10b04835a0dbbedf982">&#9670;&nbsp;</a></span>firstDayOfPrevMonth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DateTime SaveLoadDelete.firstDayOfPrevMonth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4e05798940848b8a7656fa086e6e413" name="ad4e05798940848b8a7656fa086e6e413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e05798940848b8a7656fa086e6e413">&#9670;&nbsp;</a></span>intervall</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.intervall = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47797785c57db10413a74cff56997a43" name="a47797785c57db10413a74cff56997a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47797785c57db10413a74cff56997a43">&#9670;&nbsp;</a></span>isNavLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveLoadDelete.isNavLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a120bd536610b4b217af091306e03ae86" name="a120bd536610b4b217af091306e03ae86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a120bd536610b4b217af091306e03ae86">&#9670;&nbsp;</a></span>isNavRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveLoadDelete.isNavRight = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2d346d5741d87e28073ceee93ef6630" name="ab2d346d5741d87e28073ceee93ef6630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d346d5741d87e28073ceee93ef6630">&#9670;&nbsp;</a></span>lastDayOfMonth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DateTime SaveLoadDelete.lastDayOfMonth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4e82cdbb10ca166072d8b19f27166c7" name="af4e82cdbb10ca166072d8b19f27166c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e82cdbb10ca166072d8b19f27166c7">&#9670;&nbsp;</a></span>lastDayOfMonthInt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.lastDayOfMonthInt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa13048e0b4909c9098ce29ecb8d6357a" name="aa13048e0b4909c9098ce29ecb8d6357a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13048e0b4909c9098ce29ecb8d6357a">&#9670;&nbsp;</a></span>lastDayOfPrevMonth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DateTime SaveLoadDelete.lastDayOfPrevMonth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd7d63a42b2f58b850683cfbfa6a4f5d" name="afd7d63a42b2f58b850683cfbfa6a4f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7d63a42b2f58b850683cfbfa6a4f5d">&#9670;&nbsp;</a></span>lastDayOfPrevMonthInt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.lastDayOfPrevMonthInt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07a906348d337062ee7919b407623441" name="a07a906348d337062ee7919b407623441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a906348d337062ee7919b407623441">&#9670;&nbsp;</a></span>monthDays</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject [] SaveLoadDelete.monthDays</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bbb0fdcd5fb9f5e3c074333cd49d9f6" name="a4bbb0fdcd5fb9f5e3c074333cd49d9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bbb0fdcd5fb9f5e3c074333cd49d9f6">&#9670;&nbsp;</a></span>monthDaysImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject [] SaveLoadDelete.monthDaysImage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9fc4751bd7969881df242745f3c7348" name="af9fc4751bd7969881df242745f3c7348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9fc4751bd7969881df242745f3c7348">&#9670;&nbsp;</a></span>monthDaysName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject [] SaveLoadDelete.monthDaysName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb1ad1e9118ed2a160613e192180320c" name="abb1ad1e9118ed2a160613e192180320c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1ad1e9118ed2a160613e192180320c">&#9670;&nbsp;</a></span>monthIndexText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.monthIndexText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93ccfdd7e0faad87811b01e6f2669e68" name="a93ccfdd7e0faad87811b01e6f2669e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ccfdd7e0faad87811b01e6f2669e68">&#9670;&nbsp;</a></span>offsetNext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.offsetNext</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c54f5f25cd8323c7fdc58bdfa565c09" name="a4c54f5f25cd8323c7fdc58bdfa565c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c54f5f25cd8323c7fdc58bdfa565c09">&#9670;&nbsp;</a></span>offsetPrev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.offsetPrev</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaeb98881a4432ffb86daa6edebf39ee6" name="aaeb98881a4432ffb86daa6edebf39ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb98881a4432ffb86daa6edebf39ee6">&#9670;&nbsp;</a></span>offsetRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SaveLoadDelete.offsetRef</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c352b96ed4572637dd30afca4c40253" name="a9c352b96ed4572637dd30afca4c40253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c352b96ed4572637dd30afca4c40253">&#9670;&nbsp;</a></span>SAVE_SEPARATOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string SaveLoadDelete.SAVE_SEPARATOR = &quot; -#SAVE_SEPARATOR#- &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a241abb41817a7a0fd7e335df36d87fbf" name="a241abb41817a7a0fd7e335df36d87fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241abb41817a7a0fd7e335df36d87fbf">&#9670;&nbsp;</a></span>wateringPlantCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SaveLoadDelete.wateringPlantCounter = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e22e3d8dc4465384785ffa12216b009" name="a3e22e3d8dc4465384785ffa12216b009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e22e3d8dc4465384785ffa12216b009">&#9670;&nbsp;</a></span>wateringPlantIntervall</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.wateringPlantIntervall</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1444433a4b14c315d2cb31533eae315" name="aa1444433a4b14c315d2cb31533eae315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1444433a4b14c315d2cb31533eae315">&#9670;&nbsp;</a></span>wateringPlantsDataString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string SaveLoadDelete.wateringPlantsDataString = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ec33464c50b09a37e08b6502c931952" name="a5ec33464c50b09a37e08b6502c931952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec33464c50b09a37e08b6502c931952">&#9670;&nbsp;</a></span>wateringPlantsOverviewText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.wateringPlantsOverviewText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac40199bd1d2d118c0de43894ccc9d679" name="ac40199bd1d2d118c0de43894ccc9d679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac40199bd1d2d118c0de43894ccc9d679">&#9670;&nbsp;</a></span>waterinPlantName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.waterinPlantName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f6c31fde6b3ff79337911e7cc7a36cd" name="a0f6c31fde6b3ff79337911e7cc7a36cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6c31fde6b3ff79337911e7cc7a36cd">&#9670;&nbsp;</a></span>waterIntervallValueText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text SaveLoadDelete.waterIntervallValueText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>G:/Users/Admin/Collapse/WEgreen/WEgreen/Assets/Scripts/<a class="el" href="_save_load_delete_8cs.html">SaveLoadDelete.cs</a></li>
+<li>U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/<a class="el" href="_save_load_delete_8cs.html">SaveLoadDelete.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -283,7 +1107,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_save_load_delete.html">SaveLoadDelete</a></li>
-    <li class="footer">Generated on Tue Feb 1 2022 12:50:36 for Doxygen by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Sun Feb 6 2022 19:10:40 for WEgreen by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

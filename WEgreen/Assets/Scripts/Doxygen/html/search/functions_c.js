@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['totaldaysinmonth_0',['TotalDaysInMonth',['../class_calendar_manager.html#aabb5bbc629e5dc32aa419c6a6f97b0b6',1,'CalendarManager']]]
+  ['reschedulenotification_0',['RescheduleNotification',['../class_mobile_notification_manager.html#a1300a0adb5cb98fcf90520e1c9f36cf7',1,'MobileNotificationManager']]]
 ];

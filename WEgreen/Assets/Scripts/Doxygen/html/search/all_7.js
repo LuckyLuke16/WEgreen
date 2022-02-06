@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['load_0',['Load',['../class_save_load_delete.html#afcfd2b2b389af161464821cd7fa76a4d',1,'SaveLoadDelete']]],
-  ['loadscene_1',['LoadScene',['../class_change_scenes.html#a90cdbc1e6c629d2cc33a0150fe2ee57b',1,'ChangeScenes']]]
+  ['hits_0',['hits',['../class_a_r___cursor.html#a0bf3ea7c5e9e450cebfab0146992a751',1,'AR_Cursor.hits()'],['../class_measurement_controller.html#a55989bc289aa7954021f416495e035a6',1,'MeasurementController.hits()']]]
 ];

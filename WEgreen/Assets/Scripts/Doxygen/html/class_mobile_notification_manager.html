@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Doxygen: MobileNotificationManager Class Reference</title>
+<title>WEgreen: MobileNotificationManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Doxygen
+   <div id="projectname">WEgreen
    </div>
   </td>
  </tr>
@@ -86,10 +86,15 @@ $(document).ready(function(){initNavTree('class_mobile_notification_manager.html
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_mobile_notification_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MobileNotificationManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Creates, manages and sends notification to your andorid phone.  
+ <a href="class_mobile_notification_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for MobileNotificationManager:</div>
 <div class="dyncontent">
@@ -100,9 +105,90 @@ Inheritance diagram for MobileNotificationManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af7b6868d5744a9bbc7b1c709edfebb3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#af7b6868d5744a9bbc7b1c709edfebb3d">SendNotification</a> ()</td></tr>
+<tr class="memdesc:af7b6868d5744a9bbc7b1c709edfebb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends notification through a specific channel.  <a href="class_mobile_notification_manager.html#af7b6868d5744a9bbc7b1c709edfebb3d">More...</a><br /></td></tr>
 <tr class="separator:af7b6868d5744a9bbc7b1c709edfebb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:afe1b80408b4bdbdcc9f7aef53bbaa0e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#afe1b80408b4bdbdcc9f7aef53bbaa0e5">Start</a> ()</td></tr>
+<tr class="separator:afe1b80408b4bdbdcc9f7aef53bbaa0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea237f2d1f710ca58bd17fe61a51fc2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#aea237f2d1f710ca58bd17fe61a51fc2c">Update</a> ()</td></tr>
+<tr class="separator:aea237f2d1f710ca58bd17fe61a51fc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75fffcf105992c785bd9ae1bc2875aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#a75fffcf105992c785bd9ae1bc2875aad">CreateNotification</a> ()</td></tr>
+<tr class="memdesc:a75fffcf105992c785bd9ae1bc2875aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create notification and assign values to specific attributes e.g.  <a href="class_mobile_notification_manager.html#a75fffcf105992c785bd9ae1bc2875aad">More...</a><br /></td></tr>
+<tr class="separator:a75fffcf105992c785bd9ae1bc2875aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1300a0adb5cb98fcf90520e1c9f36cf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#a1300a0adb5cb98fcf90520e1c9f36cf7">RescheduleNotification</a> ()</td></tr>
+<tr class="memdesc:a1300a0adb5cb98fcf90520e1c9f36cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reschedule the notifications by basically removing all already existing notifications when script is running and send new ones.  <a href="class_mobile_notification_manager.html#a1300a0adb5cb98fcf90520e1c9f36cf7">More...</a><br /></td></tr>
+<tr class="separator:a1300a0adb5cb98fcf90520e1c9f36cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab19b8d897ba9466e9f6cb8a12d21a4ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#ab19b8d897ba9466e9f6cb8a12d21a4ee">id</a></td></tr>
+<tr class="separator:ab19b8d897ba9466e9f6cb8a12d21a4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ad2a156c5c8e2b523236bfb2068310"><td class="memItemLeft" align="right" valign="top">AndroidNotification&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#ae7ad2a156c5c8e2b523236bfb2068310">notification</a></td></tr>
+<tr class="separator:ae7ad2a156c5c8e2b523236bfb2068310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba384c684a79e6ad4be139be64a72a5c"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mobile_notification_manager.html#aba384c684a79e6ad4be139be64a72a5c">wateringPlantIntervall</a></td></tr>
+<tr class="separator:aba384c684a79e6ad4be139be64a72a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Creates, manages and sends notification to your andorid phone. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a75fffcf105992c785bd9ae1bc2875aad" name="a75fffcf105992c785bd9ae1bc2875aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75fffcf105992c785bd9ae1bc2875aad">&#9670;&nbsp;</a></span>CreateNotification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MobileNotificationManager.CreateNotification </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create notification and assign values to specific attributes e.g. </p>
+<p >notification title </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="a1300a0adb5cb98fcf90520e1c9f36cf7" name="a1300a0adb5cb98fcf90520e1c9f36cf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1300a0adb5cb98fcf90520e1c9f36cf7">&#9670;&nbsp;</a></span>RescheduleNotification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MobileNotificationManager.RescheduleNotification </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reschedule the notifications by basically removing all already existing notifications when script is running and send new ones. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <a id="af7b6868d5744a9bbc7b1c709edfebb3d" name="af7b6868d5744a9bbc7b1c709edfebb3d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7b6868d5744a9bbc7b1c709edfebb3d">&#9670;&nbsp;</a></span>SendNotification()</h2>
 
@@ -118,10 +204,130 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sends notification through a specific channel. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="afe1b80408b4bdbdcc9f7aef53bbaa0e5" name="afe1b80408b4bdbdcc9f7aef53bbaa0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1b80408b4bdbdcc9f7aef53bbaa0e5">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MobileNotificationManager.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea237f2d1f710ca58bd17fe61a51fc2c" name="aea237f2d1f710ca58bd17fe61a51fc2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea237f2d1f710ca58bd17fe61a51fc2c">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MobileNotificationManager.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab19b8d897ba9466e9f6cb8a12d21a4ee" name="ab19b8d897ba9466e9f6cb8a12d21a4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19b8d897ba9466e9f6cb8a12d21a4ee">&#9670;&nbsp;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MobileNotificationManager.id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7ad2a156c5c8e2b523236bfb2068310" name="ae7ad2a156c5c8e2b523236bfb2068310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ad2a156c5c8e2b523236bfb2068310">&#9670;&nbsp;</a></span>notification</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AndroidNotification MobileNotificationManager.notification</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba384c684a79e6ad4be139be64a72a5c" name="aba384c684a79e6ad4be139be64a72a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba384c684a79e6ad4be139be64a72a5c">&#9670;&nbsp;</a></span>wateringPlantIntervall</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Text MobileNotificationManager.wateringPlantIntervall</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>G:/Users/Admin/Collapse/WEgreen/WEgreen/Assets/Scripts/<a class="el" href="_mobile_notification_manager_8cs.html">MobileNotificationManager.cs</a></li>
+<li>U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/<a class="el" href="_mobile_notification_manager_8cs.html">MobileNotificationManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -129,7 +335,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_mobile_notification_manager.html">MobileNotificationManager</a></li>
-    <li class="footer">Generated on Tue Feb 1 2022 12:50:36 for Doxygen by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Sun Feb 6 2022 19:10:40 for WEgreen by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

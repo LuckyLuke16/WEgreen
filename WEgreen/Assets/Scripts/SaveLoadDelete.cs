@@ -5,11 +5,16 @@ using System.IO;
 using UnityEngine.UI;
 using System;
 
+/**
+* @brief Manages all the saving, loading and deleting activities for the watering plants.
+*/
 public class SaveLoadDelete : MonoBehaviour
 {
+    // declaring and initializing constant variables
     private const string SAVE_SEPARATOR = " -#SAVE_SEPARATOR#- ";
-    private const string PLANT_DATA_TEXT_FILE_NAME = "wateringPlantData";
+    //private const string PLANT_DATA_TEXT_FILE_NAME = "wateringPlantData";
 
+    // declaring and partly initializing variables
     [SerializeField]
     private Text waterinPlantName;
     [SerializeField]
@@ -18,8 +23,7 @@ public class SaveLoadDelete : MonoBehaviour
     private Text wateringPlantsOverviewText;
 
     private string wateringPlantCounter = "";
-
-    string wateringPlantsDataString = "";
+    private string wateringPlantsDataString = "";
 
     [SerializeField]
     private Text debugText;
@@ -31,27 +35,17 @@ public class SaveLoadDelete : MonoBehaviour
     private Text monthIndexText;
     [SerializeField]
     private Text displayedYearText;
-    //[SerializeField]
-    //private Text debugg1;
-    //[SerializeField]
-    //private Text debugg2;
-    //[SerializeField]
-    //private Text debugg3;
-    //[SerializeField]
-    //private Text debugg4;
-
 
     private GameObject[] monthDays;
     private GameObject[] monthDaysImage;
     private GameObject[] monthDaysName;
-    //private Text[] monthDaysText;
 
     private int intervall = 1;
     private int offsetPrev;
     private int offsetNext;
     private int offsetRef;
 
-    private int currentMonathDay;
+    private int currentMonthDay;
     private int lastDayOfMonthInt;
     private int lastDayOfPrevMonthInt;
 
@@ -68,9 +62,10 @@ public class SaveLoadDelete : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // loads all existing data that has been saved
         Load();
 
-
+        // initialize all needed gameobjects for the calculations regarding the correctness of the calendar e.g. marking the days that need to be watered
         monthDays = GameObject.FindGameObjectsWithTag("wateringMark");
         monthDaysImage = GameObject.FindGameObjectsWithTag("month_days");
         monthDaysName = new GameObject[31];
@@ -79,24 +74,13 @@ public class SaveLoadDelete : MonoBehaviour
             monthDaysName[i - 1] = GameObject.Find(i.ToString());
         }
 
-        //monthDaysText = new Text[monthDays.Length];
-
-        //for (int i = 0; i < monthDays.Length; i++)
-        //{
-        //    monthDaysText[i] = monthDays[i].GetComponent<Text>();
-        //}
-
         MarkWateringDays();
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    // saves plant data
+    /**
+     * @brief Saves plant data(name, interval) into a text file
+     * @return void
+     */
     public void Save()
     {
         // interval between 0 and 999 only allowed, otherwise error message
@@ -147,7 +131,10 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
-    // loads plant data
+    /**
+     * @brief Loads all the watering plant data that has already been saved.
+     * @return void
+     */
     public void Load()
     {
         LoadWateringPlantCounter();
@@ -156,7 +143,12 @@ public class SaveLoadDelete : MonoBehaviour
         wateringPlantsOverviewText.text = wateringPlantsDataString;
     }
 
-    // saves / updates counter
+    /**
+     * @brief Saves / updates watering plant counter.
+     * @param update(string): expects either "increase" or "decrease" as argument, to adjust 
+     * and save the watering plant counter (needed for adding limit and naming text files with the different watering plant data.
+     * @return void
+     */
     private void SaveWateringPlantCounter(string update)
     {
         LoadWateringPlantCounter();
@@ -179,7 +171,10 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
-    // loads counter
+    /**
+     * @brief Loads the watering plant counter so the app doesn't always start from nothing even thought watering plant data already exsists.
+     * @return void
+     */
     private void LoadWateringPlantCounter()
     {
         if (File.Exists(Application.persistentDataPath + "/wateringPlantCounter.txt"))
@@ -193,6 +188,10 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Deletes the last added watering plant data.
+     * @return void
+     */
     public void Delete()
     {
         LoadWateringPlantCounter();
@@ -219,6 +218,10 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Collets all the watering plant that exists(saved) and put them into a string in a formated way, so it can be used to display on the UI.
+     * @return void
+     */
     private void CollectWateringPlantData()
     {
         string[] savedStrings = new string[int.Parse(wateringPlantCounter) + 1];
@@ -234,6 +237,10 @@ public class SaveLoadDelete : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Responsible for all the calculations so that the calendar marks all the days that need to be watered depending on the intervall of the added(most recent) watering plant.
+     * @return void
+     */
     public void MarkWateringDays()
     {
         // get counter
@@ -242,7 +249,8 @@ public class SaveLoadDelete : MonoBehaviour
         firstDayOfMonth = new DateTime(int.Parse(displayedYearText.text), int.Parse(monthIndexText.text), 1);
         lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
         
-        
+        // adjust the arguments of Datetime(firstDayOfPrevMonth) so there won't be any conflicts between index and the actual date that is needed 
+        // -> then we can find the first day of the previous month correctly
         if (int.Parse(monthIndexText.text) == 1)
         {
             firstDayOfPrevMonth = new DateTime(int.Parse(displayedYearText.text) - 1, 12, 1);
@@ -254,7 +262,7 @@ public class SaveLoadDelete : MonoBehaviour
         lastDayOfPrevMonth = firstDayOfPrevMonth.AddMonths(1).AddDays(-1);
 
         // if file exists then access the data to mark the calendar
-        if (/*waterIntervallValueText.text != null || */File.Exists(Application.persistentDataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
+        if (File.Exists(Application.persistentDataPath + "/PLANT_DATA_TEXT_FILE_NAME" + wateringPlantCounter + ".txt"))
         {
             // prepare the needed data e.g. intervall to calculate the watering markers
             string[] savedStrings = new string[int.Parse(wateringPlantCounter) + 1];
@@ -270,20 +278,14 @@ public class SaveLoadDelete : MonoBehaviour
                 // get the intervall of all the existing plants one by one
                 intervall = int.Parse(wateringPlantsData[1]);
                 // calculate for the offset for the other months, so the intervall is still remains correct
-                currentMonathDay = int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("dd"));
+                currentMonthDay = int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("dd"));
                 lastDayOfMonthInt = int.Parse(lastDayOfMonth.ToString("dd"));
                 lastDayOfPrevMonthInt = int.Parse(lastDayOfPrevMonth.ToString("dd"));
-                //offset = intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall);
-
-
-                //wateringPlantsDataString += "Pflanze " + (i + 1) + ": " + wateringPlantsData[0] + "\n";
-                //wateringPlantsDataString += "Intervall: " + wateringPlantsData[1] + "\n\n";
             }
 
             // reset month values
             for (int i = 0; i < monthDays.Length; i++)
             {
-                //monthDays[i].GetComponent<Text>().text = "";
                 monthDaysName[i].GetComponent<Image>().color = Color.white;
             }
 
@@ -299,37 +301,23 @@ public class SaveLoadDelete : MonoBehaviour
                     {
                         for (int j = i - 1; j < monthDays.Length; j += intervall)
                         {
-                            //monthDays[j].GetComponent<Text>().text = "1";
                             monthDaysName[j].GetComponent<Image>().color = Color.green;
-                            //string increaseMarkerString = monthDays[j].GetComponent<Text>().text.ToString();
-                            //int increaseMarker = int.Parse(increaseMarkerString) + 1;
-                            //monthDays[j].GetComponent<Text>().text = increaseMarker.ToString();
                         }
                     }
                 }
-                // if displayed month is smaller than current month OR displayed year is smaller than current year
-                //else if (int.Parse(monthIndexText.text) < int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("MM")) || int.Parse(displayedYearText.text) < int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
-                //{
-                //    monthDays[i].GetComponent<Text>().text = "";
-                //}
                 // if (displayed month is bigger than current month AND displayed year is equal to current year) OR displayed year is bigger than current year
                 else if (((int.Parse(monthIndexText.text) > int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("MM"))) && (int.Parse(displayedYearText.text) == int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))) 
                         || int.Parse(displayedYearText.text) > int.Parse(System.DateTime.UtcNow.ToLocalTime().ToString("yyyy")))
                 {
+                    // depending on whether you want to navigate forward or backward, a different offset is needed for marking the correct watering days
                     if (isNavLeft)
                     {
                         offsetRef = offsetPrev;
                         if (i == offsetRef)
                         {
-                            Debug.Log("OFFSETREF222: " + offsetRef);
                             for (int j = i; j < monthDays.Length; j += intervall)
                             {
-                                //monthDays[j - 1].GetComponent<Text>().text = "1";
                                 monthDaysName[j - 1].GetComponent<Image>().color = Color.green;
-
-                                //string increaseMarkerString = monthDays[j].GetComponent<Text>().text.ToString();
-                                //int increaseMarker = int.Parse(increaseMarkerString) + 1;
-                                //monthDays[j].GetComponent<Text>().text = increaseMarker.ToString();
                             }
                         }
                     }
@@ -338,68 +326,69 @@ public class SaveLoadDelete : MonoBehaviour
                         offsetRef = offsetNext;
                         if (i == offsetRef)
                         {
-                            Debug.Log("OFFSETREF333: " + offsetRef);
                             for (int j = i - 1; j < monthDays.Length; j += intervall)
                             {
-                                //monthDays[j].GetComponent<Text>().text = "1";
                                 monthDaysName[j].GetComponent<Image>().color = Color.green;
-
-                                //string increaseMarkerString = monthDays[j].GetComponent<Text>().text.ToString();
-                                //int increaseMarker = int.Parse(increaseMarkerString) + 1;
-                                //monthDays[j].GetComponent<Text>().text = increaseMarker.ToString();
                             }
                         }
                     }
 
                 }
-                //else
-                //{
-                //    monthDays[i].GetComponent<Text>().text = "0";
-                //}
             }
             // calulate offset based on which month you are currently displaying and which month you are going to display
             if (displayedMonthText.text == System.DateTime.UtcNow.ToLocalTime().ToString("MMMM"))
             {
-                Debug.Log("intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + currentMonathDay + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall)));
-                offsetNext = intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall);
+                offsetNext = intervall - ((lastDayOfMonthInt - currentMonthDay) % intervall);
                 offsetRef = offsetNext;
-                //debugg3.text = "DEBUG3: " + "intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + currentMonathDay + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - currentMonathDay) % intervall));
             }
             else
             {
-                Debug.Log("offsetNext: intervall - ((lastDayOfMonthInt - offsetRef) % intervall) = erg: \n" + intervall + " - ((" + lastDayOfMonthInt + " - " + offsetRef + ") % " + intervall + ") = " + (intervall - ((lastDayOfMonthInt - offsetRef) % intervall)));
                 offsetNext = intervall - ((lastDayOfMonthInt - offsetRef) % intervall);
-                Debug.Log("intervall - offsetRef = erg: \n" + intervall + " - " + offsetRef + " = " + (intervall - offsetRef));
 
                 offsetPrev = (lastDayOfPrevMonthInt - (intervall - offsetRef)) % intervall;
                 if (offsetPrev == 0)
                 {
                     offsetPrev = intervall;
                 }
-                Debug.Log("(" + lastDayOfPrevMonthInt + " - " + (intervall - offsetRef) + ")" + " % " + intervall);
-                Debug.Log("offsetPrev: " + offsetPrev);
-
             }
-            Debug.Log("!!!OFFSETREF: " + offsetRef);
         }
     }
+
+    /**
+     * @brief This is used fir when you navigate to the previous month. It will set the booleans isNavLeft to true and isNavRight to false, 
+     *  so that the correct offset is used for the calculations of marking the watering days
+     * @return void
+     */
     public void IsNavLeft()
     {
         isNavLeft = true;
         isNavRight = false;
-        Debug.Log("navleft: true");
     }
+
+    /**
+     * @brief This is used fir when you navigate to the previous month. It will set the booleans isNavRight to true and isNavLeft to false, 
+     *  so that the correct offset is used for the calculations of marking the watering days
+     * @return void
+     */
     public void IsNavRight()
     {
         isNavRight = true;
         isNavLeft = false;
-        Debug.Log("navright: true");
-
     }
+
+    /**
+     * @brief Activates / Opens up the error message window when saving an watering plant with an invalid intervall
+     * @return void
+     */
     public void OpenErrorMessageWindow()
     {
         errorMessageWindow.SetActive(true);
     }
+
+    /**
+     * @brief Deactivates / Closes the error message window 
+     * @return void
+     */
     public void CloseErrorMessageWindow()
     {
         errorMessageWindow.SetActive(false);
