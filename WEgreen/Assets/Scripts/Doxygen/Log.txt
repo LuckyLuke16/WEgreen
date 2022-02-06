@@ -77,25 +77,35 @@ Computing member relations...
 Building full member lists recursively...
 error: could not copy file U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/Doxygen/html/doxygen-awesome.css to U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/Doxygen/html/doxygen-awesome.css
 error: could not copy file U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/Doxygen/html/doxygen-awesome-sidebar-only.css to U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/Doxygen/html/doxygen-awesome-sidebar-only.css
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:190: warning: documented empty return type of CalendarManager.AlignWeekdays
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:168: warning: documented empty return type of CalendarManager.CheckCurrentDay
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:299: warning: documented empty return type of CalendarManager.CloseAddingWindow
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:319: warning: documented empty return type of CalendarManager.CloseWateringPlantCollectionOverview
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:90: warning: documented empty return type of CalendarManager.FindCurrentYearMonthDay
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:104: warning: documented empty return type of CalendarManager.NavigateLeft
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:136: warning: documented empty return type of CalendarManager.NavigateRight
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:289: warning: documented empty return type of CalendarManager.OpenAddingWindow
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:309: warning: documented empty return type of CalendarManager.OpenWateringPlantCollectionOverview
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/CalendarManager.cs:247: warning: documented empty return type of CalendarManager.TotalDaysInMonth
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:25: warning: documented empty return type of ChangeScenes.BackToHomeButton
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:41: warning: documented empty return type of ChangeScenes.ExitButton
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:14: warning: argument 'string' of command @param is not found in the argument list of ChangeScenes::LoadScene(string SceneName)
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/ChangeScenes.cs:14: warning: documented empty return type of ChangeScenes.LoadScene
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:47: warning: documented empty return type of MobileNotificationManager.CreateNotification
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:73: warning: documented empty return type of MobileNotificationManager.RescheduleNotification
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:63: warning: documented empty return type of MobileNotificationManager.SendNotification
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:390: warning: documented empty return type of SaveLoadDelete.CloseErrorMessageWindow
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:223: warning: documented empty return type of SaveLoadDelete.CollectWateringPlantData
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:193: warning: documented empty return type of SaveLoadDelete.Delete
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:358: warning: documented empty return type of SaveLoadDelete.IsNavLeft
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:369: warning: documented empty return type of SaveLoadDelete.IsNavRight
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:136: warning: documented empty return type of SaveLoadDelete.Load
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:176: warning: documented empty return type of SaveLoadDelete.LoadWateringPlantCounter
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:242: warning: documented empty return type of SaveLoadDelete.MarkWateringDays
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:381: warning: documented empty return type of SaveLoadDelete.OpenErrorMessageWindow
 U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:82: warning: documented empty return type of SaveLoadDelete.Save
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:148: warning: argument 'string' of command @param is not found in the argument list of SaveLoadDelete::SaveWateringPlantCounter(string update)
+U:/4. Semester/EMM/Project/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:148: warning: documented empty return type of SaveLoadDelete.SaveWateringPlantCounter
 Adding members to member groups.
 Computing member references...
 Inheriting documentation...
@@ -165,5 +175,5 @@ Generating example index...
 finalizing index lists...
 writing tag file...
 Running plantuml with JAVA...
-lookup cache used 109/65536 hits=105 misses=168
+lookup cache used 238/65536 hits=232 misses=297
 finished...

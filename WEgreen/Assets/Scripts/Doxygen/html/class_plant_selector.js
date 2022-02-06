@@ -26,6 +26,7 @@ var class_plant_selector =
     [ "Plant3Stage2", "class_plant_selector.html#a23e9ea24a19ba34d1e39688da5964837", null ],
     [ "Plant3Stage3", "class_plant_selector.html#a8d8ab79347843dd14217414b5bf3aec6", null ],
     [ "PlantStageSelectOn", "class_plant_selector.html#accdba75137e29822e8e23060af193cc8", null ],
+    [ "selectedStage", "class_plant_selector.html#ae521cd426a84c8b4d2f93caac6e7be02", null ],
     [ "ShowPlant1", "class_plant_selector.html#a173476f25e90994353ef85fef43a0f03", null ],
     [ "ShowPlant2", "class_plant_selector.html#a692fae43c044e847928397d7297bd6f8", null ],
     [ "ShowPlant3", "class_plant_selector.html#a53ae6163d813c4969b1629fe1426e04f", null ],
