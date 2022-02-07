@@ -9,6 +9,5 @@ var searchData=
   ['isnavleft_6',['isNavLeft',['../class_save_load_delete.html#a47797785c57db10413a74cff56997a43',1,'SaveLoadDelete']]],
   ['isnavleft_7',['IsNavLeft',['../class_save_load_delete.html#a83f350e825fb3151cb77f7bdf573ff4f',1,'SaveLoadDelete']]],
   ['isnavright_8',['isNavRight',['../class_save_load_delete.html#a120bd536610b4b217af091306e03ae86',1,'SaveLoadDelete']]],
-  ['isnavright_9',['IsNavRight',['../class_save_load_delete.html#a30591971b072842ffbf79dd54a18d3fc',1,'SaveLoadDelete']]],
-  ['isscaling_10',['isScaling',['../class_measure_plant.html#a1cd4d6355b57988beb57b46881ee16b4',1,'MeasurePlant']]]
+  ['isnavright_9',['IsNavRight',['../class_save_load_delete.html#a30591971b072842ffbf79dd54a18d3fc',1,'SaveLoadDelete']]]
 ];
