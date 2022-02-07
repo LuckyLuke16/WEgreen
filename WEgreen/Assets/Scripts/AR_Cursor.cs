@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-
+/**
+ * @brief Generates the plant models on the cursor through AR Raycasting from AR Foundation.
+ */
 public class AR_Cursor : MonoBehaviour
 {
    
@@ -12,21 +14,15 @@ public class AR_Cursor : MonoBehaviour
     public ARRaycastManager raycastManager;
     public ARPlaneManager aRPlaneManager;
     public GameObject movingPlantToPlace;
-    
-    //maximale anzahl an platzierbaren pflanzen und counter f�r pflanzenanzahl
     private int amountOfPlants = 0;
     private int maxAmountOfPlants = 3;
 
-    //Dialog wenn maximales pflanzenlimit erreicht ist
     public GameObject maxPlantReachedDialouge;
-
-    //list mit hits des raycasts mit einer plane
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     private bool useCursor = true;
     private bool visibility = true;
 
-    //array mit pflanzen die platziert werden
     GameObject[] placedPlants;
     
     // Start is called before the first frame update
@@ -38,8 +34,7 @@ public class AR_Cursor : MonoBehaviour
         placedPlants = new GameObject[maxAmountOfPlants];
     }
 
-    // Update is called once per frame
-    /*
+    /**
      * bei touch auf bildschirm wird eine pflanze auf die Stelle des hits des raycasts mit einer generierten plane gesetzt
      * max. 3 pflanzen moeglich zu generieren (performance) 
     */
@@ -51,11 +46,15 @@ public class AR_Cursor : MonoBehaviour
             updateCursorAndPlant();
         }
     }
-    /*
-     * updated die position und rotation des cursors wenn hit mit plane aufgetreten ist
-     * Modell-Pflanze ist immer auf cursor
+    /**
+     * @brief Updates the position of the cursor, if a hit with a plane occured.
+     * 
+     * The cursor position is set to the middle of the screen.The cursor as well as the active
+     * plant gameobject are rendered to the position of the last hit of the raycastmanager
+     * with the detected plane in the middle of the screen.
+     * 
     */
-    void updateCursorAndPlant()
+    private void updateCursorAndPlant()
     {
         Vector2 screenPosition = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
         hits = new List<ARRaycastHit>();
@@ -63,7 +62,6 @@ public class AR_Cursor : MonoBehaviour
 
         if (hits.Count > 0)
         {
-            //cursor soll erst gerendert werden, wenn raycast eine plane getroffen hat
             objectToPlace.SetActive(true);
 
             transform.position = hits[0].pose.position;
@@ -73,21 +71,27 @@ public class AR_Cursor : MonoBehaviour
             movingPlantToPlace.transform.rotation = hits[0].pose.rotation;
         }
     }
-
-    //skalierfunktion, die beim benutzen des sliders verwendet wird
-    //scaleValue wird vom slider �bergeben
+    /**
+     * @brief Scale of plant model is changed through adjustment of scale slider value.
+     * @param scaleValue Value of slider for scaling
+     */
     public void changeScale(float scaleValue)
     {
         movingPlantToPlace.transform.localScale = Vector3.one * scaleValue;
 
     }
 
-    //pflanze wird auf die derzeitige position des cursors platziert, wenn mehr als 3 pflanzen hinzugef�gt sind wird ein dialog angezeigt
+    /**
+     * @brief Selected plant models is set on current cursor position.
+     * 
+     * A maximum of three plants can be placed. The plant gameobjects are added to the placedPlants array.
+     * If the amount of placed plants exceeds three a dialoug is set active, that notifies the user, that he has
+     * to delete the plants in order to place new ones.
+     */
     public void addPlant()
     {
         if (hits.Count > 0 && amountOfPlants < maxAmountOfPlants && visibility)
         {
-            //GameObject placedPlant = GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
             placedPlants[amountOfPlants] = GameObject.Instantiate(objectToPlace, hits[0].pose.position, hits[0].pose.rotation);
             for(int i = 0; i < placedPlants[amountOfPlants].transform.childCount; i++)
             {
@@ -96,27 +100,29 @@ public class AR_Cursor : MonoBehaviour
                     placedPlants[amountOfPlants].transform.GetChild(i).Find("MeasurePrefab").gameObject.SetActive(false);
                 }
             }
-            //placedPlants[amountOfPlants].transform.Find("MeasurePrefab").gameObject;
-            //placedPlants[amountOfPlants].SetActive(false);
-
             amountOfPlants++;
         }
         else
         {
-            //wenn 3 oder mehr pflanzen gesetzt sind wird ein dialog angezeigt, der darauf hinweist, dass die maximale anzahl erreicht ist
             if (amountOfPlants >= 3) {
                 maxPlantReachedDialouge.SetActive(true);
                 useCursor = false;
             }
         }
     }
-    //ok taste bei max. pflanzen-erreicht-dialog schlie�t diesen
+    /**
+     * @brief Closes the dialouge when the maximum amount of placed plants is reached and the according ok- button is pressed.
+     * 
+     */
     public void pressedOkWhenMaxPlants()
     {
         maxPlantReachedDialouge.SetActive(false);
         
     }
-    //sichtbarkeit der pflanze + cursor wird mit taste aktiviert/deaktiviert
+
+    /**
+     * @brief Switches the visibility of the cursor and the plant model when the visibility- button is pressed.
+     */
     public void setVisibility()
     {
         visibility = !visibility;
@@ -125,7 +131,11 @@ public class AR_Cursor : MonoBehaviour
         useCursor = visibility;
     }
 
-    //die m�lleimer-taste loescht alle gesetzten pflanzen
+    /**
+     * @brief Deletes all placed plant models when the delete- button is pressed.
+     * 
+     * The gameobjects in the placedPlants array are set inactive and the cursor is set active.
+     */
     public void deletePlacedPlants()
     {
         for(int i = 0; i < maxAmountOfPlants; i++)

@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Doxygen", "index.html", [
+  [ "Wegreen", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
