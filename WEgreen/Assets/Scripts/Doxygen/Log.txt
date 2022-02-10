@@ -118,6 +118,21 @@ D:/WEgreen/WEgreen/Assets/Scripts/ExecuteAction.cs:66: warning: The following pa
 D:/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:47: warning: documented empty return type of MobileNotificationManager.CreateNotification
 D:/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:73: warning: documented empty return type of MobileNotificationManager.RescheduleNotification
 D:/WEgreen/WEgreen/Assets/Scripts/MobileNotificationManager.cs:63: warning: documented empty return type of MobileNotificationManager.SendNotification
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:47: warning: argument 'float' of command @param is not found in the argument list of PlantSelector::onSliderValueChanged(float value)
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:47: warning: The following parameter of PlantSelector.onSliderValueChanged(float value) is not documented:
+  parameter 'value'
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:201: warning: documented empty return type of PlantSelector.P1Stage1
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:214: warning: documented empty return type of PlantSelector.P1Stage2
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:227: warning: documented empty return type of PlantSelector.P1Stage3
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:242: warning: documented empty return type of PlantSelector.P2Stage1
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:257: warning: documented empty return type of PlantSelector.P2Stage2
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:270: warning: documented empty return type of PlantSelector.P2Stage3
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:286: warning: documented empty return type of PlantSelector.P3Stage1
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:299: warning: documented empty return type of PlantSelector.P3Stage2
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:312: warning: documented empty return type of PlantSelector.P3Stage3
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:103: warning: documented empty return type of PlantSelector.SelectPlant1
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:133: warning: documented empty return type of PlantSelector.SelectPlant2
+D:/WEgreen/WEgreen/Assets/Scripts/PlantSelector.cs:164: warning: documented empty return type of PlantSelector.SelectPlant3
 D:/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:390: warning: documented empty return type of SaveLoadDelete.CloseErrorMessageWindow
 D:/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:223: warning: documented empty return type of SaveLoadDelete.CollectWateringPlantData
 D:/WEgreen/WEgreen/Assets/Scripts/SaveLoadDelete.cs:193: warning: documented empty return type of SaveLoadDelete.Delete
