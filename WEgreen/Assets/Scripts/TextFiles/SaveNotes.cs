@@ -5,31 +5,36 @@ using System.IO;
 using UnityEngine.UI;
 using System;
 using TMPro;
+/**
+ *@brief The class handles the loading, saving and deleting of the notes.
+ *
+ */
 public class SaveNotes : MonoBehaviour
 {
     public TMP_InputField notesInputField;
-    //public Text parentText;
     public TMP_Text inputFieldText;
     private string notesString;
     private static string path;
-    private bool loadTextFromFile = false;    
+    private bool loadTextFromFile = false;
 
     // Start is called before the first frame update
-    // text aus Notes.txt soll beim start geladen werden und im Input Feld angezeigt werden
+    /**
+     * @brief At the start of the scene the text from the locally saved "Notes.txt" file is written in the TMPro Input Field.
+     */
     void Start()
     {
-        //pfad fuer lokale textdatei, die die notizen beinhaltet
         path = Application.persistentDataPath + "/Notes.txt";
-
-        //text aus datei in notizen anzeigen beim start der notiz-funktion
         StreamReader reader = new StreamReader(path);
         notesString = reader.ReadToEnd();
         notesInputField.text = notesString;
         reader.Close();
     }
-
-    // abspeichern der geschriebenen Notizen, beim verändern des textes im input feld 
-    public void save()
+    /**
+     * @brief Saves the input of the TMPro Input Field when the text in it was changed.
+     * 
+     * The file input is overwritten everytime the notes have to be changed.
+     */
+    private void save()
     {
         if (loadTextFromFile)
         {
